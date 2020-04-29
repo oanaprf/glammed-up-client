@@ -27,7 +27,9 @@
       "operator-linebreak": "off",
       "no-confusing-arrow": "off",
       "indent": "off",
-      "no-plusplus": "off"
+      "no-plusplus": "off",
+      "import/prefer-default-export": "off",
+      "import/no-extraneous-dependencies": "off"
     },
     "settings": {
       "import/resolver": {
@@ -62,11 +64,17 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "expo": "~37.0.3",
+    "prop-types": "^15.7.2",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
-    "react-native-web": "~0.11.7"
+    "react-native-web": "~0.11.7",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
@@ -82,7 +90,8 @@
     "eslint-plugin-react-native": "^3.8.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "redux-logger": "^3.0.6"
   },
   "private": true
 }

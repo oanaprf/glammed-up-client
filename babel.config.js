@@ -9,6 +9,7 @@ module.exports = api => {
           root: ['.'],
           alias: {
             '@@store': './src/store',
+            '@@utils': './src/utils',
           },
         },
       ],
