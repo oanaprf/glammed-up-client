@@ -1,1 +1,0 @@
-# glammed-up-client
