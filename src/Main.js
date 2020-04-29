@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { fetch } from '@@store/middlewares/fetch/actions';
+import { fetch } from '@@store/middlewares';
 import { routes } from '@@utils';
 
 const styles = StyleSheet.create({
@@ -15,15 +15,16 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = ({ api: services = [] }) => ({
-  services: services.data,
+const mapStateToProps = state => ({
+  services: fetch.selectors.getData('services', [])(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onPress: () => dispatch(fetch({ name: 'services', url: routes.services }, { method: 'GET' })),
+  onPress: () =>
+    dispatch(fetch.actions.fetch({ name: 'services', url: routes.services }, { method: 'GET' })),
 });
 
-const Main = ({ services = [], onPress }) => (
+const Main = ({ services, onPress }) => (
   <View style={styles.container}>
     <Button title="Get Services" onPress={onPress} />
     <Text>{services.length}</Text>
@@ -31,8 +32,12 @@ const Main = ({ services = [], onPress }) => (
 );
 
 Main.propTypes = {
-  services: PropTypes.array.isRequired,
+  services: PropTypes.array,
   onPress: PropTypes.func.isRequired,
+};
+
+Main.defaultProps = {
+  services: [],
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
