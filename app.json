@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "GlammedUp",
+    "name": "glammed-up",
     "slug": "glammed-up-client",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
