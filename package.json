@@ -7,6 +7,52 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
+  "eslintConfig": {
+    "plugins": [
+      "react"
+    ],
+    "extends": [
+      "plugin:react/recommended",
+      "airbnb-base"
+    ],
+    "rules": {
+      "implicit-arrow-linebreak": "off",
+      "arrow-parens": "off",
+      "comma-dangle": "off",
+      "function-paren-newline": "off",
+      "object-curly-newline": "off",
+      "no-underscore-dangle": "off",
+      "operator-linebreak": "off",
+      "no-confusing-arrow": "off",
+      "indent": "off",
+      "no-plusplus": "off"
+    },
+    "env": {
+      "node": true
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "expo": "~37.0.3",
     "react": "~16.9.0",
@@ -15,8 +61,18 @@
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
     "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-native": "^3.8.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.0",
+    "prettier": "^2.0.5"
   },
   "private": true
 }
