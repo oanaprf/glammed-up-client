@@ -8,8 +8,11 @@ module.exports = api => {
         {
           root: ['.'],
           alias: {
+            '@@components': './src/components',
+            '@@screens': './src/screens',
             '@@store': './src/store',
             '@@utils': './src/utils',
+            '@@config': './src/config',
           },
         },
       ],
