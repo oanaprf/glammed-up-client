@@ -29,7 +29,8 @@
       "indent": "off",
       "no-plusplus": "off",
       "import/prefer-default-export": "off",
-      "import/no-extraneous-dependencies": "off"
+      "import/no-extraneous-dependencies": "off",
+      "no-unused-expressions": "off"
     },
     "settings": {
       "import/resolver": {
@@ -42,7 +43,7 @@
     }
   },
   "prettier": {
-    "printWidth": 100,
+    "printWidth": 80,
     "trailingComma": "es5",
     "singleQuote": true,
     "arrowParens": "avoid"
@@ -65,14 +66,18 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "emoji-strip": "^1.0.1",
     "expo": "~37.0.3",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+    "react-native-elements": "^2.0.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.1",
     "react-native-web": "~0.11.7",
     "react-redux": "^7.2.0",
+    "recompose": "^0.30.0",
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",
     "redux-thunk": "^2.3.0",
