@@ -1,13 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 
 import store from '@@store';
+import { theme } from '@@config';
 
 import Main from './src/Main';
 
 const App = () => (
   <Provider store={store}>
-    <Main />
+    <ThemeProvider theme={theme}>
+      <Main />
+    </ThemeProvider>
   </Provider>
 );
 

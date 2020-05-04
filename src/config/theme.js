@@ -1,10 +1,32 @@
 export default {
+  text: {
+    fontSize: {
+      XS: 10,
+      S: 15,
+      M: 17,
+      L: 20,
+      XL: 25,
+    },
+    letterSpacing: {
+      S: 1,
+      M: 2,
+      L: 3,
+      XL: 4,
+    },
+  },
+  borderRadius: {
+    XS: 2,
+    S: 5,
+    M: 8,
+    L: 10,
+    XL: 20,
+  },
   colors: {
     white: '#FFFFFF',
-    veryLightGrey: '#F7F8FC',
-    lightGrey: '#C6C9DA',
+    veryLightGrey: '#F9FAFC',
+    lightGrey: '#F1F1F1',
     grey: '#8D8A9B',
-    darkGrey: '#676a79',
+    darkGrey: '#646567',
     black: '#000000',
     success: '#00C851',
     info: '#35C4FC',
@@ -76,30 +98,5 @@ export default {
       ternaryDark: '#c41c04',
       ternaryLight: '#ff8a5f',
     },
-  },
-  text: {
-    fontSize: {
-      XS: 8,
-      S: 10,
-      M: 15,
-      L: 20,
-      XL: 25,
-    },
-    letterSpacing: {
-      S: 1,
-      M: 2,
-      L: 3,
-      XL: 4,
-    },
-    fontWeight: {
-      S: 1,
-    },
-  },
-  borderRadius: {
-    XS: 2,
-    S: 5,
-    M: 8,
-    L: 10,
-    XL: 20,
   },
 };
