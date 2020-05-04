@@ -9,6 +9,7 @@ module.exports = api => {
           root: ['.'],
           alias: {
             '@@components': './src/components',
+            '@@hocs': './src/hocs',
             '@@screens': './src/screens',
             '@@store': './src/store',
             '@@utils': './src/utils',
