@@ -4,13 +4,12 @@ import PropTypes from 'prop-types';
 
 import * as S from './styled';
 
-const Input = ({ keyboardType, autoCapitalize, Icon, dark, ...rest }) =>
-  console.log(keyboardType) || (
-    <S.TextInputWrapper dark={dark}>
-      <S.StyledTextInput {...{ keyboardType, autoCapitalize, ...rest }} />
-      {Icon && <S.StyledIcon>{Icon}</S.StyledIcon>}
-    </S.TextInputWrapper>
-  );
+const Input = ({ keyboardType, autoCapitalize, Icon, dark, ...rest }) => (
+  <S.TextInputWrapper dark={dark}>
+    <S.StyledTextInput {...{ keyboardType, autoCapitalize, ...rest }} />
+    {Icon && <S.StyledIcon>{Icon}</S.StyledIcon>}
+  </S.TextInputWrapper>
+);
 
 Input.defaultProps = {
   keyboardType: Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password',
