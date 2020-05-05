@@ -1,10 +1,7 @@
 import { withUseState } from '@@hocs';
 
-import PasswordInput from './PasswordInput';
+import BasePassword from './PasswordInput';
 
-const PasswordInputContainer = withUseState(
-  'passwordHidden',
-  true
-)(PasswordInput);
+const PasswordInput = withUseState('passwordHidden', true)(BasePassword);
 
-export default PasswordInputContainer;
+export default PasswordInput;

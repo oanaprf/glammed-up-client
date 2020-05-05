@@ -3,7 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 import { theme } from '@@config';
-import { TextInput, PasswordInput, NumericInput, Spacer } from '@@components';
+import { TextInput, PasswordInput, Spacer, Text, Button } from '@@components';
+import styled from 'styled-components';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +28,12 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     elevation: 15,
   },
+  animation: [],
 });
+
+const StyledButton = styled(Button)`
+  border-radius: 20;
+`;
 
 const Main = () => (
   <View style={styles.container}>
@@ -48,8 +54,23 @@ const Main = () => (
       />
       <Spacer />
       <PasswordInput dark placeholder="Password" />
+      <Spacer height={60} />
+      <StyledButton>
+        <Text style={{ color: 'white', fontSize: theme.text.fontSize.M }}>
+          login
+        </Text>
+      </StyledButton>
       <Spacer />
-      <NumericInput dark placeholder="Phone" />
+      <Button style={{ borderRadius: 20 }}>
+        <Icon
+          {...{
+            name: 'mail',
+            type: 'feather',
+            size: 20,
+            color: theme.colors.white,
+          }}
+        />
+      </Button>
     </View>
   </View>
 );
