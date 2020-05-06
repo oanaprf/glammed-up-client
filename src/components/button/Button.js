@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as S from './styled';
 
 const Button = ({
-  scaleInterpolate,
+  interpolation,
   onPressIn,
   onPressOut,
   children,
@@ -15,7 +15,7 @@ const Button = ({
   <TouchableWithoutFeedback {...{ onPressIn, onPressOut, ...rest }}>
     <S.AnimatedButton
       {...{
-        style: [style, { transform: [{ scale: scaleInterpolate }] }],
+        style: [style, { transform: [{ scale: interpolation }] }],
         ...rest,
       }}
     >
@@ -25,7 +25,7 @@ const Button = ({
 );
 
 Button.propTypes = {
-  scaleInterpolate: PropTypes.object.isRequired,
+  interpolation: PropTypes.object.isRequired,
   onPressIn: PropTypes.func.isRequired,
   onPressOut: PropTypes.func.isRequired,
   children: PropTypes.element.isRequired,

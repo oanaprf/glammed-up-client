@@ -18,7 +18,7 @@ const TabItem = ({
   isActive,
   onPress,
   hitSlop,
-  scaleInterpolate,
+  interpolation,
   onPressIn,
   onPressOut,
 }) => (
@@ -28,7 +28,7 @@ const TabItem = ({
       onPressIn,
       onPressOut,
       hitSlop,
-      style: { transform: [{ scale: scaleInterpolate }] },
+      style: { transform: [{ scale: interpolation }] },
     }}
   >
     <Icon
@@ -48,7 +48,7 @@ TabItem.propTypes = {
   isActive: PropTypes.bool.isRequired,
   onPress: PropTypes.func.isRequired,
   hitSlop: PropTypes.object.isRequired,
-  scaleInterpolate: PropTypes.object.isRequired,
+  interpolation: PropTypes.object.isRequired,
   onPressIn: PropTypes.func.isRequired,
   onPressOut: PropTypes.func.isRequired,
 };
