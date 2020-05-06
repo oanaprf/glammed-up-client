@@ -6,7 +6,7 @@ import BaseButton from './Button';
 const Button = compose(
   withState('scaleValue', 'setScaleValue', () => new Animated.Value(0)),
   withProps(({ scaleValue }) => ({
-    cardScale: scaleValue.interpolate({
+    scaleInterpolate: scaleValue.interpolate({
       inputRange: [0, 0.5, 1],
       outputRange: [1, 0.98, 0.95],
     }),

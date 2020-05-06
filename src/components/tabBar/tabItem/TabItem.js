@@ -13,8 +13,24 @@ const icons = {
   Settings: 'settings',
 };
 
-const TabItem = ({ route, isActive, onPress, hitSlop }) => (
-  <S.StyledTouchableOpacity {...{ onPress, hitSlop }}>
+const TabItem = ({
+  route,
+  isActive,
+  onPress,
+  hitSlop,
+  scaleInterpolate,
+  onPressIn,
+  onPressOut,
+}) => (
+  <S.StyledTouchableOpacity
+    {...{
+      onPress,
+      onPressIn,
+      onPressOut,
+      hitSlop,
+      style: { transform: [{ scale: scaleInterpolate }] },
+    }}
+  >
     <Icon
       {...{
         name: icons[route.name],
@@ -32,6 +48,9 @@ TabItem.propTypes = {
   isActive: PropTypes.bool.isRequired,
   onPress: PropTypes.func.isRequired,
   hitSlop: PropTypes.object.isRequired,
+  scaleInterpolate: PropTypes.object.isRequired,
+  onPressIn: PropTypes.func.isRequired,
+  onPressOut: PropTypes.func.isRequired,
 };
 
 export default TabItem;
