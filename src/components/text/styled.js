@@ -4,4 +4,5 @@ export const StyledText = styled.Text`
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: ${({ theme }) => theme.text.letterSpacing.M}px;
+  color: ${({ theme }) => theme.colors.black};
 `;

@@ -20,6 +20,7 @@ export default {
     M: 8,
     L: 10,
     XL: 20,
+    XXL: 40,
   },
   colors: {
     white: '#FFFFFF',
