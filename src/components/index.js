@@ -3,3 +3,4 @@ export { default as Spacer } from './spacer';
 export { default as Text } from './text';
 export { default as Button } from './button';
 export { default as TabBar } from './tabBar';
+export { default as Card } from './card';

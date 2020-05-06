@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Text } from '@@components';
+import { Text, Card } from '@@components';
 
 const Home = () => (
   <View
@@ -12,7 +12,16 @@ const Home = () => (
       backgroundColor: 'white',
     }}
   >
-    <Text>Home</Text>
+    <Card
+      style={{
+        height: 500,
+        width: 300,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <Text>Home</Text>
+    </Card>
   </View>
 );
 
