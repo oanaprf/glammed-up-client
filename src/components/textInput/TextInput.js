@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as S from './styled';
 
 const TextInput = ({ keyboardType, autoCapitalize, Icon, dark, ...rest }) => (
-  <S.TextInputWrapper dark={dark}>
+  <S.TextInputWrapper dark={dark} {...rest}>
     <S.StyledTextInput {...{ keyboardType, autoCapitalize, ...rest }} />
     {Icon && <S.StyledIcon>{Icon}</S.StyledIcon>}
   </S.TextInputWrapper>

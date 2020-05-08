@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Text, Card } from '@@components';
+import { Text, Card, Spacer, Dropdown } from '@@components';
 
 const Home = () => (
   <View
@@ -21,6 +21,13 @@ const Home = () => (
       }}
     >
       <Text>Home</Text>
+      <Spacer />
+      <Dropdown
+        options={['NAILS', 'MAKE_UP', 'WAXING']}
+        style={{ width: '80%' }}
+        dark
+        placeholder="Category"
+      />
     </Card>
   </View>
 );

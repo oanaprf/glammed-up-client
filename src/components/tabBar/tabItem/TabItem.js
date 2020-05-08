@@ -28,6 +28,7 @@ const TabItem = ({
       onPressIn,
       onPressOut,
       hitSlop,
+      activeOpacity: 1,
       style: { transform: [{ scale: interpolation }] },
     }}
   >
