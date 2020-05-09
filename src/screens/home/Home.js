@@ -1,7 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
-import { Text, Card, Spacer, Dropdown } from '@@components';
+import { Text, Card, Spacer, Dropdown, NumberSpinner } from '@@components';
 
 const Home = () => (
   <View
@@ -12,23 +12,27 @@ const Home = () => (
       backgroundColor: 'white',
     }}
   >
-    <Card
-      style={{
-        height: 500,
-        width: 300,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Text>Home</Text>
-      <Spacer />
-      <Dropdown
-        options={['NAILS', 'MAKE_UP', 'WAXING']}
-        style={{ width: '80%' }}
-        dark
-        placeholder="Category"
-      />
-    </Card>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <Card
+        style={{
+          height: 500,
+          width: 300,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Text>Home</Text>
+        <Spacer />
+        <Dropdown
+          options={['NAILS', 'MAKE_UP', 'WAXING']}
+          style={{ width: '80%', zIndex: 1 }}
+          dark
+          placeholder="Category"
+        />
+        <Spacer />
+        <NumberSpinner />
+      </Card>
+    </TouchableWithoutFeedback>
   </View>
 );
 

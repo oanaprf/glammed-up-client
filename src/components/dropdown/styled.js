@@ -8,7 +8,6 @@ export const StyledTouchableOpacity = styled(TouchableOpacity)`
   padding-right: 10px;
   padding-top: 15px;
   padding-bottom: 12px;
-  z-index: 1;
 `;
 
 export const StyledText = styled(Text)`
