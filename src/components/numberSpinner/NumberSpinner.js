@@ -11,9 +11,10 @@ const NumberSpinner = ({
   onDecrement,
   onChangeText,
   dark,
+  rounded,
   ...rest
 }) => (
-  <S.NumberSpinner dark={dark} {...rest}>
+  <S.NumberSpinner {...{ dark, rounded, ...rest }}>
     <S.LeftPaddedTouchableOpacity
       onPress={onDecrement}
       hitSlop={{ top: 10, bottom: 10, left: 20, right: 10 }}
@@ -52,6 +53,7 @@ NumberSpinner.propTypes = {
   onDecrement: PropTypes.func.isRequired,
   onChangeText: PropTypes.func.isRequired,
   dark: PropTypes.bool,
+  rounded: PropTypes.bool,
 };
 
 export default NumberSpinner;

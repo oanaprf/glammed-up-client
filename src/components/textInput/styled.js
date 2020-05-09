@@ -7,7 +7,8 @@ export const TextInputWrapper = styled.View`
 
   background-color: ${({ theme, dark }) =>
     dark ? theme.colors.lightGrey : theme.colors.white};
-  border-radius: ${({ theme }) => theme.borderRadius.XL}px;
+  border-radius: ${({ rounded, theme }) =>
+    rounded ? theme.borderRadius.XXL : theme.borderRadius.XL}px;
 
   elevation: 20;
   padding: 18px 15px;

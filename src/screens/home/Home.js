@@ -8,6 +8,8 @@ import {
   Dropdown,
   NumberSpinner,
   Rating,
+  Button,
+  TextInput,
 } from '@@components';
 
 const Home = () => (
@@ -30,14 +32,21 @@ const Home = () => (
       >
         <Text>Home</Text>
         <Spacer />
+        <Button rounded>
+          <Text style={{ color: 'white' }}>Press me</Text>
+        </Button>
+        <Spacer />
+        <TextInput placeholder="Test" rounded style={{ width: '80%' }} />
+        <Spacer />
         <Dropdown
           options={['NAILS', 'MAKE_UP', 'WAXING']}
           style={{ width: '80%', zIndex: 1 }}
           dark
+          rounded
           placeholder="Category"
         />
         <Spacer />
-        <NumberSpinner />
+        <NumberSpinner rounded />
         <Spacer />
         <Rating />
       </Card>

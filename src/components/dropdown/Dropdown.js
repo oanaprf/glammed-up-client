@@ -21,10 +21,11 @@ const Dropdown = ({
   value,
   setValue,
   dark,
+  rounded,
   ...rest
 }) => (
   <View style={{ position: 'relative' }} {...rest}>
-    <S.StyledList {...{ dark, opened, maxHeight }}>
+    <S.StyledList {...{ dark, rounded, opened, maxHeight }}>
       {options.map(option => (
         <DropdownItem
           key={option}
@@ -36,7 +37,9 @@ const Dropdown = ({
         />
       ))}
     </S.StyledList>
-    <DropdownInput {...{ opened, setOpened, value, dark, placeholder }} />
+    <DropdownInput
+      {...{ opened, setOpened, value, dark, rounded, placeholder }}
+    />
   </View>
 );
 
@@ -49,6 +52,7 @@ Dropdown.propTypes = {
   value: PropTypes.string,
   setValue: PropTypes.func,
   dark: PropTypes.bool,
+  rounded: PropTypes.bool,
 };
 
 export default Dropdown;
