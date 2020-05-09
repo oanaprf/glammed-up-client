@@ -1,7 +1,14 @@
 import React from 'react';
 import { View, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
-import { Text, Card, Spacer, Dropdown, NumberSpinner } from '@@components';
+import {
+  Text,
+  Card,
+  Spacer,
+  Dropdown,
+  NumberSpinner,
+  Rating,
+} from '@@components';
 
 const Home = () => (
   <View
@@ -31,6 +38,8 @@ const Home = () => (
         />
         <Spacer />
         <NumberSpinner />
+        <Spacer />
+        <Rating />
       </Card>
     </TouchableWithoutFeedback>
   </View>
