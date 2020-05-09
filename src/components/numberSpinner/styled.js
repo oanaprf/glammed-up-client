@@ -15,7 +15,10 @@ export const NumberSpinner = styled.View`
 `;
 
 export const StyledNumericInput = styled(NumericInput)`
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  ${Platform.select({
+    ios: 'box-shadow: 0 0 0 rgba(0, 0, 0, 0);',
+    android: 'elevation: 0;',
+  })}
   width: 68px;
   text-align: center;
 `;

@@ -47,7 +47,7 @@ const NumberSpinner = ({
 );
 
 NumberSpinner.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
   onChangeText: PropTypes.func.isRequired,
