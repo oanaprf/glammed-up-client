@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import store from '@@store';
 import { theme } from '@@config';
 
-import Main from './src/Main';
+import Main from './src/Main.container';
 
 const App = () => (
   <Provider store={store}>

@@ -11,6 +11,7 @@ import {
   Button,
   TextInput,
 } from '@@components';
+import { t } from '@@config';
 
 const Home = () => (
   <View
@@ -30,7 +31,7 @@ const Home = () => (
           justifyContent: 'center',
         }}
       >
-        <Text>Home</Text>
+        <Text>{t('home.pageName')}</Text>
         <Spacer />
         <Button rounded>
           <Text style={{ color: 'white' }}>Press me</Text>

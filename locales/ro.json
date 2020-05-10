@@ -1,0 +1,17 @@
+{
+  "home": {
+    "pageName": "Acasă"
+  },
+  "appointments": {
+    "pageName": "Programări"
+  },
+  "profile": {
+    "pageName": "Profil"
+  },
+  "services": {
+    "pageName": "Servicii"
+  },
+  "settings": {
+    "pageName": "Setări"
+  }
+}

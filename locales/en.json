@@ -1,0 +1,17 @@
+{
+  "home": {
+    "pageName": "Home"
+  },
+  "appointments": {
+    "pageName": "Appointments"
+  },
+  "profile": {
+    "pageName": "Profile"
+  },
+  "services": {
+    "pageName": "Services"
+  },
+  "settings": {
+    "pageName": "Settings"
+  }
+}
