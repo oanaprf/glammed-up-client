@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { FETCH_START, FETCH_SUCCESS, FETCH_FAILURE } from './actionTypes';
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from './actionTypes';
 
 export default handleActions(
   {
@@ -20,7 +20,7 @@ export default handleActions(
         error: undefined,
       },
     }),
-    [FETCH_FAILURE]: (state, { payload: { name, error } }) => ({
+    [FETCH_FAIL]: (state, { payload: { name, error } }) => ({
       ...state,
       [name]: {
         ...(state[name] || {}),

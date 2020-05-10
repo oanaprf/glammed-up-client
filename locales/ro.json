@@ -1,4 +1,7 @@
 {
+  "login": {
+    "pageName": "Autentificare"
+  },
   "home": {
     "pageName": "Acasă"
   },

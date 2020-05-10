@@ -2,8 +2,8 @@ import I18n from 'ex-react-native-i18n';
 import { AsyncStorage } from 'react-native';
 import * as Localization from 'expo-localization';
 
-import en from '../../locales/en.json';
-import ro from '../../locales/ro.json';
+import en from '@@locales/en.json';
+import ro from '@@locales/ro.json';
 
 I18n.fallbacks = true;
 I18n.translations = {

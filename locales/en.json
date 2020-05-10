@@ -1,4 +1,7 @@
 {
+  "login": {
+    "pageName": "Login"
+  },
   "home": {
     "pageName": "Home"
   },
