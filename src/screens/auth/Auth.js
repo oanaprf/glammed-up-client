@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import PropTypes from 'prop-types';
 
 import {
   Text,
@@ -9,10 +8,11 @@ import {
   Button,
   TextInput,
   PasswordInput,
+  Tabs,
 } from '@@components';
 import { t } from '@@config';
 
-const Auth = ({ formValues, setFormValues, login }) => (
+const Auth = () => (
   <View
     style={{
       flex: 1,
@@ -27,41 +27,40 @@ const Auth = ({ formValues, setFormValues, login }) => (
           height: '80%',
           width: '80%',
           alignItems: 'center',
-          justifyContent: 'center',
+          paddingTop: 40,
         }}
       >
-        <Text>{t('login.pageName')}</Text>
-        <Spacer />
-        <TextInput
-          placeholder="Email"
-          rounded
-          style={{ width: '80%' }}
-          value={formValues.email}
-          onChangeText={value => setFormValues({ ...formValues, email: value })}
+        <Tabs
+          tabLabels={[
+            <Text key={1}>{t('login.pageName')}</Text>,
+            <Text key={2}>Sign up</Text>,
+          ]}
+          tabContents={[
+            <View key={2}>
+              <TextInput placeholder="Email" rounded />
+              <Spacer />
+              <PasswordInput placeholder="Password" rounded />
+              <Spacer />
+              <Button rounded>
+                <Text style={{ color: 'white' }}>Login</Text>
+              </Button>
+            </View>,
+            <View key={1}>
+              <TextInput placeholder="Fullname" rounded />
+              <Spacer />
+              <TextInput placeholder="Email" rounded />
+              <Spacer />
+              <PasswordInput placeholder="Password" rounded />
+              <Spacer />
+              <Button rounded>
+                <Text style={{ color: 'white' }}>Sign up</Text>
+              </Button>
+            </View>,
+          ]}
         />
-        <Spacer />
-        <PasswordInput
-          placeholder="Password"
-          rounded
-          style={{ width: '80%' }}
-          value={formValues.password}
-          onChangeText={value =>
-            setFormValues({ ...formValues, password: value })
-          }
-        />
-        <Spacer />
-        <Button rounded onPress={() => login(formValues)}>
-          <Text style={{ color: 'white' }}>Login</Text>
-        </Button>
       </Card>
     </TouchableWithoutFeedback>
   </View>
 );
-
-Auth.propTypes = {
-  formValues: PropTypes.object.isRequired,
-  setFormValues: PropTypes.func.isRequired,
-  login: PropTypes.func.isRequired,
-};
 
 export default Auth;

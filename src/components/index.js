@@ -8,3 +8,4 @@ export { default as Dropdown } from './dropdown';
 export { default as NumberSpinner } from './numberSpinner';
 export { default as Rating } from './rating';
 export { default as SplashScreen } from './splashScreen';
+export { default as Tabs } from './tabs';
