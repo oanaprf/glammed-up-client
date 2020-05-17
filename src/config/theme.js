@@ -1,13 +1,14 @@
 export default {
   text: {
     fontSize: {
-      XS: 10,
+      XS: 13,
       S: 15,
       M: 17,
       L: 20,
       XL: 25,
     },
     letterSpacing: {
+      XS: 0,
       S: 1,
       M: 2,
       L: 3,
@@ -33,6 +34,50 @@ export default {
     info: '#35C4FC',
     warning: '#ffbb33',
     error: '#FF3548',
+    theme_sweet_morning: {
+      primary: '#ff5f6d',
+      secondary: '#ffc371',
+    },
+    theme_back_to_earth: {
+      primary: '#00C9FF',
+      secondary: '#92FE9D',
+    },
+    theme_timber: {
+      primary: '#fc00ff',
+      secondary: '#00dbde',
+    },
+    theme_sublime_light: {
+      primary: '#FC5C7D',
+      secondary: '#6A82FB',
+    },
+    theme_mini: {
+      primary: '#30E8BF',
+      secondary: '#FF8235',
+    },
+    theme_ibiza_sunset: {
+      primary: '#ee0979',
+      secondary: '#ff6a00',
+    },
+    theme_sound_cloud: {
+      primary: '#f83600',
+      secondary: '#fe8c00',
+    },
+    theme_morpheus_den: {
+      primary: '#6456f6',
+      secondary: '#30cfd0',
+    },
+    theme_young_grass: {
+      primary: '#00e3ae',
+      secondary: '#9be15d',
+    },
+    theme_melon: {
+      primary: '#FA2A4C',
+      secondary: '#00e3ae',
+    },
+    theme_superman: {
+      primary: '#0057FF',
+      secondary: '#FF3E4F',
+    },
     theme_pink: {
       primary: '#FA2A4C',
       primaryDark: '#8e002f',

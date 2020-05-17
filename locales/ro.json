@@ -1,6 +1,14 @@
 {
   "login": {
-    "pageName": "Autentificare"
+    "pageName": "Autentificare",
+    "loginButton": "Autentifică-te",
+    "forgotPassword": "Ți-ai uitat parola?",
+    "or": "Sau",
+    "signInWithSocial": "Autentifică-te cu ajutorul rețelelor de socializare",
+    "fields": {
+      "email": "Email",
+      "password": "Parolă"
+    }
   },
   "home": {
     "pageName": "Acasă"

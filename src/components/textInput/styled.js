@@ -10,12 +10,13 @@ export const TextInputWrapper = styled.View`
   border-radius: ${({ rounded, theme }) =>
     rounded ? theme.borderRadius.XXL : theme.borderRadius.XL}px;
 
-  elevation: 20;
   padding: 18px 15px;
-  ${Platform.select({
-    ios: 'box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);',
-    android: 'elevation: 1;',
-  })}
+  ${({ dark }) =>
+    !dark &&
+    Platform.select({
+      ios: 'box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);',
+      android: 'elevation: 3;',
+    })}
 `;
 
 export const StyledTextInput = styled.TextInput`

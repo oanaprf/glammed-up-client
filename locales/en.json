@@ -1,6 +1,14 @@
 {
   "login": {
-    "pageName": "Login"
+    "pageName": "Login",
+    "loginButton": "Login",
+    "forgotPassword": "Forgot password",
+    "or": "Or",
+    "signInWithSocial": "Sign in with social networks",
+    "fields": {
+      "email": "Email",
+      "password": "Password"
+    }
   },
   "home": {
     "pageName": "Home"

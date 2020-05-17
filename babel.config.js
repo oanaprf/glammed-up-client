@@ -15,6 +15,7 @@ module.exports = api => {
             '@@utils': './src/utils',
             '@@config': './src/config',
             '@@locales': './locales',
+            '@@assets': './assets',
           },
         },
       ],

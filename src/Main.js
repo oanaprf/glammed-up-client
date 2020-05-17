@@ -10,10 +10,11 @@ import { Home, Appointments, Profile, Settings, Auth } from '@@screens';
 const Tab = createBottomTabNavigator();
 
 const Main = ({ translationsLoaded, isLoggedIn }) =>
+  // eslint-disable-next-line no-nested-ternary
   translationsLoaded ? (
-    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-      <NavigationContainer>
-        {isLoggedIn ? (
+    isLoggedIn ? (
+      <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+        <NavigationContainer>
           <Tab.Navigator tabBar={TabBar} initialRouteName="Home">
             <Tab.Screen name="Home" component={Home} icon="home" />
             <Tab.Screen
@@ -24,11 +25,13 @@ const Main = ({ translationsLoaded, isLoggedIn }) =>
             <Tab.Screen name="Profile" component={Profile} icon="user" />
             <Tab.Screen name="Settings" component={Settings} icon="settings" />
           </Tab.Navigator>
-        ) : (
-          <Auth />
-        )}
+        </NavigationContainer>
+      </SafeAreaView>
+    ) : (
+      <NavigationContainer>
+        <Auth />
       </NavigationContainer>
-    </SafeAreaView>
+    )
   ) : (
     <SplashScreen />
   );

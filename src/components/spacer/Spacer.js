@@ -2,7 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
-const Spacer = ({ height }) => <View style={{ height }} />;
+const Spacer = ({ height, ...rest }) => (
+  <View {...{ style: { height }, ...rest }} />
+);
 
 Spacer.defaultProps = {
   height: 20,

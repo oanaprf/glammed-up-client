@@ -23,13 +23,13 @@ const Tabs = ({
         </S.TabLabel>
       ))}
     </S.TabHeader>
-    <View>
+    <>
       {tabContents.map((content, index) => (
         <S.TabContent key={index} isTabSelected={selectedTab === index}>
           {content}
         </S.TabContent>
       ))}
-    </View>
+    </>
   </View>
 );
 
