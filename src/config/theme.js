@@ -34,6 +34,10 @@ export default {
     info: '#35C4FC',
     warning: '#ffbb33',
     error: '#FF3548',
+    theme_black_pink: {
+      primary: '#000000',
+      secondary: '#fc00ff',
+    },
     theme_sweet_morning: {
       primary: '#ff5f6d',
       secondary: '#ffc371',

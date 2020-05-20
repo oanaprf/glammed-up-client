@@ -1,12 +1,21 @@
+/* eslint-disable global-require */
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
+import * as Font from 'expo-font';
 
 import { withUseState, withOnMount } from '@@hocs';
 import { initI18n, firebaseConfig } from '@@config';
 import { user } from '@@store/modules';
 
 import BaseMain from './Main';
+
+const fonts = {
+  MontserratBold: require('../assets/fonts/Montserrat-Bold.ttf'),
+  MontserratSemiBold: require('../assets/fonts/Montserrat-SemiBold.ttf'),
+  MontserratMedium: require('../assets/fonts/Montserrat-Medium.ttf'),
+  MontserratRegular: require('../assets/fonts/Montserrat-Regular.ttf'),
+};
 
 const Main = compose(
   withUseState('translationsLoaded', false),
@@ -15,6 +24,7 @@ const Main = compose(
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
+    await Font.loadAsync(fonts);
     setTranslationsLoaded(true);
   }),
   connect(state => ({

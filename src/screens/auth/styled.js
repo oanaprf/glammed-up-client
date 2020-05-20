@@ -1,37 +1,49 @@
 import styled from 'styled-components/native';
-import { LinearGradient } from 'expo-linear-gradient';
 
-import { Card, Tabs } from '@@components';
+import { Tabs, Text } from '@@components';
 
-export const TopBackground = styled(LinearGradient)`
-  width: 100%;
-  flex: 1;
-  align-items: center;
-`;
-
-export const BottomBackground = styled.View`
-  flex-grow: 1;
+export const SafeAreaView = styled.SafeAreaView`
+  flex: 0;
+  background-color: ${({ theme }) => theme.colors.theme_black_pink.primary};
 `;
 
 export const Container = styled.View`
   flex: 1;
   align-items: center;
-  position: relative;
+  background-color: ${({ theme }) => theme.colors.theme_black_pink.primary};
 `;
 
-export const Logo = styled.Image`
-  margin-top: 150;
+export const StyledTitle = styled.View`
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 0.1;
+  padding-bottom: 20px;
 `;
 
-export const StyledCard = styled(Card)`
-  width: 85%;
-  height: 70%;
+export const TitleText = styled(Text)`
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 45;
+  text-align: center;
+  font-family: 'MontserratRegular';
+`;
+
+export const StyledLogo = styled.Image`
+  width: 40px;
+  height: 27px;
+  align-self: flex-end;
+  margin-right: 35px;
+`;
+
+export const StyledCard = styled.View`
+  width: 100%;
+  flex-grow: 0.9;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px 20px 20px;
-  position: absolute;
-  bottom: 30px;
-  border-radius: ${({ theme }) => theme.borderRadius.XL}px;
+  padding: 30px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const StyledTabs = styled(Tabs)`

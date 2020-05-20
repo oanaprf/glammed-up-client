@@ -10,11 +10,11 @@ export const SmallSpacer = styled(Spacer)`
   flex-grow: 0.2;
 `;
 
-export const ItalicText = styled.Text`
+export const ForgotPasswordText = styled.Text`
   text-align: center;
-  font-style: italic;
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.text.fontSize.XS}px;
+  font-family: 'MontserratMedium';
 `;
 const horizontalFlex = `
   flex-direction: row;
@@ -23,14 +23,14 @@ const horizontalFlex = `
 `;
 
 export const HorizontalBarWrapper = styled.View`
-  width: 70%;
+  width: 75%;
   ${horizontalFlex}
 `;
 
 export const HorizontalBar = styled.View`
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme }) =>
-    theme.colors.theme_sublime_light.secondary};
+    theme.colors.theme_black_pink.secondary};
   flex-grow: 2;
 `;
 
@@ -40,6 +40,7 @@ export const PaddedText = styled(Text)`
 
 export const CenteredText = styled.Text`
   text-align: center;
+  font-family: 'MontserratMedium';
 `;
 
 export const SocialIconsWrapper = styled.View`
