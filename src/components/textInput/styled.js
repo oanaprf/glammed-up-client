@@ -22,8 +22,8 @@ export const TextInputWrapper = styled.View`
 export const StyledTextInput = styled.TextInput`
   color: ${({ theme }) => theme.colors.darkGrey};
   font-size: ${({ theme }) => theme.text.fontSize.M}px;
-  font-weight: bold;
   flex: 8;
+  font-family: 'MontserratMedium';
 `;
 
 export const StyledIcon = styled.View`

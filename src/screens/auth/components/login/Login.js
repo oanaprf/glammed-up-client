@@ -18,7 +18,7 @@ const Login = ({ formValues, onChange, onPress }) => (
     <LoginButton onPress={onPress} />
     <S.SmallSpacer />
     <TouchableOpacity>
-      <S.ItalicText>{t('login.forgotPassword')}</S.ItalicText>
+      <S.ForgotPasswordText>{t('login.forgotPassword')}</S.ForgotPasswordText>
     </TouchableOpacity>
     <S.SmallSpacer />
     <S.HorizontalBarWrapper>
