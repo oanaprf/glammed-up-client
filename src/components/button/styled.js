@@ -4,7 +4,7 @@ import { Animated } from 'react-native';
 export const AnimatedButton = styled(Animated.View)`
   align-items: center;
   padding: 20px;
-  background-color: ${({ theme }) => theme.colors.theme_timber.primary};
+  background-color: ${({ theme }) => theme.colors.theme_sublime_light.primary};
   border-radius: ${({ rounded, theme }) =>
     rounded ? theme.borderRadius.XXL : theme.borderRadius.XL}px;
 `;

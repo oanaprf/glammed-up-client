@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
-import { TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { TouchableWithoutFeedback, Keyboard, View } from 'react-native';
 
 import { Text } from '@@components';
 import { t, theme } from '@@config';
@@ -10,17 +10,17 @@ import * as S from './styled';
 
 const Auth = () => (
   <>
-    <S.StyledSafeAreaView />
     <S.Container>
       <S.TopBackground
         colors={[
-          theme.colors.theme_timber.primary,
-          theme.colors.theme_timber.secondary,
+          theme.colors.theme_sublime_light.primary,
+          theme.colors.theme_sublime_light.secondary,
         ]}
       >
-        {/* <S.Logo source={require('@@assets/final_logo.png')} /> */}
+        <View style={{ position: 'absolute', top: '18%' }}>
+          <Text style={{ color: 'white', fontSize: 45 }}>GLAMMED UP</Text>
+        </View>
       </S.TopBackground>
-      <S.BottomBackground />
       <S.StyledCard>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <S.StyledTabs

@@ -38,7 +38,7 @@ const TabItem = ({
         type: 'feather',
         size: 25,
         color: isActive
-          ? theme.colors.theme_timber.primary
+          ? theme.colors.theme_sublime_light.primary
           : theme.colors.black,
       }}
     />
