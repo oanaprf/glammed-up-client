@@ -10,8 +10,8 @@ export const TabLabel = styled.TouchableOpacity`
   ${({ isTabSelected, theme }) =>
     isTabSelected &&
     `border-bottom-width: 6px;
-   border-bottom-left-radius: ${theme.borderRadius.L}px;
-   border-bottom-right-radius: ${theme.borderRadius.L}px;
+   border-bottom-left-radius: ${theme.borderRadius.M}px;
+   border-bottom-right-radius: ${theme.borderRadius.M}px;
    border-bottom-color: ${theme.colors.theme_black_pink.secondary}`}
 `;
 

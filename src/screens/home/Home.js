@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {
   Text,
@@ -10,10 +12,12 @@ import {
   Rating,
   Button,
   TextInput,
+  Modal,
 } from '@@components';
 import { t } from '@@config';
+import { modal } from '@@store/modules';
 
-const Home = () => (
+const Home = ({ openModal }) => (
   <View
     style={{
       flex: 1,
@@ -47,12 +51,36 @@ const Home = () => (
           placeholder="Category"
         />
         <Spacer />
-        <NumberSpinner rounded />
+        <NumberSpinner rounded dark />
         <Spacer />
         <Rating />
+        <Button onPress={() => openModal({ name: 'test' })}>
+          <Text>OPen</Text>
+        </Button>
+        <Modal
+          name="test"
+          style={{ height: '80%', width: '90%' }}
+          title="Make an appointment"
+        >
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <TextInput
+              {...{
+                dark: true,
+                placeholder: t('login.fields.email'),
+                name: 'email',
+              }}
+            />
+          </View>
+        </Modal>
       </Card>
     </TouchableWithoutFeedback>
   </View>
 );
 
-export default Home;
+Home.propTypes = {
+  openModal: PropTypes.func,
+};
+
+export default connect(null, {
+  openModal: modal.actions.openModal,
+})(Home);

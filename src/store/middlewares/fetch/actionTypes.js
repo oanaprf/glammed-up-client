@@ -1,5 +1,3 @@
-const prefix = 'FETCH';
-
-export const FETCH_START = `${prefix}_START`;
-export const FETCH_SUCCESS = `${prefix}_SUCCESS`;
-export const FETCH_FAIL = `${prefix}_FAIL`;
+export const FETCH_START = 'FETCH_START';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_FAIL = 'FETCH_FAIL';

@@ -41,8 +41,8 @@ export const StyledCard = styled.View`
   align-items: center;
   justify-content: center;
   padding: 30px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-top-right-radius: ${({ theme }) => theme.borderRadius.XL}px;
+  border-top-left-radius: ${({ theme }) => theme.borderRadius.XL}px;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
