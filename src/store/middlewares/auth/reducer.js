@@ -3,6 +3,9 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  SIGN_UP_START,
+  SIGN_UP_SUCCESS,
+  SIGN_UP_FAIL,
   LOGOUT_START,
   LOGOUT_SUCCESS,
   LOGOUT_FAIL,
@@ -28,6 +31,31 @@ export default handleActions(
       },
     }),
     [LOGIN_FAIL]: (state, { payload: { error } }) => ({
+      ...state,
+      user: {
+        ...(state.user || {}),
+        isLoading: false,
+        error,
+      },
+    }),
+    [SIGN_UP_START]: state => ({
+      ...state,
+      user: {
+        ...(state.user || {}),
+        isLoading: true,
+        error: undefined,
+      },
+    }),
+    [SIGN_UP_SUCCESS]: (state, { payload: { data } }) => ({
+      ...state,
+      user: {
+        ...(state.user || {}),
+        data,
+        isLoading: false,
+        error: undefined,
+      },
+    }),
+    [SIGN_UP_FAIL]: (state, { payload: { error } }) => ({
       ...state,
       user: {
         ...(state.user || {}),

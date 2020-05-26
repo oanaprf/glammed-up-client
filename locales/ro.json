@@ -10,6 +10,18 @@
       "password": "Parolă"
     }
   },
+  "signUp": {
+    "pageName": "Înregistrare",
+    "signUpButton": "Înregistrează-te",
+    "or": "Sau",
+    "signInWithSocial": "Înregistrează-te cu ajutorul rețelelor de socializare",
+    "fields": {
+      "firstName": "Prenume",
+      "lastName": "Nume",
+      "email": "Email",
+      "password": "Parolă"
+    }
+  },
   "home": {
     "pageName": "Acasă"
   },

@@ -4,8 +4,20 @@
     "loginButton": "Login",
     "forgotPassword": "Forgot password",
     "or": "Or",
-    "signInWithSocial": "Sign in with social networks",
+    "signInWithSocial": "Sign in using social networks",
     "fields": {
+      "email": "Email",
+      "password": "Password"
+    }
+  },
+  "signUp": {
+    "pageName": "Sign up",
+    "signUpButton": "Sign up",
+    "or": "Or",
+    "signInWithSocial": "Sign up using social networks",
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
       "email": "Email",
       "password": "Password"
     }

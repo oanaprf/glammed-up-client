@@ -23,7 +23,7 @@ export const StyledTitle = styled.View`
 
 export const TitleText = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
-  font-size: 45;
+  font-size: 45px;
   text-align: center;
   font-family: 'MontserratRegular';
 `;

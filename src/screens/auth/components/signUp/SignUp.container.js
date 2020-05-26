@@ -4,22 +4,24 @@ import { connect } from 'react-redux';
 import { withUseState } from '@@hocs';
 import { user } from '@@store/modules';
 
-import BaseLogin from './Login';
+import BaseSignUp from './SignUp';
 
-const Login = compose(
+const SignUp = compose(
   withUseState('formValues', {
-    email: 'testtest@gmail.com',
-    password: 'testtest',
+    firstName: 'first',
+    lastName: 'user',
+    email: 'first.user@gmail.com',
+    password: 'first.user',
   }),
   connect(null, {
-    login: user.actions.login,
+    signUp: user.actions.signUp,
   }),
   withHandlers({
     onChange: ({ formValues, setFormValues }) => ({
       nativeEvent: { target, text },
     }) => setFormValues({ ...formValues, [`${target.name}`]: text }),
-    onPress: ({ login, formValues }) => () => login(formValues),
+    onPress: ({ signUp, formValues }) => () => signUp(formValues),
   })
-)(BaseLogin);
+)(BaseSignUp);
 
-export default Login;
+export default SignUp;

@@ -6,14 +6,14 @@ import { Button } from '@@components';
 
 import * as S from './styled';
 
-const LoginButton = ({ onPress }) => (
+const SignUpButton = ({ onPress }) => (
   <Button rounded onPress={onPress}>
-    <S.StyledText>{t('login.loginButton')}</S.StyledText>
+    <S.StyledText>{t('signUp.signUpButton')}</S.StyledText>
   </Button>
 );
 
-LoginButton.propTypes = {
+SignUpButton.propTypes = {
   onPress: PropTypes.func.isRequired,
 };
 
-export default LoginButton;
+export default SignUpButton;

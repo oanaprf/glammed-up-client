@@ -2,8 +2,15 @@ import firebase from 'firebase';
 
 import { http, routes } from '@@utils';
 
-import { LOGIN_START, LOGOUT_START } from './actionTypes';
-import { loginSuccess, loginFail, logoutSuccess, logoutFail } from './actions';
+import { LOGIN_START, SIGN_UP_START, LOGOUT_START } from './actionTypes';
+import {
+  loginSuccess,
+  loginFail,
+  signUpSuccess,
+  signUpFail,
+  logoutSuccess,
+  logoutFail,
+} from './actions';
 
 export default ({ dispatch }) => next => action => {
   const { type, payload } = action;
@@ -31,6 +38,14 @@ export default ({ dispatch }) => next => action => {
           .catch(error => dispatch(loginFail({ error })));
       })
       .catch(error => dispatch(loginFail({ error })));
+  } else if (type === SIGN_UP_START) {
+    http({
+      url: routes.user,
+      method: 'POST',
+      data: payload,
+    })
+      .then(({ data: { data } }) => dispatch(signUpSuccess({ data })))
+      .catch(error => dispatch(signUpFail({ error })));
   } else if (type === LOGOUT_START) {
     firebase
       .auth()
