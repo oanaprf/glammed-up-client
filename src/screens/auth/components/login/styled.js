@@ -46,7 +46,3 @@ export const CenteredText = styled.Text`
 export const SocialIconsWrapper = styled.View`
   ${horizontalFlex}
 `;
-
-export const PaddedTouchableOpacity = styled.TouchableOpacity`
-  padding: 5px;
-`;

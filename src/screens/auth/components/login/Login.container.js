@@ -13,12 +13,16 @@ const Login = compose(
   }),
   connect(null, {
     login: user.actions.login,
+    loginFacebook: user.actions.loginFacebook,
+    loginGoogle: user.actions.loginGoogle,
   }),
   withHandlers({
     onChange: ({ formValues, setFormValues }) => ({
       nativeEvent: { target, text },
     }) => setFormValues({ ...formValues, [`${target.name}`]: text }),
-    onPress: ({ login, formValues }) => () => login(formValues),
+    onLogin: ({ login, formValues }) => () => login(formValues),
+    onFacebookLogin: ({ loginFacebook }) => () => loginFacebook(),
+    onGoogleLogin: ({ loginGoogle }) => () => loginGoogle(),
   })
 )(BaseLogin);
 

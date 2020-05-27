@@ -10,12 +10,16 @@ import {
   LOGOUT_START,
   LOGOUT_SUCCESS,
   LOGOUT_FAIL,
+  LOGIN_FACEBOOK_START,
+  LOGIN_GOOGLE_START,
 } from './actionTypes';
 
 export const loginStart = createAction(LOGIN_START, ({ email, password }) => ({
   email,
   password,
 }));
+export const loginFacebookStart = createAction(LOGIN_FACEBOOK_START);
+export const loginGoogleStart = createAction(LOGIN_GOOGLE_START);
 export const loginSuccess = createAction(LOGIN_SUCCESS, ({ data }) => ({
   data,
 }));
