@@ -3,6 +3,7 @@ import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
 import * as Font from 'expo-font';
+import * as Facebook from 'expo-facebook';
 
 import { withUseState, withOnMount } from '@@hocs';
 import { initI18n, firebaseConfig } from '@@config';
@@ -25,6 +26,7 @@ const Main = compose(
       firebase.initializeApp(firebaseConfig);
     }
     await Font.loadAsync(fonts);
+    await Facebook.initializeAsync('257066585530930');
     setTranslationsLoaded(true);
   }),
   connect(state => ({

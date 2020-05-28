@@ -9,11 +9,29 @@ import {
   LOGOUT_START,
   LOGOUT_SUCCESS,
   LOGOUT_FAIL,
+  LOGIN_FACEBOOK_START,
+  LOGIN_GOOGLE_START,
 } from './actionTypes';
 
 export default handleActions(
   {
     [LOGIN_START]: state => ({
+      ...state,
+      user: {
+        ...(state.user || {}),
+        isLoading: true,
+        error: undefined,
+      },
+    }),
+    [LOGIN_FACEBOOK_START]: state => ({
+      ...state,
+      user: {
+        ...(state.user || {}),
+        isLoading: true,
+        error: undefined,
+      },
+    }),
+    [LOGIN_GOOGLE_START]: state => ({
       ...state,
       user: {
         ...(state.user || {}),

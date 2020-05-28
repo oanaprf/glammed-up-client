@@ -1,22 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
-import { Icon } from 'react-native-elements';
 
+import { Spacer } from '@@components';
 import { t } from '@@config';
 
 import * as S from './styled';
-import { LoginButton } from './components';
+import { LoginButton, SocialLoginButton } from './components';
 import { Email, Password } from '../common';
 
-const Login = ({ formValues, onChange, onPress }) => (
+const Login = ({
+  formValues,
+  onChange,
+  onLogin,
+  onFacebookLogin,
+  onGoogleLogin,
+}) => (
   <>
-    <S.MediumSpacer />
+    <Spacer height={40} />
     <Email value={formValues.email} onChange={onChange} />
-    <S.SmallSpacer />
+    <Spacer />
     <Password value={formValues.password} onChange={onChange} />
     <S.MediumSpacer />
-    <LoginButton onPress={onPress} />
+    <LoginButton onPress={onLogin} />
     <S.SmallSpacer />
     <TouchableOpacity>
       <S.ForgotPasswordText>{t('login.forgotPassword')}</S.ForgotPasswordText>
@@ -30,16 +36,8 @@ const Login = ({ formValues, onChange, onPress }) => (
     <S.CenteredText>{t('login.signInWithSocial')}</S.CenteredText>
     <S.SmallSpacer />
     <S.SocialIconsWrapper>
-      <S.PaddedTouchableOpacity>
-        <Icon
-          {...{ name: 'social-facebook', type: 'simple-line-icon', size: 30 }}
-        />
-      </S.PaddedTouchableOpacity>
-      <S.PaddedTouchableOpacity>
-        <Icon
-          {...{ name: 'social-google', type: 'simple-line-icon', size: 30 }}
-        />
-      </S.PaddedTouchableOpacity>
+      <SocialLoginButton onPress={onFacebookLogin} type="facebook" />
+      <SocialLoginButton onPress={onGoogleLogin} type="google" />
     </S.SocialIconsWrapper>
   </>
 );
@@ -47,7 +45,9 @@ const Login = ({ formValues, onChange, onPress }) => (
 Login.propTypes = {
   formValues: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
-  onPress: PropTypes.func.isRequired,
+  onLogin: PropTypes.func.isRequired,
+  onFacebookLogin: PropTypes.func.isRequired,
+  onGoogleLogin: PropTypes.func.isRequired,
 };
 
 export default Login;
