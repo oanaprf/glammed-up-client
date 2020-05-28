@@ -12,6 +12,7 @@ const DropdownInput = ({ onPress, ...rest }) => (
     Icon={
       <TouchableOpacity
         onPress={onPress}
+        activeOpacity={0.6}
         hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
       >
         <Icon

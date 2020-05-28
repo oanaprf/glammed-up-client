@@ -6,5 +6,5 @@ export const AnimatedButton = styled(Animated.View)`
   padding: 20px;
   background-color: ${({ theme }) => theme.colors.theme_black_pink.primary};
   border-radius: ${({ rounded, theme }) =>
-    rounded ? theme.borderRadius.XXL : theme.borderRadius.XL}px;
+    rounded ? theme.borderRadius.XXXL : theme.borderRadius.XL}px;
 `;

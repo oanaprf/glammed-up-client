@@ -17,6 +17,7 @@ const NumberSpinner = ({
   <S.NumberSpinner {...{ dark, rounded, ...rest }}>
     <S.LeftPaddedTouchableOpacity
       onPress={onDecrement}
+      activeOpacity={0.6}
       hitSlop={{ top: 10, bottom: 10, left: 20, right: 10 }}
     >
       <Icon
@@ -33,6 +34,7 @@ const NumberSpinner = ({
     />
     <S.RightPaddedTouchableOpacity
       onPress={onIncrement}
+      activeOpacity={0.6}
       hitSlop={{ top: 10, bottom: 10, left: 10, right: 20 }}
     >
       <Icon

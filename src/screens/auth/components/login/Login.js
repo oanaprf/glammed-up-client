@@ -17,14 +17,14 @@ const Login = ({
   onGoogleLogin,
 }) => (
   <>
-    <Spacer height={40} />
+    <Spacer height={30} />
     <Email value={formValues.email} onChange={onChange} />
-    <Spacer />
+    <S.SmallSpacer />
     <Password value={formValues.password} onChange={onChange} />
     <S.MediumSpacer />
     <LoginButton onPress={onLogin} />
     <S.SmallSpacer />
-    <TouchableOpacity>
+    <TouchableOpacity activeOpacity={0.6}>
       <S.ForgotPasswordText>{t('login.forgotPassword')}</S.ForgotPasswordText>
     </TouchableOpacity>
     <S.SmallSpacer />

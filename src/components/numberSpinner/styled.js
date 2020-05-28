@@ -8,7 +8,7 @@ export const NumberSpinner = styled.View`
   flex-direction: row;
   align-items: center;
   border-radius: ${({ rounded, theme }) =>
-    rounded ? theme.borderRadius.XXL : theme.borderRadius.XL}px;
+    rounded ? theme.borderRadius.XXXL : theme.borderRadius.XL}px;
   ${Platform.select({
     ios: 'box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);',
     android: 'elevation: 1;',

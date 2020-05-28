@@ -1,20 +1,28 @@
 import React from 'react';
-import { View } from 'react-native';
 
-import { Text } from '@@components';
 import { t } from '@@config';
 
+import Option from './option';
+import * as S from './styled';
+
 const Settings = () => (
-  <View
-    style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'white',
-    }}
-  >
-    <Text>{t('settings.pageName')}</Text>
-  </View>
+  <S.SettingsContainer>
+    <S.Header>
+      <S.Title>{t('settings.pageName')}</S.Title>
+    </S.Header>
+    <S.OptionsContainer>
+      <S.AppOptions>
+        <Option icon="globe" label="changeLanguage" />
+        <Option icon="edit-2" label="changeTheme" />
+        <Option icon="lock" label="changePassword" />
+        <Option icon="info" label="about" />
+      </S.AppOptions>
+      <S.HorizontalBar />
+      <S.Logout>
+        <Option icon="power" label="logout" />
+      </S.Logout>
+    </S.OptionsContainer>
+  </S.SettingsContainer>
 );
 
 export default Settings;

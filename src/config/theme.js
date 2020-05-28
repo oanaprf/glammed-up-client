@@ -6,6 +6,8 @@ export default {
       M: 17,
       L: 20,
       XL: 25,
+      XXL: 35,
+      XXXL: 45,
     },
     letterSpacing: {
       XS: 0,
@@ -21,7 +23,8 @@ export default {
     M: 10,
     L: 15,
     XL: 20,
-    XXL: 40,
+    XXL: 30,
+    XXXL: 40,
   },
   colors: {
     white: '#FFFFFF',

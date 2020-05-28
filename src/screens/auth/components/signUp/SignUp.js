@@ -9,16 +9,18 @@ import { Email, Password } from '../common';
 
 const SignUp = ({ formValues, onChange, onPress }) => (
   <>
-    <Spacer height={40} />
+    <Spacer height={30} />
     <FirstName value={formValues.firstName} onChange={onChange} />
-    <Spacer />
+    <S.SmallSpacer />
     <LastName value={formValues.lastName} onChange={onChange} />
-    <Spacer />
+    <S.SmallSpacer />
     <Email value={formValues.email} onChange={onChange} />
-    <Spacer />
+    <S.SmallSpacer />
     <Password value={formValues.password} onChange={onChange} />
     <S.MediumSpacer />
-    <SignUpButton onPress={onPress} />
+    <S.SignUpContainer style={{ flex: 1 }}>
+      <SignUpButton onPress={onPress} />
+    </S.SignUpContainer>
   </>
 );
 

@@ -35,6 +35,11 @@
     "pageName": "Services"
   },
   "settings": {
-    "pageName": "Settings"
+    "pageName": "Settings",
+    "changeLanguage": "Change app language",
+    "changeTheme": "Change app theme",
+    "changePassword": "Change password",
+    "about": "About",
+    "logout": "Log Out"
   }
 }

@@ -12,6 +12,7 @@ const PasswordInput = ({ passwordHidden, setPasswordHidden, ...rest }) => (
     Icon={
       <TouchableOpacity
         hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+        activeOpacity={0.6}
         onPress={() => setPasswordHidden(!passwordHidden)}
       >
         <Icon

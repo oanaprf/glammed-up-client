@@ -8,6 +8,7 @@ export const MediumSpacer = styled(Spacer)`
 
 export const SmallSpacer = styled(Spacer)`
   flex-grow: 0.2;
+  max-height: 20px;
 `;
 
 export const ForgotPasswordText = styled.Text`

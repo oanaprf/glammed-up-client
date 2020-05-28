@@ -35,6 +35,11 @@
     "pageName": "Servicii"
   },
   "settings": {
-    "pageName": "Setări"
+    "pageName": "Setări",
+    "changeLanguage": "Schimbă limba aplicației",
+    "changeTheme": "Schimbă tema aplicației",
+    "changePassword": "Schimbă parola",
+    "about": "Despre aplicație",
+    "logout": "Deconectare"
   }
 }

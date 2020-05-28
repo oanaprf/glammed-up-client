@@ -27,5 +27,5 @@ export const StyledList = styled.View`
   background-color: ${({ theme, dark }) =>
     dark ? theme.colors.lightGrey : theme.colors.white};
   border-radius: ${({ rounded, theme }) =>
-    rounded ? theme.borderRadius.XXL : theme.borderRadius.XL}px;
+    rounded ? theme.borderRadius.XXXL : theme.borderRadius.XL}px;
 `;

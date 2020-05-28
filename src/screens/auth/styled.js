@@ -2,11 +2,6 @@ import styled from 'styled-components/native';
 
 import { Tabs, Text } from '@@components';
 
-export const SafeAreaView = styled.SafeAreaView`
-  flex: 0;
-  background-color: ${({ theme }) => theme.colors.theme_black_pink.primary};
-`;
-
 export const Container = styled.View`
   flex: 1;
   align-items: center;
@@ -23,7 +18,7 @@ export const StyledTitle = styled.View`
 
 export const TitleText = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
-  font-size: 45px;
+  font-size: ${({ theme }) => theme.text.fontSize.XXXL}px;
   text-align: center;
   font-family: 'MontserratRegular';
 `;
@@ -41,8 +36,8 @@ export const StyledCard = styled.View`
   align-items: center;
   justify-content: center;
   padding: 30px;
-  border-top-right-radius: ${({ theme }) => theme.borderRadius.XL}px;
-  border-top-left-radius: ${({ theme }) => theme.borderRadius.XL}px;
+  border-top-right-radius: ${({ theme }) => theme.borderRadius.XXL}px;
+  border-top-left-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 

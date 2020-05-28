@@ -18,6 +18,7 @@ const Modal = ({ children, onCloseModal, isModalOpen, style, title }) => (
               </S.ModalTitleContainer>
               <TouchableOpacity
                 onPress={onCloseModal}
+                activeOpacity={0.6}
                 hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
               >
                 <S.ModalCloseIcon

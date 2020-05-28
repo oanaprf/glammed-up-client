@@ -5,7 +5,7 @@ import { Icon } from 'react-native-elements';
 import * as S from './styled';
 
 const SocialLoginButton = ({ onPress, type }) => (
-  <S.PaddedTouchableOpacity onPress={onPress}>
+  <S.PaddedTouchableOpacity onPress={onPress} activeOpacity={0.6}>
     <Icon {...{ name: `social-${type}`, type: 'simple-line-icon', size: 30 }} />
   </S.PaddedTouchableOpacity>
 );

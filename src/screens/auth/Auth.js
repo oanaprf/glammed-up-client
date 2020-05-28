@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
-import { TouchableWithoutFeedback, Keyboard, StatusBar } from 'react-native';
+import { TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 import { Text } from '@@components';
 import { t } from '@@config';
@@ -11,12 +11,10 @@ import * as S from './styled';
 const Auth = () => (
   <>
     <S.Container>
-      <S.SafeAreaView />
-      <StatusBar barStyle="light-content" />
       <S.StyledTitle>
         <S.StyledLogo
           // eslint-disable-next-line global-require
-          source={require('../../../assets/logo.png')}
+          source={require('@@assets/logo.png')}
         />
         <S.TitleText>GLAMMED UP</S.TitleText>
       </S.StyledTitle>
