@@ -2,10 +2,9 @@ import styled from 'styled-components/native';
 
 import { Text } from '@@components';
 
-export const SettingsContainer = styled.View`
+export const Container = styled.View`
   flex: 1;
   align-items: stretch;
-  justify-content: space-evenly;
   background-color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -22,7 +21,7 @@ export const Title = styled(Text)`
   letter-spacing: ${({ theme }) => theme.text.letterSpacing.S}px;
 `;
 
-export const OptionsContainer = styled.View`
+export const Body = styled.View`
   flex: 0.7;
   border-top-right-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   border-top-left-radius: ${({ theme }) => theme.borderRadius.XXL}px;

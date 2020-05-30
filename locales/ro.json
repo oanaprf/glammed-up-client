@@ -29,7 +29,9 @@
     "pageName": "Programări"
   },
   "profile": {
-    "pageName": "Profil"
+    "pageName": "Profil",
+    "reviews": "Recenzii",
+    "services": "Servicii"
   },
   "services": {
     "pageName": "Servicii"

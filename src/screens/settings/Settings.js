@@ -2,15 +2,15 @@ import React from 'react';
 
 import { t } from '@@config';
 
-import Option from './option';
+import { Option } from './components';
 import * as S from './styled';
 
 const Settings = () => (
-  <S.SettingsContainer>
+  <S.Container>
     <S.Header>
       <S.Title>{t('settings.pageName')}</S.Title>
     </S.Header>
-    <S.OptionsContainer>
+    <S.Body>
       <S.AppOptions>
         <Option icon="globe" label="changeLanguage" />
         <Option icon="edit-2" label="changeTheme" />
@@ -21,8 +21,8 @@ const Settings = () => (
       <S.Logout>
         <Option icon="power" label="logout" />
       </S.Logout>
-    </S.OptionsContainer>
-  </S.SettingsContainer>
+    </S.Body>
+  </S.Container>
 );
 
 export default Settings;

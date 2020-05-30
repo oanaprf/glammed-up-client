@@ -7,8 +7,8 @@ export const TabBar = styled.View`
   justify-content:space-around;
   height: 60px;
 
-  border-top-left-radius: ${({ theme }) => theme.borderRadius.XXXL}px;
-  border-top-right-radius: ${({ theme }) => theme.borderRadius.XXXL}px;
+  border-top-left-radius: ${({ theme }) => theme.borderRadius.L}px;
+  border-top-right-radius: ${({ theme }) => theme.borderRadius.L}px;
   
   ${Platform.select({
     ios: 'box-shadow: 0 0 4px rgba(0,0,0,0.2)',

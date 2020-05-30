@@ -2,12 +2,12 @@ import styled from 'styled-components/native';
 
 export const TabHeader = styled.View`
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
 `;
 
 export const TabLabel = styled.TouchableOpacity`
-  padding: 10px;
+  padding: 5px 15px;
   ${({ isTabSelected, theme }) =>
     isTabSelected &&
     `border-bottom-width: 6px;

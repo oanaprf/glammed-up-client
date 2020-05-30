@@ -8,14 +8,13 @@ import { t } from '@@config';
 import { Login, SignUp } from './components';
 import * as S from './styled';
 
+const logo = require('@@assets/logo.png');
+
 const Auth = () => (
   <>
     <S.Container>
       <S.StyledTitle>
-        <S.StyledLogo
-          // eslint-disable-next-line global-require
-          source={require('@@assets/logo.png')}
-        />
+        <S.StyledLogo source={logo} />
         <S.TitleText>GLAMMED UP</S.TitleText>
       </S.StyledTitle>
       <S.StyledCard>

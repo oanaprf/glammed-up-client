@@ -29,7 +29,9 @@
     "pageName": "Appointments"
   },
   "profile": {
-    "pageName": "Profile"
+    "pageName": "Profile",
+    "reviews": "Reviews",
+    "services": "Services"
   },
   "services": {
     "pageName": "Services"

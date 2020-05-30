@@ -22,7 +22,7 @@ const Main = ({ translationsLoaded, isLoggedIn }) => (
             style={{ flex: 1, backgroundColor: theme.colors.white }}
           >
             <NavigationContainer>
-              <Tab.Navigator tabBar={TabBar} initialRouteName="Home">
+              <Tab.Navigator tabBar={TabBar} initialRouteName="Profile">
                 <Tab.Screen name="Home" component={Home} icon="home" />
                 <Tab.Screen
                   name="Appointments"
