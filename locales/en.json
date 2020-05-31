@@ -34,7 +34,19 @@
     "services": "Services"
   },
   "services": {
-    "pageName": "Services"
+    "pageName": "Services",
+    "search": "Search...",
+    "categories": {
+      "NAILS": "Nails",
+      "MAKE_UP": "Make up",
+      "HAIR": "Hair",
+      "EYELASHES": "Eyelashes",
+      "EYEBROWS": "Eyebrows",
+      "FACIALS": "Facials",
+      "WAXING": "Waxing",
+      "MASSAGE": "Massage",
+      "OTHER": "Other"
+    }
   },
   "settings": {
     "pageName": "Settings",

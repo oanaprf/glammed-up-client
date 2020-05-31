@@ -3,7 +3,7 @@ import React from 'react';
 import { EditButton, RatingButton } from './components';
 import * as S from './styled';
 
-const avatar = require('@@assets/me.png');
+const avatar = require('@@assets/images/me.png');
 
 const AvatarBar = () => (
   <S.AvatarBar>

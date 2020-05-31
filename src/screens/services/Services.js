@@ -1,20 +1,26 @@
 import React from 'react';
-import { View } from 'react-native';
+import PropTypes from 'prop-types';
 
-import { Text } from '@@components';
 import { t } from '@@config';
 
-const Services = () => (
-  <View
-    style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'white',
-    }}
-  >
-    <Text>{t('services.pageName')}</Text>
-  </View>
+import { Search, ServiceList, CategoryList } from './components';
+import * as S from './styled';
+
+const Services = ({ searchFocused, setSearchFocused }) => (
+  <S.Container>
+    <S.Header>
+      <S.Title>{t('services.pageName')}</S.Title>
+    </S.Header>
+    <S.Body>
+      <Search setSearchFocused={setSearchFocused} />
+      {searchFocused ? <CategoryList /> : <ServiceList />}
+    </S.Body>
+  </S.Container>
 );
+
+Services.propTypes = {
+  searchFocused: PropTypes.bool.isRequired,
+  setSearchFocused: PropTypes.func.isRequired,
+};
 
 export default Services;

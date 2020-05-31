@@ -5,7 +5,7 @@ import { Spacer } from '@@components';
 import { ServiceInfo, Comment } from './components';
 import * as S from './styled';
 
-const servicePicture = require('@@assets/nails.jpg');
+const servicePicture = require('@@assets/images/nails.jpg');
 
 const Review = () => (
   <S.CardContainer>

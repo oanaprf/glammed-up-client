@@ -34,7 +34,19 @@
     "services": "Servicii"
   },
   "services": {
-    "pageName": "Servicii"
+    "pageName": "Servicii",
+    "search": "Caută...",
+    "categories": {
+      "NAILS": "Unghii",
+      "MAKE_UP": "Make up",
+      "HAIR": "Păr",
+      "EYELASHES": "Gene",
+      "EYEBROWS": "Sprâncene",
+      "FACIALS": "Tratamente faciale",
+      "WAXING": "Epilare",
+      "MASSAGE": "Masaj",
+      "OTHER": "Altele"
+    }
   },
   "settings": {
     "pageName": "Setări",

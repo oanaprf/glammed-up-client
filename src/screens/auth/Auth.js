@@ -8,7 +8,7 @@ import { t } from '@@config';
 import { Login, SignUp } from './components';
 import * as S from './styled';
 
-const logo = require('@@assets/logo.png');
+const logo = require('@@assets/images/logo.png');
 
 const Auth = () => (
   <>
