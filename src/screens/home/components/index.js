@@ -1,1 +1,1 @@
-export { default as ServiceList } from './serviceList';
+export { default as SettingsButton } from './settingsButton';

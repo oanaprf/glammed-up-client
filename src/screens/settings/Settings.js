@@ -1,13 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { t } from '@@config';
 
-import { Option } from './components';
+import { Option, GoBackButton } from './components';
 import * as S from './styled';
 
-const Settings = () => (
+const Settings = ({ navigation }) => (
   <S.Container>
     <S.Header>
+      <GoBackButton navigation={navigation} />
       <S.Title>{t('settings.pageName')}</S.Title>
     </S.Header>
     <S.Body>
@@ -24,5 +26,9 @@ const Settings = () => (
     </S.Body>
   </S.Container>
 );
+
+Settings.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 export default Settings;

@@ -9,9 +9,9 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  justify-content: flex-end;
-  padding-left:25px;
-  padding-bottom:10px
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 10px;
   flex: 0.2;
 `;
 
@@ -19,6 +19,7 @@ export const Title = styled(Text)`
   font-size: ${({ theme }) => theme.text.fontSize.XL}px;
   color: ${({ theme }) => theme.colors.white};
   font-family: 'MontserratRegular';
+  margin-left: 25px;
 `;
 
 export const Body = styled.View`

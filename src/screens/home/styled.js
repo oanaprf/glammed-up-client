@@ -9,8 +9,10 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  justify-content: center;
-  padding-left: 25px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
   flex: 0.1;
 `;
 
