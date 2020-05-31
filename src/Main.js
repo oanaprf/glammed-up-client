@@ -5,14 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import PropTypes from 'prop-types';
 
 import { TabBar, SplashScreen } from '@@components';
-import {
-  Home,
-  Services,
-  Appointments,
-  Profile,
-  Settings,
-  Auth,
-} from '@@screens';
+import { Home, Search, Appointments, Profile, Settings, Auth } from '@@screens';
 import { theme } from '@@config';
 
 const Tab = createBottomTabNavigator();
@@ -29,9 +22,9 @@ const Main = ({ translationsLoaded, isLoggedIn }) => (
             style={{ flex: 1, backgroundColor: theme.colors.white }}
           >
             <NavigationContainer>
-              <Tab.Navigator tabBar={TabBar} initialRouteName="Services">
+              <Tab.Navigator tabBar={TabBar} initialRouteName="Search">
                 <Tab.Screen name="Home" component={Home} />
-                <Tab.Screen name="Services" component={Services} />
+                <Tab.Screen name="Search" component={Search} />
                 <Tab.Screen name="Appointments" component={Appointments} />
                 <Tab.Screen name="Profile" component={Profile} />
                 <Tab.Screen name="Settings" component={Settings} />

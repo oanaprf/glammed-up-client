@@ -2,9 +2,10 @@
 import React from 'react';
 
 import { Spacer, Text } from '@@components';
+import { UserServices } from '@@screens/common';
 import { t } from '@@config';
 
-import { AvatarBar, UserInfoCard, Reviews, Services } from './components';
+import { AvatarBar, UserInfoCard, Reviews } from './components';
 import * as S from './styled';
 
 const Profile = () => (
@@ -22,7 +23,7 @@ const Profile = () => (
           <Text>{t('profile.services')}</Text>,
           <Text>{t('profile.reviews')}</Text>,
         ]}
-        tabContents={[<Services />, <Reviews />]}
+        tabContents={[<UserServices />, <Reviews />]}
       />
     </S.Body>
   </S.Container>

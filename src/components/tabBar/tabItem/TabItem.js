@@ -8,7 +8,7 @@ import * as S from '../styled';
 
 const icons = {
   Home: 'home',
-  Services: 'list',
+  Search: 'search',
   Appointments: 'calendar',
   Profile: 'user',
   Settings: 'settings',
