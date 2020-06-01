@@ -23,7 +23,9 @@
     }
   },
   "home": {
-    "pageName": "Acasă"
+    "pageName": "Acasă",
+    "mostPopular": "Servicii populare",
+    "allServices": "Toate serviciile"
   },
   "appointments": {
     "pageName": "Programări"
@@ -33,9 +35,10 @@
     "reviews": "Recenzii",
     "services": "Servicii"
   },
-  "services": {
-    "pageName": "Servicii",
+  "search": {
+    "pageName": "Caută servicii",
     "search": "Caută...",
+    "noResults": "Oops...Căutarea nu a avut rezultate",
     "categories": {
       "NAILS": "Unghii",
       "MAKE_UP": "Make up",

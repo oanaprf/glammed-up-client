@@ -8,7 +8,7 @@ import * as S from '../styled';
 
 const icons = {
   Home: 'home',
-  Services: 'list',
+  Search: 'search',
   Appointments: 'calendar',
   Profile: 'user',
   Settings: 'settings',
@@ -38,9 +38,7 @@ const TabItem = ({
         name: icons[route.name],
         type: 'feather',
         size: 25,
-        color: isActive
-          ? theme.colors.theme_black_pink.primary
-          : theme.colors.black,
+        color: theme.colors.theme_black_pink.primary,
       }}
     />
     {isActive && <S.Point isActive={isActive} />}

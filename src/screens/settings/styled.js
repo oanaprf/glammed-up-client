@@ -9,20 +9,21 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  justify-content: center;
-  align-items: center;
-  flex: 0.3;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  flex: 0.2;
 `;
 
 export const Title = styled(Text)`
-  font-size: ${({ theme }) => theme.text.fontSize.XXL}px;
+  font-size: ${({ theme }) => theme.text.fontSize.XL}px;
   color: ${({ theme }) => theme.colors.white};
   font-family: 'MontserratRegular';
-  letter-spacing: ${({ theme }) => theme.text.letterSpacing.S}px;
+  margin-left: 25px;
 `;
 
 export const Body = styled.View`
-  flex: 0.7;
+  flex: 0.8;
   border-top-right-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   border-top-left-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   background-color: ${({ theme }) => theme.colors.white};

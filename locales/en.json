@@ -23,7 +23,9 @@
     }
   },
   "home": {
-    "pageName": "Home"
+    "pageName": "Home",
+    "mostPopular": "Most popular services",
+    "allServices": "All services"
   },
   "appointments": {
     "pageName": "Appointments"
@@ -33,9 +35,10 @@
     "reviews": "Reviews",
     "services": "Services"
   },
-  "services": {
-    "pageName": "Services",
+  "search": {
+    "pageName": "Search services",
     "search": "Search...",
+    "noResults": "Oops...Search had no results",
     "categories": {
       "NAILS": "Nails",
       "MAKE_UP": "Make up",
