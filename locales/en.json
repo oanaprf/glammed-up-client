@@ -23,7 +23,9 @@
     }
   },
   "home": {
-    "pageName": "Home"
+    "pageName": "Home",
+    "mostPopular": "Most popular services",
+    "allServices": "All services"
   },
   "appointments": {
     "pageName": "Appointments"

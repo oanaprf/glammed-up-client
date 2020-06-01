@@ -3,10 +3,11 @@ import { ScrollView } from 'react-native';
 
 import { t } from '@@config';
 import { Services } from '@@screens/common';
+import { Spacer } from '@@components';
 import PropTypes from 'prop-types';
 
 import * as S from './styled';
-import { SettingsButton } from './components';
+import { SettingsButton, TopServices } from './components';
 
 const Home = ({ navigation }) => (
   <S.Container>
@@ -19,7 +20,11 @@ const Home = ({ navigation }) => (
         contentContainerStyle={{
           paddingHorizontal: 10,
         }}
+        nestedScrollEnabled={true}
       >
+        <TopServices />
+        <Spacer height={10} />
+        <S.StyledText>{t('home.allServices')}</S.StyledText>
         <Services />
       </ScrollView>
     </S.Body>

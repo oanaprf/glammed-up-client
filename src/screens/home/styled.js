@@ -29,3 +29,8 @@ export const Body = styled.View`
   background-color: ${({ theme }) => theme.colors.white};
   padding: 10px 10px 0 10px;
 `;
+
+export const StyledText = styled.Text`
+  font-family: 'MontserratBold';
+  font-size: ${({ theme }) => theme.text.fontSize.M}px;
+`;

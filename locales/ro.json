@@ -23,7 +23,9 @@
     }
   },
   "home": {
-    "pageName": "Acasă"
+    "pageName": "Acasă",
+    "mostPopular": "Servicii populare",
+    "allServices": "Toate serviciile"
   },
   "appointments": {
     "pageName": "Programări"

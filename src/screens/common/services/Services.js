@@ -6,7 +6,7 @@ import Service from './service';
 
 const Services = () => (
   <>
-    <Spacer height={10} />
+    <Spacer height={5} />
     <View>
       <Service />
       <Service />
