@@ -1,10 +1,7 @@
 import styled from 'styled-components/native';
 
 export const ServiceDetails = styled.View`
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  flex-direction: column-reverse;
   padding: 0 7px 7px 7px;
 `;
 
@@ -15,6 +12,11 @@ export const ServiceNameText = styled.Text`
 `;
 
 export const RowContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const RowSpaceBetweenContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +38,6 @@ export const PriceValueText = styled.Text`
 
 export const PriceCurrencyText = styled.Text`
   font-family: 'MontserratMedium';
-  font-size: ${({ theme }) => theme.text.fontSize.S}px;
+  font-size: ${({ theme }) => theme.text.fontSize.XS}px;
   color: ${({ theme }) => theme.colors.white};
 `;

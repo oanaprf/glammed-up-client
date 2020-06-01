@@ -6,7 +6,6 @@ import * as S from './styled';
 
 const ServiceDetails = () => (
   <S.ServiceDetails>
-    <S.ServiceNameText numberOfLines={2}>Unghii cu gel</S.ServiceNameText>
     <S.RowContainer>
       <S.RowContainer>
         <S.PriceValueText>100</S.PriceValueText>
@@ -23,6 +22,10 @@ const ServiceDetails = () => (
           }}
         />
       </S.RowContainer>
+    </S.RowContainer>
+    <S.RowContainer>
+      <S.ServiceNameText numberOfLines={2}>Unghii cu gel</S.ServiceNameText>
+      <S.PriceCurrencyText>Oana Profir</S.PriceCurrencyText>
     </S.RowContainer>
   </S.ServiceDetails>
 );

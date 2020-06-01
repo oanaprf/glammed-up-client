@@ -8,6 +8,7 @@ const UserServices = () => (
   <>
     <Spacer height={10} />
     <ScrollView
+      showsVerticalScrollIndicator={false}
       contentContainerStyle={{
         paddingVertical: 5,
         flexDirection: 'row',

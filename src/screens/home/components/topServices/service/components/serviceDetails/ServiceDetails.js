@@ -6,13 +6,13 @@ import * as S from './styled';
 
 const ServiceDetails = () => (
   <S.ServiceDetails>
-    <S.ServiceNameText numberOfLines={2}>Unghii cu gel</S.ServiceNameText>
     <S.RowContainer>
-      <S.RowContainer>
-        <S.PriceValueText>100</S.PriceValueText>
-        <S.PriceCurrencyText>lei</S.PriceCurrencyText>
-      </S.RowContainer>
-      <S.RowContainer>
+      <S.PriceValueText>100</S.PriceValueText>
+      <S.PriceCurrencyText>lei</S.PriceCurrencyText>
+    </S.RowContainer>
+    <S.RowSpaceBetweenContainer>
+      <S.ServiceNameText numberOfLines={2}>Unghii cu gel</S.ServiceNameText>
+      <S.RowSpaceBetweenContainer>
         <S.RatingText>5</S.RatingText>
         <Icon
           {...{
@@ -22,8 +22,9 @@ const ServiceDetails = () => (
             color: theme.colors.warning,
           }}
         />
-      </S.RowContainer>
-    </S.RowContainer>
+      </S.RowSpaceBetweenContainer>
+    </S.RowSpaceBetweenContainer>
+    <S.PriceCurrencyText>Oana Profir</S.PriceCurrencyText>
   </S.ServiceDetails>
 );
 

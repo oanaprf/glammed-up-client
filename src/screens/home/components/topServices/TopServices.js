@@ -11,8 +11,8 @@ const TopServices = () => (
     <S.StyledText>{t('home.mostPopular')}</S.StyledText>
     <ScrollView
       horizontal
+      showsHorizontalScrollIndicator={false}
       contentContainerStyle={{
-        flex: 1,
         paddingVertical: 5,
       }}
     >

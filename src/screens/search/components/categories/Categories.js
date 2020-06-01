@@ -11,6 +11,7 @@ const Categories = () => (
   <>
     <Spacer height={10} />
     <ScrollView
+      showsVerticalScrollIndicator={false}
       contentContainerStyle={{
         paddingVertical: 5,
         flexGrow: 1,

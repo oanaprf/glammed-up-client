@@ -8,11 +8,12 @@ const servicePicture = require('@@assets/images/nails.jpg');
 
 const Service = () => (
   <S.CardContainer>
-    <S.ServicePicture source={servicePicture} />
-    <S.StyledLinearGradient
-      colors={['transparent', 'transparent', 'rgba(0,0,0,0.5)']}
-    />
-    <ServiceDetails />
+    <S.ServicePicture source={servicePicture}>
+      <S.StyledLinearGradient
+        colors={['transparent', 'transparent', 'rgba(0,0,0,0.5)']}
+      />
+      <ServiceDetails />
+    </S.ServicePicture>
   </S.CardContainer>
 );
 

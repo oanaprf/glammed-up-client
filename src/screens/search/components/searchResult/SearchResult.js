@@ -11,6 +11,7 @@ const SearchResult = ({ users, services }) => (
   <>
     <Spacer height={10} />
     <ScrollView
+      showsVerticalScrollIndicator={false}
       contentContainerStyle={{
         paddingHorizontal: 10,
         paddingVertical: 5,

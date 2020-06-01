@@ -9,6 +9,7 @@ const Reviews = () => (
   <>
     <Spacer height={10} />
     <ScrollView
+      showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingVertical: 5, alignItems: 'center' }}
     >
       <Review />

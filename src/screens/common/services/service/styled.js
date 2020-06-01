@@ -10,10 +10,12 @@ export const CardContainer = styled(Card)`
   margin-bottom: 10px;
 `;
 
-export const ServicePicture = styled.Image`
+export const ServicePicture = styled.ImageBackground`
   width: 100%;
   height: 100%;
   border-radius: ${({ theme }) => theme.borderRadius.L}px;
+  overflow: hidden;
+  justify-content: flex-end;
 `;
 
 export const StyledLinearGradient = styled(LinearGradient)`
