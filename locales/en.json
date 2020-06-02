@@ -58,5 +58,8 @@
     "changePassword": "Change password",
     "about": "About",
     "logout": "Log Out"
+  },
+  "common": {
+    "makeAnAppointment": "Make an appointment"
   }
 }

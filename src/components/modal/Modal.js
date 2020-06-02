@@ -12,26 +12,28 @@ const Modal = ({ children, onCloseModal, isModalOpen, style, title }) => (
       <S.ModalBackground>
         <S.Touchable>
           <S.ModalContent style={style}>
-            <S.ModalHeader>
-              <S.ModalTitleContainer>
-                <S.ModalTitleText>{title}</S.ModalTitleText>
-              </S.ModalTitleContainer>
-              <TouchableOpacity
-                onPress={onCloseModal}
-                activeOpacity={0.6}
-                hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
-              >
-                <S.ModalCloseIcon
-                  {...{
-                    name: 'x',
-                    type: 'feather',
-                    size: 20,
-                    color: theme.colors.white,
-                  }}
-                />
-              </TouchableOpacity>
-            </S.ModalHeader>
-            <S.ModalBody>{children}</S.ModalBody>
+            {title && (
+              <S.ModalHeader>
+                <S.ModalTitleContainer>
+                  <S.ModalTitleText>{title}</S.ModalTitleText>
+                </S.ModalTitleContainer>
+                <TouchableOpacity
+                  onPress={onCloseModal}
+                  activeOpacity={0.6}
+                  hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+                >
+                  <S.ModalCloseIcon
+                    {...{
+                      name: 'x',
+                      type: 'feather',
+                      size: 20,
+                      color: theme.colors.white,
+                    }}
+                  />
+                </TouchableOpacity>
+              </S.ModalHeader>
+            )}
+            <>{children}</>
           </S.ModalContent>
         </S.Touchable>
       </S.ModalBackground>

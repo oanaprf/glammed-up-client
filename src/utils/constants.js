@@ -9,3 +9,7 @@ export const CATEGORIES = {
   MASSAGE: 'MASSAGE',
   OTHER: 'OTHER',
 };
+
+export const MODALS = {
+  SERVICE_DETAILS: 'serviceDetails',
+};

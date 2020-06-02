@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ScrollView } from 'react-native';
 
 import { t } from '@@config';
 import { Services } from '@@screens/common';
-import PropTypes from 'prop-types';
+import { ServiceDetailsModal } from '@@screens/modals';
 
 import * as S from './styled';
 import { SettingsButton, TopServices } from './components';
@@ -26,6 +27,7 @@ const Home = ({ navigation }) => (
         <Services />
       </ScrollView>
     </S.Body>
+    <ServiceDetailsModal />
   </S.Container>
 );
 

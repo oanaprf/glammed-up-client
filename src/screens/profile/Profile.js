@@ -4,6 +4,7 @@ import React from 'react';
 import { Spacer, Text } from '@@components';
 import { UserServices } from '@@screens/common';
 import { t } from '@@config';
+import { ServiceDetailsModal } from '@@screens/modals';
 
 import { AvatarBar, UserInfoCard, Reviews } from './components';
 import * as S from './styled';
@@ -26,6 +27,7 @@ const Profile = () => (
         tabContents={[<UserServices />, <Reviews />]}
       />
     </S.Body>
+    <ServiceDetailsModal />
   </S.Container>
 );
 

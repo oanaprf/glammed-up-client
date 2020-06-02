@@ -58,5 +58,8 @@
     "changePassword": "Schimbă parola",
     "about": "Despre aplicație",
     "logout": "Deconectare"
+  },
+  "common": {
+    "makeAnAppointment": "Fă o programare"
   }
 }

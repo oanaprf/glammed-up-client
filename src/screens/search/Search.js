@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { t } from '@@config';
+import { ServiceDetailsModal } from '@@screens/modals';
 
 import { SearchBar, Categories, SearchResult } from './components';
 import * as S from './styled';
@@ -17,6 +18,7 @@ const Search = ({ isSearching, users, services }) => (
       </S.SearchBarContainer>
       {isSearching ? <SearchResult {...{ users, services }} /> : <Categories />}
     </S.Body>
+    <ServiceDetailsModal />
   </S.Container>
 );
 

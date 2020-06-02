@@ -43,7 +43,3 @@ export const ModalCloseIcon = styled(Icon)`
   border-top-right-radius: ${({ theme }) => theme.borderRadius.L}px;
   border-bottom-left-radius: ${({ theme }) => theme.borderRadius.L}px;
 `;
-
-export const ModalBody = styled.View`
-  padding: 20px;
-`;
