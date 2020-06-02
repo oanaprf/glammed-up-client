@@ -3,10 +3,10 @@ import { ScrollView } from 'react-native';
 
 import { t } from '@@config';
 
-import Service from './service';
+import { ServiceDetails } from './components';
 import * as S from './styled';
 
-const TopServices = () => (
+const MostPopularServices = () => (
   <S.TopServicesContainer>
     <S.StyledText>{t('home.mostPopular')}</S.StyledText>
     <ScrollView
@@ -16,11 +16,11 @@ const TopServices = () => (
         paddingVertical: 5,
       }}
     >
-      <Service />
-      <Service />
-      <Service />
+      {[0, 1, 2].map(v => (
+        <S.StyledService key={v} ServiceDetails={ServiceDetails} />
+      ))}
     </ScrollView>
   </S.TopServicesContainer>
 );
 
-export default TopServices;
+export default MostPopularServices;

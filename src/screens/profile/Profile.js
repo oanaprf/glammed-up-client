@@ -2,11 +2,10 @@
 import React from 'react';
 
 import { Spacer, Text } from '@@components';
-import { UserServices } from '@@screens/common';
 import { t } from '@@config';
 import { ServiceDetailsModal } from '@@screens/modals';
 
-import { AvatarBar, UserInfoCard, Reviews } from './components';
+import { AvatarBar, UserInfoCard, Reviews, UserServices } from './components';
 import * as S from './styled';
 
 const Profile = () => (

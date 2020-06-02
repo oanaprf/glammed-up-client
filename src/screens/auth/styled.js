@@ -10,10 +10,9 @@ export const Container = styled.View`
 
 export const StyledTitle = styled.View`
   width: 100%;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-grow: 0.1;
-  padding-bottom: 20px;
 `;
 
 export const TitleText = styled(Text)`

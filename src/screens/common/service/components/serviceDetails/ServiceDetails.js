@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Icon } from 'react-native-elements';
 
 import { theme } from '@@config';
 import * as S from './styled';
 
-const ServiceDetails = () => (
+const ServiceDetails = ({ userService }) => (
   <S.ServiceDetails>
     <S.RowContainer>
       <S.RowContainer>
@@ -25,9 +26,13 @@ const ServiceDetails = () => (
     </S.RowContainer>
     <S.RowContainer>
       <S.ServiceNameText numberOfLines={2}>Unghii cu gel</S.ServiceNameText>
-      <S.PriceCurrencyText>Oana Profir</S.PriceCurrencyText>
+      {!userService && <S.PriceCurrencyText>Oana Profir</S.PriceCurrencyText>}
     </S.RowContainer>
   </S.ServiceDetails>
 );
+
+ServiceDetails.propTypes = {
+  userService: PropTypes.bool,
+};
 
 export default ServiceDetails;
