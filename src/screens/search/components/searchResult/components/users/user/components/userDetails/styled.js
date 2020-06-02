@@ -6,7 +6,7 @@ export const UserDetailsContainer = styled.View`
 `;
 
 export const UserFullname = styled.Text`
-  font-family: 'MontserratBold';
+  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
   font-size: ${({ theme }) => theme.text.fontSize.L}px;
 `;
 
@@ -17,7 +17,7 @@ export const RowContainer = styled.View`
 `;
 
 export const StyledText = styled.Text`
-  font-family: 'MontserratMedium';
+  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
   font-size: ${({ theme }) => theme.text.fontSize.XS}px;
   flex: 0.97;
 `;

@@ -19,7 +19,7 @@ export const TitleText = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.text.fontSize.XXXL}px;
   text-align: center;
-  font-family: 'MontserratRegular';
+  font-family: ${({ theme }) => theme.text.fontFamily.REGULAR};
 `;
 
 export const StyledLogo = styled.Image`

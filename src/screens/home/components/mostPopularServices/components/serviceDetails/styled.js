@@ -6,7 +6,7 @@ export const ServiceDetails = styled.View`
 `;
 
 export const ServiceNameText = styled.Text`
-  font-family: 'MontserratBold';
+  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
   font-size: ${({ theme }) => theme.text.fontSize.S}px;
   color: ${({ theme }) => theme.colors.white};
 `;
@@ -23,21 +23,21 @@ export const RowSpaceBetweenContainer = styled.View`
 `;
 
 export const RatingText = styled.Text`
-  font-family: 'MontserratBold';
+  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
   font-size: ${({ theme }) => theme.text.fontSize.S}px;
   color: ${({ theme }) => theme.colors.white};
   padding-right: 2px;
 `;
 
 export const PriceValueText = styled.Text`
-  font-family: 'MontserratBold';
+  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
   font-size: ${({ theme }) => theme.text.fontSize.S}px;
   color: ${({ theme }) => theme.colors.white};
   padding-right: 2px;
 `;
 
 export const PriceCurrencyText = styled.Text`
-  font-family: 'MontserratMedium';
+  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
   font-size: ${({ theme }) => theme.text.fontSize.XS}px;
   color: ${({ theme }) => theme.colors.white};
 `;

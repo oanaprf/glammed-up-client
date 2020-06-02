@@ -17,7 +17,7 @@ export const Header = styled.View`
 export const Title = styled(Text)`
   font-size: ${({ theme }) => theme.text.fontSize.XL}px;
   color: ${({ theme }) => theme.colors.white};
-  font-family: 'MontserratRegular';
+  font-family: ${({ theme }) => theme.text.fontFamily.REGULAR};
 `;
 
 export const Body = styled.View`

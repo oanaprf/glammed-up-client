@@ -1,5 +1,9 @@
 import styled from 'styled-components/native';
 
+export const ServiceDetailsContainer = styled.View`
+  padding: 0 10px;
+`;
+
 export const RowContainer = styled.View`
   flex-direction: row;
   align-items: center;
@@ -26,10 +30,6 @@ export const PriceValueText = styled.Text`
 export const PriceCurrencyText = styled.Text`
   font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
   font-size: ${({ theme }) => theme.text.fontSize.S}px;
-`;
-
-export const ProviderInfoContainer = styled.View`
-  width: 100%;
 `;
 
 export const UserInfoText = styled.Text`

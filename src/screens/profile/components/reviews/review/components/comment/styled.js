@@ -7,7 +7,7 @@ export const CommentTextContainer = styled.View`
 `;
 
 export const CommentText = styled.Text`
-  font-family: 'MontserratRegular';
+  font-family: ${({ theme }) => theme.text.fontFamily.REGULAR};
   font-size: ${({ theme }) => theme.text.fontSize.XS}px;
   color: ${({ theme }) => theme.colors.darkGrey};
 `;

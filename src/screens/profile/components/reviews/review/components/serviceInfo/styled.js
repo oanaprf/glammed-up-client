@@ -10,13 +10,13 @@ export const ServiceInfoContainer = styled.View`
 `;
 
 export const ServiceNameText = styled.Text`
-  font-family: 'MontserratBold';
+  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
   font-size: ${({ theme }) => theme.text.fontSize.S}px;
   padding-right: 2px;
 `;
 
 export const ProviderNameText = styled.Text`
-  font-family: 'MontserratMedium';
+  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
   font-size: ${({ theme }) => theme.text.fontSize.S}px;
 `;
 

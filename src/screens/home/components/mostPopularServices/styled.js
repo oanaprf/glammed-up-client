@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { Service } from '@@screens/common';
 
 export const StyledText = styled.Text`
-  font-family: 'MontserratBold';
+  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
   font-size: ${({ theme }) => theme.text.fontSize.M}px;
 `;
 

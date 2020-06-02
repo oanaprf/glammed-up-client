@@ -23,7 +23,7 @@ export const StyledTextInput = styled.TextInput`
   color: ${({ theme }) => theme.colors.darkGrey};
   font-size: ${({ theme }) => theme.text.fontSize.M}px;
   flex: 8;
-  font-family: 'MontserratMedium';
+  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
 `;
 
 export const StyledIcon = styled.View`

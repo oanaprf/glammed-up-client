@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 
 import { t } from '@@config';
 import { Service } from '@@screens/common';
-import { ServiceDetailsModal } from '@@screens/modals';
+import { ServiceDetailsModal, CreateAppointmentModal } from '@@screens/modals';
 import { Spacer } from '@@components';
 
 import * as S from './styled';
@@ -32,6 +32,7 @@ const Home = ({ navigation }) => (
       </ScrollView>
     </S.Body>
     <ServiceDetailsModal />
+    <CreateAppointmentModal />
   </S.Container>
 );
 

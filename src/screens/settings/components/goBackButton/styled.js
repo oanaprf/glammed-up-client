@@ -7,7 +7,7 @@ export const StyledTouchableOpacity = styled.TouchableOpacity`
 `;
 
 export const StyledText = styled(Text)`
-  font-family: 'MontserratMedium';
+  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
   font-size: ${({ theme }) => theme.text.fontSize.S}px;
   color: ${({ theme }) => theme.colors.white};
 `;

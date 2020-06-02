@@ -28,7 +28,9 @@
     "allServices": "All services"
   },
   "appointments": {
-    "pageName": "Appointments"
+    "pageName": "Appointments",
+    "makeAnAppointment": "Make an appointment",
+    "chooseHour": "Hour"
   },
   "profile": {
     "pageName": "Profile",
@@ -58,8 +60,5 @@
     "changePassword": "Change password",
     "about": "About",
     "logout": "Log Out"
-  },
-  "common": {
-    "makeAnAppointment": "Make an appointment"
   }
 }

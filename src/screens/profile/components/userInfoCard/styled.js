@@ -19,6 +19,6 @@ export const StyledText = styled(Text)`
   text-transform: none;
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.text.fontSize.S}px;
-  font-family: 'MontserratRegular';
+  font-family: ${({ theme }) => theme.text.fontFamily.REGULAR};
   flex: 0.97;
 `;

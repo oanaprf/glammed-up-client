@@ -25,7 +25,7 @@ export const Body = styled.View`
 
 export const UserFullname = styled(Text)`
   font-size: ${({ theme }) => theme.text.fontSize.XL}px;
-  font-family: 'MontserratMedium';
+  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
   text-transform: none;
 `;
 

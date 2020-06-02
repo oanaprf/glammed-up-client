@@ -13,7 +13,7 @@ export const ButtonContainer = styled(Button)`
 `;
 
 export const StyledText = styled(Text)`
-  font-family: 'MontserratBold';
+  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
   font-size: ${({ theme }) => theme.text.fontSize.M}px;
   color: ${({ theme }) => theme.colors.white};
   text-align: center;

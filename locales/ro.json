@@ -28,7 +28,9 @@
     "allServices": "Toate serviciile"
   },
   "appointments": {
-    "pageName": "Programări"
+    "pageName": "Programări",
+    "makeAnAppointment": "Rezervă un loc",
+    "chooseHour": "Ora"
   },
   "profile": {
     "pageName": "Profil",
@@ -58,8 +60,5 @@
     "changePassword": "Schimbă parola",
     "about": "Despre aplicație",
     "logout": "Deconectare"
-  },
-  "common": {
-    "makeAnAppointment": "Fă o programare"
   }
 }

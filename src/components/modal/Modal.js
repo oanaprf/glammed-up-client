@@ -1,5 +1,6 @@
 import React from 'react';
-import { Modal as BaseModal, TouchableOpacity } from 'react-native';
+import { Modal as BaseModal } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import PropTypes from 'prop-types';
 
 import { theme } from '@@config';
@@ -7,7 +8,12 @@ import { theme } from '@@config';
 import * as S from './styled';
 
 const Modal = ({ children, onCloseModal, isModalOpen, style, title }) => (
-  <BaseModal visible={isModalOpen} animationType="fade" transparent={true}>
+  <BaseModal
+    visible={isModalOpen}
+    animationType="fade"
+    transparent={true}
+    propagateSwipe={true}
+  >
     <S.Touchable onPress={onCloseModal}>
       <S.ModalBackground>
         <S.Touchable>

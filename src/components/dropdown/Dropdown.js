@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Platform, UIManager } from 'react-native';
+import { View, Platform, UIManager, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { DropdownItem, DropdownInput } from './components';
@@ -15,7 +15,7 @@ if (
 const Dropdown = ({
   placeholder,
   options,
-  maxHeight,
+  maxHeight = 200,
   opened,
   setOpened,
   value,
@@ -24,18 +24,20 @@ const Dropdown = ({
   rounded,
   ...rest
 }) => (
-  <View style={{ position: 'relative' }} {...rest}>
+  <View style={{ position: 'relative', zIndex: 99 }} {...rest}>
     <S.StyledList {...{ dark, rounded, opened, maxHeight }}>
-      {options.map(option => (
-        <DropdownItem
-          key={option}
-          {...{
-            option,
-            setValue,
-            setOpened,
-          }}
-        />
-      ))}
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {options.map(option => (
+          <DropdownItem
+            key={option}
+            {...{
+              option,
+              setValue,
+              setOpened,
+            }}
+          />
+        ))}
+      </ScrollView>
     </S.StyledList>
     <DropdownInput
       {...{ opened, setOpened, value, dark, rounded, placeholder }}

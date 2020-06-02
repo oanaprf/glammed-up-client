@@ -11,3 +11,4 @@ export { default as SplashScreen } from './splashScreen';
 export { default as Tabs } from './tabs';
 export { default as Modal } from './modal';
 export { default as NoResults } from './noResults';
+export { default as Calendar } from './calendar';

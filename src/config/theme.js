@@ -16,6 +16,11 @@ export default {
       L: 3,
       XL: 4,
     },
+    fontFamily: {
+      REGULAR: 'MontserratRegular',
+      MEDIUM: 'MontserratMedium',
+      BOLD: 'MontserratBold',
+    },
   },
   borderRadius: {
     XS: 5,

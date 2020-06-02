@@ -8,7 +8,7 @@ export const NoResultsContainer = styled.View`
 `;
 
 export const StyledText = styled.Text`
-  font-family: 'MontserratMedium';
+  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
   font-size: ${({ theme }) => theme.text.fontSize.L}px;
   color: ${({ theme }) => theme.colors.darkGrey};
   margin-top: 20px;
