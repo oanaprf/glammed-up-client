@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { UserServices } from '@@screens/common';
-
-import { UserDetails } from './components';
+import { UserDetails, UserServices } from './components';
 import * as S from './styled';
 
 const userProfilePicture = require('@@assets/images/me.png');

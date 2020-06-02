@@ -1,2 +1,2 @@
 export { default as SettingsButton } from './settingsButton';
-export { default as TopServices } from './topServices';
+export { default as MostPopularServices } from './mostPopularServices';

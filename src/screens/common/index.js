@@ -1,2 +1,1 @@
-export { default as UserServices } from './userServices';
-export { default as Services } from './services';
+export { default as Service } from './service';

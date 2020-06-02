@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { Spacer } from '@@components';
-import { Services } from '@@screens/common';
+import { Service } from '@@screens/common';
 
 import { Users } from './components';
 
@@ -18,7 +18,7 @@ const SearchResult = ({ users, services }) => (
       }}
     >
       {users && <Users users={users} />}
-      {services && <Services services={services} />}
+      {services && [0, 1, 2].map(v => <Service key={v} />)}
     </ScrollView>
   </>
 );

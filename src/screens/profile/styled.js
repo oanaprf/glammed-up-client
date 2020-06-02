@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { Text, Tabs } from '@@components';
+import { Service } from '@@screens/common';
 
 export const Container = styled.View`
   flex: 1;
@@ -35,4 +36,9 @@ export const EmptyView = styled.View`
 export const StyledTabs = styled(Tabs)`
   flex: 1;
   width: 100%;
+`;
+
+export const StyledService = styled(Service)`
+  width: 45%;
+  height: 150px;
 `;
