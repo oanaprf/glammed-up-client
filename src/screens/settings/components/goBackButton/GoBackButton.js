@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon } from 'react-native-elements';
 
 import { theme, t } from '@@config';
+import { ButtonText } from '@@components';
 
 import * as S from './styled';
 
@@ -20,7 +21,7 @@ const GoBackButton = ({ onGoBackPress }) => (
         color: theme.colors.lightGrey,
       }}
     />
-    <S.StyledText>{t('home.pageName')}</S.StyledText>
+    <ButtonText family="REGULAR">{t('home.pageName')}</ButtonText>
   </S.StyledTouchableOpacity>
 );
 

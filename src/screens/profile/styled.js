@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { Text, Tabs } from '@@components';
+import { Tabs } from '@@components';
 import { Service } from '@@screens/common';
 
 export const Container = styled.View`
@@ -21,12 +21,6 @@ export const Body = styled.View`
   border-top-left-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   background-color: ${({ theme }) => theme.colors.white};
   position: relative;
-`;
-
-export const UserFullname = styled(Text)`
-  font-size: ${({ theme }) => theme.text.fontSize.XL}px;
-  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
-  text-transform: none;
 `;
 
 export const EmptyView = styled.View`

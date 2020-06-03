@@ -21,14 +21,20 @@ const Auth = () => (
             size: 50,
           }}
         />
-        <S.TitleText>GLAMMED UP</S.TitleText>
+        <S.TitleText size="XXXL" family="REGULAR">
+          GLAMMED UP
+        </S.TitleText>
       </S.StyledTitle>
       <S.StyledCard>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <S.StyledTabs
             tabLabels={[
-              <Text>{t('login.pageName')}</Text>,
-              <Text>{t('signUp.pageName')}</Text>,
+              <Text family="BOLD" uppercase>
+                {t('login.pageName')}
+              </Text>,
+              <Text family="BOLD" uppercase>
+                {t('signUp.pageName')}
+              </Text>,
             ]}
             tabContents={[<Login />, <SignUp />]}
           />

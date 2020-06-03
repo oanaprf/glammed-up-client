@@ -11,12 +11,6 @@ export const SmallSpacer = styled(Spacer)`
   max-height: 20px;
 `;
 
-export const ForgotPasswordText = styled.Text`
-  text-align: center;
-  color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ theme }) => theme.text.fontSize.XS}px;
-  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
-`;
 const horizontalFlex = `
   flex-direction: row;
   align-items: center;
@@ -39,9 +33,8 @@ export const PaddedText = styled(Text)`
   padding: 10px;
 `;
 
-export const CenteredText = styled.Text`
+export const CenteredText = styled(Text)`
   text-align: center;
-  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
 `;
 
 export const SocialIconsWrapper = styled.View`

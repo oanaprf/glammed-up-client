@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const StyledText = styled.Text`
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.black};
-  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
+  font-family: ${({ family, theme }) => theme.text.fontFamily[family]};
+  font-size: ${({ size, theme }) => theme.text.fontSize[size]}px;
+  ${({ uppercase }) => uppercase && 'text-transform: uppercase;'}
 `;

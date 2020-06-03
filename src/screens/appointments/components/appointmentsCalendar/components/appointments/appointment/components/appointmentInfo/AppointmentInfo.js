@@ -1,13 +1,15 @@
 import React from 'react';
 
-import { Spacer } from '@@components';
+import { Spacer, Text } from '@@components';
 import * as S from './styled';
 
 const AppointmentInfo = () => (
   <S.AppointmentInfoContainer>
-    <S.ServiceNameText>13:30</S.ServiceNameText>
+    <Text family="BOLD" size="M">
+      13:30
+    </Text>
     <Spacer height={5} />
-    <S.ProviderNameText>Oana Popescu</S.ProviderNameText>
+    <Text>Oana Popescu</Text>
   </S.AppointmentInfoContainer>
 );
 

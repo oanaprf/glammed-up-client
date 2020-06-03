@@ -1,17 +1,20 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
 
+import { Text } from '@@components';
 import { theme } from '@@config';
 import * as S from './styled';
 
 const ServiceInfo = () => (
   <S.InfoContainer>
     <S.ServiceInfoContainer>
-      <S.ServiceNameText numberOfLines={1}>Unghii cu gels</S.ServiceNameText>
-      <S.ProviderNameText>by Narcisa Petcu </S.ProviderNameText>
+      <S.TextWithPadding family="BOLD" numberOfLines={1}>
+        Unghii cu gels
+      </S.TextWithPadding>
+      <Text>by Narcisa Petcu </Text>
     </S.ServiceInfoContainer>
     <S.RatingContainer>
-      <S.ServiceNameText>{'4.5'}</S.ServiceNameText>
+      <S.TextWithPadding family="BOLD">{'4.5'}</S.TextWithPadding>
       <Icon
         {...{
           name: 'star',

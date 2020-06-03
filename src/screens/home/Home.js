@@ -5,7 +5,7 @@ import { ScrollView } from 'react-native';
 import { t } from '@@config';
 import { Service } from '@@screens/common';
 import { ServiceDetailsModal, CreateAppointmentModal } from '@@screens/modals';
-import { Spacer } from '@@components';
+import { Spacer, ButtonText, Text } from '@@components';
 
 import * as S from './styled';
 import { SettingsButton, MostPopularServices } from './components';
@@ -13,7 +13,9 @@ import { SettingsButton, MostPopularServices } from './components';
 const Home = ({ navigation }) => (
   <S.Container>
     <S.Header>
-      <S.Title>{t('home.pageName')}</S.Title>
+      <ButtonText size="XL" family="REGULAR">
+        {t('home.pageName')}
+      </ButtonText>
       <SettingsButton navigation={navigation} />
     </S.Header>
     <S.Body>
@@ -24,7 +26,9 @@ const Home = ({ navigation }) => (
         }}
       >
         <MostPopularServices />
-        <S.StyledText>{t('home.allServices')}</S.StyledText>
+        <Text size="M" family="BOLD">
+          {t('home.allServices')}
+        </Text>
         <Spacer height={5} />
         {[0, 1, 2].map(v => (
           <Service key={v} />

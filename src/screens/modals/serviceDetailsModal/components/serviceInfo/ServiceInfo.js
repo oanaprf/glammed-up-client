@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 import { theme } from '@@config';
-import { Spacer } from '@@components';
+import { Spacer, Text } from '@@components';
 
 import * as S from './styled';
 import { ProviderInfo } from './components';
@@ -11,16 +11,22 @@ import { ProviderInfo } from './components';
 const ServiceInfo = () => (
   <View>
     <S.RowContainer>
-      <S.ServiceNameText>Unghii cu gel</S.ServiceNameText>
+      <Text size="M" family="BOLD">
+        Unghii cu gel
+      </Text>
       <S.RowContainer>
-        <S.PriceValueText>100</S.PriceValueText>
-        <S.PriceCurrencyText>lei</S.PriceCurrencyText>
+        <S.TextWithPadding size="M" family="BOLD">
+          100
+        </S.TextWithPadding>
+        <Text>lei</Text>
       </S.RowContainer>
     </S.RowContainer>
     <S.RowContainer>
-      <S.UserInfoText>Oana Profir</S.UserInfoText>
+      <Text>Oana Profir</Text>
       <S.RowContainer>
-        <S.RatingText>5</S.RatingText>
+        <S.TextWithPadding size="M" family="BOLD">
+          5
+        </S.TextWithPadding>
         <Icon
           {...{
             name: 'star',

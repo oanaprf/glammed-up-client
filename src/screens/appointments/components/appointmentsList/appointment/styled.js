@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { Card } from '@@components';
+import { Card, Text } from '@@components';
 
 export const CardContainer = styled(Card)`
   flex-direction: row;
@@ -12,9 +12,7 @@ export const AppointmentInfo = styled.View`
   padding: 10px 10px;
 `;
 
-export const UserInfoText = styled.Text`
-  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
-  font-size: ${({ theme }) => theme.text.fontSize.XS}px;
+export const FlexText = styled(Text)`
   flex: 0.97;
 `;
 

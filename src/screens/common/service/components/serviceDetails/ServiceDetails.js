@@ -9,11 +9,11 @@ const ServiceDetails = ({ userService }) => (
   <S.ServiceDetails>
     <S.RowContainer>
       <S.RowContainer>
-        <S.PriceValueText>100</S.PriceValueText>
-        <S.PriceCurrencyText>lei</S.PriceCurrencyText>
+        <S.WhiteTextWithPadding family="BOLD">100</S.WhiteTextWithPadding>
+        <S.WhiteText size="XS">lei</S.WhiteText>
       </S.RowContainer>
       <S.RowContainer>
-        <S.RatingText>5</S.RatingText>
+        <S.WhiteTextWithPadding family="BOLD">5</S.WhiteTextWithPadding>
         <Icon
           {...{
             name: 'star',
@@ -25,8 +25,10 @@ const ServiceDetails = ({ userService }) => (
       </S.RowContainer>
     </S.RowContainer>
     <S.RowContainer>
-      <S.ServiceNameText numberOfLines={2}>Unghii cu gel</S.ServiceNameText>
-      {!userService && <S.PriceCurrencyText>Oana Profir</S.PriceCurrencyText>}
+      <S.WhiteText family="BOLD" numberOfLines={2}>
+        Unghii cu gel
+      </S.WhiteText>
+      {!userService && <S.WhiteText size="XS">Oana Profir</S.WhiteText>}
     </S.RowContainer>
   </S.ServiceDetails>
 );

@@ -14,7 +14,7 @@ const NoResults = () => (
         color: theme.colors.lightGrey,
       }}
     />
-    <S.StyledText>{t('search.noResults')}</S.StyledText>
+    <S.StyledText size="L">{t('search.noResults')}</S.StyledText>
   </S.NoResultsContainer>
 );
 

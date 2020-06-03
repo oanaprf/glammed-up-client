@@ -25,7 +25,7 @@ const Login = ({
     <LoginButton onPress={onLogin} />
     <S.SmallSpacer />
     <TouchableOpacity activeOpacity={0.6}>
-      <S.ForgotPasswordText>{t('login.forgotPassword')}</S.ForgotPasswordText>
+      <S.CenteredText size="XS">{t('login.forgotPassword')}</S.CenteredText>
     </TouchableOpacity>
     <S.SmallSpacer />
     <S.HorizontalBarWrapper>
