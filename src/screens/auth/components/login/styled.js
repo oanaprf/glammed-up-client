@@ -11,10 +11,6 @@ export const SmallSpacer = styled(Spacer)`
   max-height: 20px;
 `;
 
-export const ForgotPasswordText = styled.Text`
-  text-align: center;
-`;
-
 const horizontalFlex = `
   flex-direction: row;
   align-items: center;
@@ -37,7 +33,7 @@ export const PaddedText = styled(Text)`
   padding: 10px;
 `;
 
-export const CenteredText = styled.Text`
+export const CenteredText = styled(Text)`
   text-align: center;
 `;
 

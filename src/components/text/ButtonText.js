@@ -26,10 +26,10 @@ const ButtonText = ({
 );
 
 ButtonText.propTypes = {
-  children: PropTypes.array.isRequired,
-  size: PropTypes.string.isRequired,
-  family: PropTypes.string.isRequired,
-  uppercase: PropTypes.bool.isRequired,
+  children: PropTypes.any.isRequired,
+  size: PropTypes.string,
+  family: PropTypes.string,
+  uppercase: PropTypes.bool,
 };
 
 export default ButtonText;
