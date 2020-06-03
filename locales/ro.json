@@ -30,7 +30,9 @@
   "appointments": {
     "pageName": "Programări",
     "makeAnAppointment": "Rezervă un loc",
-    "chooseHour": "Ora"
+    "chooseHour": "Ora",
+    "list": "Listă",
+    "calendar": "Calendar"
   },
   "profile": {
     "pageName": "Profil",

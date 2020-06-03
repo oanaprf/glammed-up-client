@@ -1,20 +1,29 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
-import { View } from 'react-native';
 
 import { Text } from '@@components';
 import { t } from '@@config';
 
+import { AppointmentsList, AppointmentsCalendar } from './components';
+import * as S from './styled';
+
 const Appointments = () => (
-  <View
-    style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'white',
-    }}
-  >
-    <Text>{t('appointments.pageName')}</Text>
-  </View>
+  <S.Container>
+    <S.Header>
+      <S.Title>{t('appointments.pageName')}</S.Title>
+    </S.Header>
+    <S.Body>
+      <S.StyledTabs
+        tabLabels={[
+          <Text>{t('appointments.list')}</Text>,
+          <Text>{t('appointments.calendar')}</Text>,
+        ]}
+        tabContents={[<AppointmentsList />, <AppointmentsCalendar />]}
+      />
+    </S.Body>
+  </S.Container>
 );
+
+Appointments.propTypes = {};
 
 export default Appointments;
