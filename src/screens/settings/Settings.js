@@ -10,7 +10,9 @@ const Settings = ({ navigation }) => (
   <S.Container>
     <S.Header>
       <GoBackButton navigation={navigation} />
-      <S.Title>{t('settings.pageName')}</S.Title>
+      <S.Title size="XL" family="REGULAR">
+        {t('settings.pageName')}
+      </S.Title>
     </S.Header>
     <S.Body>
       <Option icon="globe" label="changeLanguage" />

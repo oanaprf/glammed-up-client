@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import { theme } from '@@config';
 
+import { Text } from '../text';
 import * as S from './styled';
 
 const Modal = ({ children, onCloseModal, isModalOpen, style, title }) => (
@@ -21,7 +22,9 @@ const Modal = ({ children, onCloseModal, isModalOpen, style, title }) => (
             {title && (
               <S.ModalHeader>
                 <S.ModalTitleContainer>
-                  <S.ModalTitleText>{title}</S.ModalTitleText>
+                  <Text size="M" family="BOLD" uppercase>
+                    {title}
+                  </Text>
                 </S.ModalTitleContainer>
                 <TouchableOpacity
                   onPress={onCloseModal}

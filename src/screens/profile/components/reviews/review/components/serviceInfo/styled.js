@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Text } from '@@components';
 
 export const InfoContainer = styled.View`
   flex-direction: row;
@@ -9,15 +10,8 @@ export const ServiceInfoContainer = styled.View`
   flex: 1;
 `;
 
-export const ServiceNameText = styled.Text`
-  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
-  font-size: ${({ theme }) => theme.text.fontSize.S}px;
+export const TextWithPadding = styled(Text)`
   padding-right: 2px;
-`;
-
-export const ProviderNameText = styled.Text`
-  font-family: ${({ theme }) => theme.text.fontFamily.MEDIUM};
-  font-size: ${({ theme }) => theme.text.fontSize.S}px;
 `;
 
 export const RatingContainer = styled.View`

@@ -14,14 +14,18 @@ const Profile = () => (
     <S.Body>
       <AvatarBar />
       <S.EmptyView />
-      <S.UserFullname>Oana Profir</S.UserFullname>
+      <Text size="XL">Oana Profir</Text>
       <Spacer />
       <UserInfoCard />
       <Spacer />
       <S.StyledTabs
         tabLabels={[
-          <Text>{t('profile.services')}</Text>,
-          <Text>{t('profile.reviews')}</Text>,
+          <Text family="BOLD" uppercase>
+            {t('profile.services')}
+          </Text>,
+          <Text family="BOLD" uppercase>
+            {t('profile.reviews')}
+          </Text>,
         ]}
         tabContents={[<UserServices />, <Reviews />]}
       />

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import { Text } from '@@components';
+import { ButtonText } from '@@components';
 
 export const Container = styled.View`
   flex: 1;
@@ -15,10 +15,7 @@ export const Header = styled.View`
   flex: 0.2;
 `;
 
-export const Title = styled(Text)`
-  font-size: ${({ theme }) => theme.text.fontSize.XL}px;
-  color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.text.fontFamily.REGULAR};
+export const Title = styled(ButtonText)`
   margin-left: 25px;
 `;
 

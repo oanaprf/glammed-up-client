@@ -7,7 +7,7 @@ import * as S from './styled';
 const RatingButton = () => (
   <S.StyledButton>
     <>
-      <S.StyledText>{'5'}</S.StyledText>
+      <S.StyledText size="M">{'5'}</S.StyledText>
       <Icon
         {...{
           name: 'star',

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { Button, Text } from '@@components';
+import { Button, ButtonText } from '@@components';
 
 export const ButtonContainer = styled(Button)`
   width: 140px;
@@ -12,10 +12,7 @@ export const ButtonContainer = styled(Button)`
   align-items: center;
 `;
 
-export const StyledText = styled(Text)`
-  font-family: ${({ theme }) => theme.text.fontFamily.BOLD};
-  font-size: ${({ theme }) => theme.text.fontSize.M}px;
-  color: ${({ theme }) => theme.colors.white};
+export const StyledText = styled(ButtonText)`
   text-align: center;
 `;
 

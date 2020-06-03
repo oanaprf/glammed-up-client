@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Text } from '@@components';
 
 export const RowContainer = styled.View`
   flex-direction: row;
@@ -6,6 +7,10 @@ export const RowContainer = styled.View`
   justify-content: space-between;
 `;
 
-export const StyledText = styled.Text`
-  color: ${({ theme }) => theme.colors.theme_black_pink.secondary};
+export const ProviderInfoContainer = styled.View`
+  width: 100%;
+`;
+
+export const FlexText = styled(Text)`
+  flex: 0.97;
 `;

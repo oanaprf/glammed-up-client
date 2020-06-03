@@ -1,16 +1,20 @@
 import React from 'react';
 
+import { Text } from '@@components';
+
 import * as S from './styled';
 
 const AppointmentInfo = () => (
   <>
     <S.RowContainer>
-      <S.ServiceNameText numberOfLines={1}>Unghii cu gels</S.ServiceNameText>
-      <S.DateText>12.04.2020</S.DateText>
+      <Text family="BOLD" numberOfLines={1}>
+        Unghii cu gels
+      </Text>
+      <Text family="BOLD">12.04.2020</Text>
     </S.RowContainer>
     <S.RowContainer>
-      <S.ProviderNameText>by Narcisa Petcu </S.ProviderNameText>
-      <S.TimeText>13:30</S.TimeText>
+      <Text size="XS">by Narcisa Petcu </Text>
+      <S.StyledText family="BOLD">13:30</S.StyledText>
     </S.RowContainer>
   </>
 );

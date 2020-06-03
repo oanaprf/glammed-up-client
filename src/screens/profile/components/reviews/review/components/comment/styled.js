@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Text } from '@@components';
 
 export const CommentTextContainer = styled.View`
   flex: 1;
@@ -6,8 +7,6 @@ export const CommentTextContainer = styled.View`
   align-items: center;
 `;
 
-export const CommentText = styled.Text`
-  font-family: ${({ theme }) => theme.text.fontFamily.REGULAR};
-  font-size: ${({ theme }) => theme.text.fontSize.XS}px;
+export const CommentText = styled(Text)`
   color: ${({ theme }) => theme.colors.darkGrey};
 `;

@@ -17,7 +17,7 @@ const ProviderInfo = () => (
           color: theme.colors.black,
         }}
       />
-      <S.UserInfoText>0769117933</S.UserInfoText>
+      <S.FlexText size="XS">0769117933</S.FlexText>
     </S.RowContainer>
     <Spacer height={2} />
     <S.RowContainer>
@@ -29,9 +29,9 @@ const ProviderInfo = () => (
           color: theme.colors.black,
         }}
       />
-      <S.UserInfoText>
+      <S.FlexText size="XS">
         Strada Ion Berindei 2, bloc OD 47, scara A, etaj 7, apart. 30
-      </S.UserInfoText>
+      </S.FlexText>
     </S.RowContainer>
   </>
 );

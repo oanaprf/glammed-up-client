@@ -1,8 +1,6 @@
 import styled from 'styled-components/native';
 import { Icon } from 'react-native-elements';
 
-import Text from '../text';
-
 export const ModalBackground = styled.View`
   flex: 1;
   justify-content: center;
@@ -28,10 +26,6 @@ export const ModalHeader = styled.View`
 export const ModalTitleContainer = styled.View`
   padding-left: 15px;
   justify-content: center;
-`;
-
-export const ModalTitleText = styled(Text)`
-  font-size: ${({ theme }) => theme.text.fontSize.M}px;
 `;
 
 export const ModalCloseIcon = styled(Icon)`

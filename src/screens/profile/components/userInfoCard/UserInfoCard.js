@@ -16,7 +16,7 @@ const UserInfoCard = () => (
           color: theme.colors.white,
         }}
       />
-      <S.StyledText>oanaprofir12@gmail.com</S.StyledText>
+      <S.StyledText family="REGULAR">oanaprofir12@gmail.com</S.StyledText>
     </S.StyledRow>
     <S.StyledRow>
       <Icon
@@ -27,7 +27,7 @@ const UserInfoCard = () => (
           color: theme.colors.white,
         }}
       />
-      <S.StyledText>0769117933</S.StyledText>
+      <S.StyledText family="REGULAR">0769117933</S.StyledText>
     </S.StyledRow>
     <S.StyledRow>
       <Icon
@@ -38,7 +38,7 @@ const UserInfoCard = () => (
           color: theme.colors.white,
         }}
       />
-      <S.StyledText>
+      <S.StyledText family="REGULAR">
         Strada Ion Berindei 2, bloc OD 47, scara A, etaj 7, apart. 30
       </S.StyledText>
     </S.StyledRow>

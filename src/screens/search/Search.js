@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { t } from '@@config';
 import { ServiceDetailsModal } from '@@screens/modals';
+import { ButtonText } from '@@components';
 
 import { SearchBar, Categories, SearchResult } from './components';
 import * as S from './styled';
@@ -10,7 +11,9 @@ import * as S from './styled';
 const Search = ({ isSearching, users, services }) => (
   <S.Container>
     <S.Header>
-      <S.Title>{t('search.pageName')}</S.Title>
+      <ButtonText size="XL" family="REGULAR">
+        {t('search.pageName')}
+      </ButtonText>
     </S.Header>
     <S.Body>
       <S.SearchBarContainer>

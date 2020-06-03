@@ -21,7 +21,9 @@ const Category = ({ category }) => (
   <S.ButtonContainer>
     <>
       <S.StyledImage source={icons[category]} />
-      <S.StyledText>{t(`search.categories.${category}`)}</S.StyledText>
+      <S.StyledText size="M" family="REGULAR">
+        {t(`search.categories.${category}`)}
+      </S.StyledText>
     </>
   </S.ButtonContainer>
 );

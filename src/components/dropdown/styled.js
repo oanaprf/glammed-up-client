@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import Text from '../text';
+import { Text } from '../text';
 
 export const StyledTouchableOpacity = styled(TouchableOpacity)`
   padding-left: 10px;
