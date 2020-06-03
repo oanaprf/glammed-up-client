@@ -27,23 +27,5 @@ export const Body = styled.View`
   border-top-right-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   border-top-left-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   background-color: ${({ theme }) => theme.colors.white};
-`;
-
-export const AppOptions = styled.View`
-  flex: 0.8;
-  justify-content: center;
-`;
-
-export const HorizontalBar = styled.View`
-  border-bottom-width: 0.5px;
-  border-bottom-color: ${({ theme }) =>
-    theme.colors.theme_black_pink.secondary};
-  flex-grow: 0.1;
-  margin-right: 60px;
-  margin-left: 60px;
-`;
-
-export const Logout = styled.View`
-  flex: 0.2;
   justify-content: center;
 `;
