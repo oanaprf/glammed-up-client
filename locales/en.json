@@ -30,7 +30,9 @@
   "appointments": {
     "pageName": "Appointments",
     "makeAnAppointment": "Make an appointment",
-    "chooseHour": "Hour"
+    "chooseHour": "Hour",
+    "list": "List",
+    "calendar": "Calendar"
   },
   "profile": {
     "pageName": "Profile",
