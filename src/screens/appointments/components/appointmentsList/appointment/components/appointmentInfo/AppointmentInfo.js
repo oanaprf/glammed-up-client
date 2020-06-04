@@ -16,6 +16,9 @@ const AppointmentInfo = () => (
       <Text size="XS">by Narcisa Petcu </Text>
       <S.StyledText family="BOLD">13:30</S.StyledText>
     </S.RowContainer>
+    <S.StyledText family="BOLD" uppercase size="XS">
+      Finalizată
+    </S.StyledText>
   </>
 );
 

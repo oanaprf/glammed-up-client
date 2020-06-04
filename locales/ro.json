@@ -32,7 +32,11 @@
     "bookAppointment": "Rezervă un loc",
     "chooseHour": "Ora",
     "list": "Listă",
-    "calendar": "Calendar"
+    "calendar": "Calendar",
+    "fields": {
+      "date": "Alege data",
+      "time": "Alege ora"
+    }
   },
   "profile": {
     "pageName": "Profil",

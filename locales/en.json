@@ -32,7 +32,11 @@
     "bookAppointment": "Book appointment",
     "chooseHour": "Hour",
     "list": "List",
-    "calendar": "Calendar"
+    "calendar": "Calendar",
+    "fields": {
+      "date": "Choose date",
+      "time": "Choose time"
+    }
   },
   "profile": {
     "pageName": "Profile",
