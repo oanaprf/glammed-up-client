@@ -8,7 +8,7 @@ import { theme } from '@@config';
 import * as S from './styled';
 
 const EditButton = ({ openModal }) => (
-  <S.StyledButton onPress={() => openModal({ name: C.MODALS.ADD_SERVICE })}>
+  <S.StyledButton onPress={() => openModal({ name: C.MODALS.EDIT_USER })}>
     <Icon
       {...{
         name: 'edit-2',

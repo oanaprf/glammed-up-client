@@ -1,9 +1,10 @@
-import { compose, withHandlers } from 'recompose';
+import { compose, withHandlers, branch, renderComponent } from 'recompose';
 import * as ExpoImagePicker from 'expo-image-picker';
 import { Platform } from 'react-native';
 
 import { withUseState, withOnMount } from '@@hocs';
-import BaseImagePicker from './ImagePicker';
+import SingleImagePicker from './SingleImagePicker';
+import MultipleImagePicker from './MultipleImagePicker';
 
 const ImagePicker = compose(
   withUseState('images', []),
@@ -23,7 +24,12 @@ const ImagePicker = compose(
         setImages([...images, uri]);
       }
     },
-  })
-)(BaseImagePicker);
+  }),
+  branch(
+    ({ multiple }) => multiple,
+    renderComponent(MultipleImagePicker),
+    renderComponent(SingleImagePicker)
+  )
+)();
 
 export default ImagePicker;

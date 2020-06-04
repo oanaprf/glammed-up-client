@@ -4,5 +4,5 @@ import { Text } from '@@components/text';
 
 export const StyledLabel = styled(Text)`
   padding-bottom: 2px;
-  padding-left: 10px;
+  ${({ noLabelPadding }) => !noLabelPadding && 'padding-left: 10px;'};
 `;

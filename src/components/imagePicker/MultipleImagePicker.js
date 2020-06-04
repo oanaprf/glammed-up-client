@@ -8,7 +8,7 @@ import Button from '../button';
 import * as S from './styled';
 import { NoImageSelected } from './components';
 
-const ImagePicker = ({ images, onSelectImage }) => (
+const MultipleImagePicker = ({ images, onSelectImage }) => (
   <S.RowContainer>
     <ScrollView
       horizontal
@@ -20,7 +20,7 @@ const ImagePicker = ({ images, onSelectImage }) => (
     >
       {images.length ? (
         images.map((image, index) => (
-          <S.StyledImage key={index} source={{ uri: image }} />
+          <S.StyledSmallImage key={index} source={{ uri: image }} />
         ))
       ) : (
         <NoImageSelected />
@@ -39,9 +39,9 @@ const ImagePicker = ({ images, onSelectImage }) => (
   </S.RowContainer>
 );
 
-ImagePicker.propTypes = {
+MultipleImagePicker.propTypes = {
   images: PropTypes.array.isRequired,
   onSelectImage: PropTypes.func.isRequired,
 };
 
-export default ImagePicker;
+export default MultipleImagePicker;

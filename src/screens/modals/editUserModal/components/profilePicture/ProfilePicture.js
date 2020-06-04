@@ -2,14 +2,13 @@ import React from 'react';
 
 import { ImagePicker } from '@@components';
 
-const ServiceImagePicker = props => (
+const ProfilePicture = props => (
   <ImagePicker
     {...{
-      name: 'pictures',
-      multiple: true,
+      name: 'profilePicture',
       ...props,
     }}
   />
 );
 
-export default ServiceImagePicker;
+export default ProfilePicture;
