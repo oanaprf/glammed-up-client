@@ -7,6 +7,7 @@ import {
   ServiceDetailsModal,
   AddServiceModal,
   EditUserModal,
+  AddReviewModal,
 } from '@@screens/modals';
 
 import { AvatarBar, UserInfoCard, Reviews, UserServices } from './components';
@@ -37,6 +38,7 @@ const Profile = () => (
     <ServiceDetailsModal />
     <AddServiceModal />
     <EditUserModal />
+    <AddReviewModal />
   </S.Container>
 );
 

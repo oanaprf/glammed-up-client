@@ -3,10 +3,9 @@ import { View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 import { theme } from '@@config';
-import { Spacer, Text } from '@@components';
+import { Text } from '@@components';
 
 import * as S from './styled';
-import { ProviderInfo } from './components';
 
 const ServiceInfo = () => (
   <View>
@@ -37,9 +36,6 @@ const ServiceInfo = () => (
         />
       </S.RowContainer>
     </S.RowContainer>
-    <Spacer height={15} />
-    <ProviderInfo />
-    <Spacer height={15} />
   </View>
 );
 
