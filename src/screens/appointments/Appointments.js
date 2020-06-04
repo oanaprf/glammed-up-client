@@ -3,6 +3,7 @@ import React from 'react';
 
 import { Text, ButtonText } from '@@components';
 import { t } from '@@config';
+import { AddManualAppointment } from '@@screens/modals';
 
 import { AppointmentsList, AppointmentsCalendar } from './components';
 import * as S from './styled';
@@ -27,6 +28,7 @@ const Appointments = () => (
         tabContents={[<AppointmentsList />, <AppointmentsCalendar />]}
       />
     </S.Body>
+    <AddManualAppointment />
   </S.Container>
 );
 

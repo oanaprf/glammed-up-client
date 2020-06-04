@@ -9,10 +9,7 @@ import { t, theme } from '@@config';
 import * as S from './styled';
 
 const BecomeProviderModal = () => (
-  <Modal
-    name={C.MODALS.BECOME_PROVIDER}
-    style={{ width: '90%', overflow: 'hidden' }}
-  >
+  <Modal name={C.MODALS.BECOME_PROVIDER} style={{ width: '90%' }}>
     <S.ModalContainer>
       <S.WandContainer>
         <Icon

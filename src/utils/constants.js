@@ -17,4 +17,5 @@ export const MODALS = {
   EDIT_USER: 'editUserModal',
   BECOME_PROVIDER: 'becomeProviderModal',
   ADD_REVIEW: 'addReviewModal',
+  ADD_MANUAL_APPOINTMENT: 'addManualAppointment',
 };

@@ -30,12 +30,15 @@
   "appointments": {
     "pageName": "Appointments",
     "bookAppointment": "Book appointment",
+    "addManualAppointment": "Add manual appointment",
     "chooseHour": "Hour",
     "list": "List",
     "calendar": "Calendar",
     "fields": {
-      "date": "Choose date",
-      "time": "Choose time"
+      "date": "Date",
+      "time": "Time",
+      "client": "Client",
+      "service": "Service"
     }
   },
   "profile": {
