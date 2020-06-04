@@ -5,6 +5,7 @@ import { SliderBox } from 'react-native-image-slider-box';
 import { Modal, ButtonText, Button } from '@@components';
 import { theme, t } from '@@config';
 import { withOpenModal } from '@@hocs';
+import * as C from '@@utils/constants';
 
 import { ServiceInfo } from './components';
 import * as S from './styled';
@@ -16,7 +17,7 @@ const pictures = [servicePicture, defaultPicture];
 
 const ServiceDetailsModal = ({ openModal }) => (
   <Modal
-    name="serviceDetailsModal"
+    name={C.MODALS.SERVICE_DETAILS}
     style={{ width: '90%', overflow: 'hidden' }}
   >
     <>
@@ -33,9 +34,9 @@ const ServiceDetailsModal = ({ openModal }) => (
         <ServiceInfo />
         <Button
           rounded
-          onPress={() => openModal({ name: 'createAppointmentModal' })}
+          onPress={() => openModal({ name: C.MODALS.BOOK_APPOINTMENT })}
         >
-          <ButtonText>{t('appointments.makeAnAppointment')}</ButtonText>
+          <ButtonText>{t('appointments.bookAppointment')}</ButtonText>
         </Button>
       </S.ServiceDetailsContainer>
     </>

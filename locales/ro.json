@@ -29,7 +29,7 @@
   },
   "appointments": {
     "pageName": "Programări",
-    "makeAnAppointment": "Rezervă un loc",
+    "bookAppointment": "Rezervă un loc",
     "chooseHour": "Ora",
     "list": "Listă",
     "calendar": "Calendar"
@@ -37,7 +37,18 @@
   "profile": {
     "pageName": "Profil",
     "reviews": "Recenzii",
-    "services": "Servicii"
+    "services": "Servicii",
+    "addService": "Adaugă un serviciu"
+  },
+  "service": {
+    "fields": {
+      "name": "Nume",
+      "category": "Categorie",
+      "price": "Preț",
+      "duration": "Durată",
+      "pictures": "Poze"
+    },
+    "noImageSelected": "Nicio poză selectată"
   },
   "search": {
     "pageName": "Caută servicii",
@@ -62,5 +73,8 @@
     "changePassword": "Schimbă parola",
     "about": "Despre aplicație",
     "logout": "Deconectare"
+  },
+  "common": {
+    "save": "Salvează"
   }
 }

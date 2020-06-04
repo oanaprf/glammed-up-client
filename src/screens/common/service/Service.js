@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 
+import * as C from '@@utils/constants';
 import { ServiceDetails as DefaultServiceDetails } from './components';
-
 import * as S from './styled';
 
 const servicePicture = require('@@assets/images/nails.jpg');
@@ -16,7 +16,7 @@ const Service = ({
 }) => (
   <S.CardContainer style={style}>
     <TouchableOpacity
-      onPress={() => openModal({ name: 'serviceDetailsModal' })}
+      onPress={() => openModal({ name: C.MODALS.SERVICE_DETAILS })}
       activeOpacity={0.8}
     >
       <S.ServicePicture source={servicePicture}>

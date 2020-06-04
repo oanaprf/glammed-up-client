@@ -1,11 +1,14 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
+import { withOpenModal } from '@@hocs';
+import * as C from '@@utils/constants';
 import { theme } from '@@config';
 import * as S from './styled';
 
-const AvatarBar = () => (
-  <S.StyledButton>
+const EditButton = ({ openModal }) => (
+  <S.StyledButton onPress={() => openModal({ name: C.MODALS.ADD_SERVICE })}>
     <Icon
       {...{
         name: 'edit-2',
@@ -17,4 +20,8 @@ const AvatarBar = () => (
   </S.StyledButton>
 );
 
-export default AvatarBar;
+EditButton.propTypes = {
+  openModal: PropTypes.func.isRequired,
+};
+
+export default withOpenModal(EditButton);

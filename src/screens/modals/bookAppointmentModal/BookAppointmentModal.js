@@ -2,16 +2,17 @@ import React from 'react';
 import { Icon } from 'react-native-elements';
 
 import { t, theme } from '@@config';
+import * as C from '@@utils/constants';
 import { Modal, Calendar, Button, Dropdown, Spacer } from '@@components';
 
 import { ServiceDetails } from './components';
 import * as S from './styled';
 
-const CreateAppointmentModal = () => (
+const BookAppointmentModal = () => (
   <Modal
-    name="createAppointmentModal"
+    name={C.MODALS.BOOK_APPOINTMENT}
     style={{ width: '90%', overflow: 'hidden' }}
-    title={t('appointments.makeAnAppointment')}
+    title={t('appointments.bookAppointment')}
   >
     <S.ModalContainer>
       <ServiceDetails />
@@ -38,4 +39,4 @@ const CreateAppointmentModal = () => (
   </Modal>
 );
 
-export default CreateAppointmentModal;
+export default BookAppointmentModal;

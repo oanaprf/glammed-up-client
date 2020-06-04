@@ -29,7 +29,7 @@ const Dropdown = ({
       <ScrollView showsVerticalScrollIndicator={false}>
         {options.map(option => (
           <DropdownItem
-            key={option}
+            key={option.key}
             {...{
               option,
               setValue,

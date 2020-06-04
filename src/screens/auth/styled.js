@@ -12,7 +12,7 @@ export const StyledTitle = styled.View`
   width: 100%;
   justify-content: center;
   align-items: center;
-  flex-grow: 0.1;
+  flex-grow: 0.05;
 `;
 
 export const TitleText = styled(Text)`
@@ -20,19 +20,12 @@ export const TitleText = styled(Text)`
   text-align: center;
 `;
 
-export const StyledLogo = styled.Image`
-  width: 40px;
-  height: 27px;
-  align-self: flex-end;
-  margin-right: 35px;
-`;
-
 export const StyledCard = styled.View`
   width: 100%;
-  flex-grow: 0.9;
+  flex-grow: 0.95;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 20px 30px 30px 30px;
   border-top-right-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   border-top-left-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   background-color: ${({ theme }) => theme.colors.white};

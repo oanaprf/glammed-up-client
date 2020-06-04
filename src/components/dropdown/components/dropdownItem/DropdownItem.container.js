@@ -5,7 +5,7 @@ import BaseDropdownItem from './DropdownItem';
 
 const DropdownItem = withHandlers({
   onPress: ({ option, setValue, setOpened }) => () => {
-    setValue(option);
+    setValue(option.key);
     setOpened(false);
     LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
   },

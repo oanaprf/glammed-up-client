@@ -6,16 +6,10 @@ import { Spacer } from '@@components';
 import { t } from '@@config';
 
 import * as S from './styled';
-import { LoginButton, SocialLoginButton } from './components';
+import { LoginButton } from './components';
 import { Email, Password } from '../common';
 
-const Login = ({
-  formValues,
-  onChange,
-  onLogin,
-  onFacebookLogin,
-  onGoogleLogin,
-}) => (
+const Login = ({ formValues, onChange, onLogin }) => (
   <>
     <Spacer height={30} />
     <Email value={formValues.email} onChange={onChange} />
@@ -27,7 +21,7 @@ const Login = ({
     <TouchableOpacity activeOpacity={0.6}>
       <S.CenteredText size="XS">{t('login.forgotPassword')}</S.CenteredText>
     </TouchableOpacity>
-    <S.SmallSpacer />
+    {/* <S.SmallSpacer />
     <S.HorizontalBarWrapper>
       <S.HorizontalBar />
       <S.PaddedText>{t('login.or')}</S.PaddedText>
@@ -38,7 +32,7 @@ const Login = ({
     <S.SocialIconsWrapper>
       <SocialLoginButton onPress={onFacebookLogin} type="facebook" />
       <SocialLoginButton onPress={onGoogleLogin} type="google" />
-    </S.SocialIconsWrapper>
+    </S.SocialIconsWrapper> */}
   </>
 );
 
