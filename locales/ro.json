@@ -30,12 +30,15 @@
   "appointments": {
     "pageName": "Programări",
     "bookAppointment": "Rezervă un loc",
+    "addManualAppointment": "Adaugă rezervare",
     "chooseHour": "Ora",
     "list": "Listă",
     "calendar": "Calendar",
     "fields": {
-      "date": "Alege data",
-      "time": "Alege ora"
+      "date": "Data",
+      "time": "Ora",
+      "client": "Client",
+      "service": "Serviciu"
     }
   },
   "profile": {
