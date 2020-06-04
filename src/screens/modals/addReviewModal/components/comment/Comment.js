@@ -3,16 +3,16 @@ import { Platform } from 'react-native';
 
 import { TextInput } from '@@components';
 
-const Address = props => (
+const Comment = props => (
   <TextInput
     {...{
       dark: true,
       multiline: true,
-      ...(Platform.OS === 'ios' ? { minHeight: 20 * 2 } : { numberOfLines: 2 }),
-      name: 'address',
+      ...(Platform.OS === 'ios' ? { minHeight: 20 * 3 } : { numberOfLines: 3 }),
+      name: 'comment',
       ...props,
     }}
   />
 );
 
-export default Address;
+export default Comment;

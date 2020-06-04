@@ -16,4 +16,5 @@ export const MODALS = {
   ADD_SERVICE: 'addServiceModal',
   EDIT_USER: 'editUserModal',
   BECOME_PROVIDER: 'becomeProviderModal',
+  ADD_REVIEW: 'addReviewModal',
 };

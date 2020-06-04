@@ -7,7 +7,7 @@ import { theme, t } from '@@config';
 import { withOpenModal } from '@@hocs';
 import * as C from '@@utils/constants';
 
-import { ServiceInfo } from './components';
+import { ServiceDetails } from './components';
 import * as S from './styled';
 
 const servicePicture = require('@@assets/images/nails.jpg');
@@ -31,7 +31,7 @@ const ServiceDetailsModal = ({ openModal }) => (
         }}
       />
       <S.ServiceDetailsContainer>
-        <ServiceInfo />
+        <ServiceDetails />
         <Button
           rounded
           onPress={() => openModal({ name: C.MODALS.BOOK_APPOINTMENT })}

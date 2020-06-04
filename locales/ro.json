@@ -58,6 +58,13 @@
     },
     "noImageSelected": "Nicio poză selectată"
   },
+  "review": {
+    "addReview": "Adaugă o recenzie",
+    "fields": {
+      "rating": "Rating",
+      "comment": "Comentariu"
+    }
+  },
   "search": {
     "pageName": "Caută servicii",
     "search": "Caută...",

@@ -74,6 +74,13 @@
       "OTHER": "Other"
     }
   },
+  "review": {
+    "addReview": "Add review",
+    "fields": {
+      "rating": "Rating",
+      "comment": "Comment"
+    }
+  },
   "settings": {
     "pageName": "Settings",
     "becomeProvider": "Activate beautician profile",
