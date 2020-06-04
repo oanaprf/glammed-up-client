@@ -15,4 +15,5 @@ export const MODALS = {
   BOOK_APPOINTMENT: 'bookAppointmentModal',
   ADD_SERVICE: 'addServiceModal',
   EDIT_USER: 'editUserModal',
+  BECOME_PROVIDER: 'becomeProviderModal',
 };

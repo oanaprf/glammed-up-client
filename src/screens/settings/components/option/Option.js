@@ -5,8 +5,8 @@ import { t, theme } from '@@config';
 
 import * as S from './styled';
 
-const Option = ({ icon, label }) => (
-  <S.Option activeOpacity={0.6}>
+const Option = ({ icon, label, onPress }) => (
+  <S.Option activeOpacity={0.6} onPress={onPress}>
     <S.StyledIcon
       {...{
         name: icon,
@@ -22,6 +22,7 @@ const Option = ({ icon, label }) => (
 Option.propTypes = {
   icon: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  onPress: PropTypes.func,
 };
 
 export default Option;

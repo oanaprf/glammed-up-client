@@ -76,14 +76,23 @@
   },
   "settings": {
     "pageName": "Setări",
-    "becomeProvider": "Activează profilul de cosmetician",
+    "becomeProvider": "Activează profilul cosmetician",
     "changeLanguage": "Schimbă limba aplicației",
     "changeTheme": "Schimbă tema aplicației",
     "changePassword": "Schimbă parola",
     "help": "Ajutor",
-    "logout": "Deconectare"
+    "logout": "Deconectare",
+    "becomeProviderText": "   Activând această opțiune vei debloca toate funcționalitățile asociate unui profil de cosmetician, dar în același timp te vei putea bucura și de profilul client pe care l-ai avut până acum.",
+    "newFunctionalitiesInclude": "   Noile funcționalități includ:",
+    "addingServices": "adăugarea serviciilor",
+    "addingManualAppointment": "adăugarea manuală a rezervărilor",
+    "receivingAppointments": "primirea de rezervări pentru propriile servicii",
+    "receivingReviews": "primirea recenziilor pentru propriile servicii",
+    "wishToContinue": "Dorești să continui?"
   },
   "common": {
-    "save": "Salvează"
+    "save": "Salvează",
+    "yes": "Da",
+    "no": "Nu"
   }
 }

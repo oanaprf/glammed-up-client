@@ -76,14 +76,23 @@
   },
   "settings": {
     "pageName": "Settings",
-    "becomeProvider": "Activate your beautician profile",
+    "becomeProvider": "Activate beautician profile",
     "changeLanguage": "Change app language",
     "changeTheme": "Change app theme",
     "changePassword": "Change password",
     "help": "Help",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "becomeProviderText": "   By activating this option you will unlock all the new functionalities that come with a beautician profile, while still being able to enjoy your client profile.",
+    "newFunctionalitiesInclude": "   New functionalities include:",
+    "addingServices": "adding services",
+    "addingManualAppointment": "adding manual appointments",
+    "receivingAppointments": " receiving appointments for you own services",
+    "receivingReviews": "getting your services reviewed",
+    "wishToContinue": "Do you wish to continue?"
   },
   "common": {
-    "save": "Salvează"
+    "save": "Salvează",
+    "yes": "Yes",
+    "no": "No"
   }
 }

@@ -25,4 +25,5 @@ export const Body = styled.View`
   border-top-left-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   background-color: ${({ theme }) => theme.colors.white};
   justify-content: center;
+  align-items: center;
 `;
