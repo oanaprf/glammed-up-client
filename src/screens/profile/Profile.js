@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Spacer, Text } from '@@components';
 import { t } from '@@config';
-import { ServiceDetailsModal } from '@@screens/modals';
+import { ServiceDetailsModal, AddServiceModal } from '@@screens/modals';
 
 import { AvatarBar, UserInfoCard, Reviews, UserServices } from './components';
 import * as S from './styled';
@@ -31,6 +31,7 @@ const Profile = () => (
       />
     </S.Body>
     <ServiceDetailsModal />
+    <AddServiceModal />
   </S.Container>
 );
 

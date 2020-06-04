@@ -11,5 +11,7 @@ export const CATEGORIES = {
 };
 
 export const MODALS = {
-  SERVICE_DETAILS: 'serviceDetails',
+  SERVICE_DETAILS: 'serviceDetailsModal',
+  BOOK_APPOINTMENT: 'bookAppointmentModal',
+  ADD_SERVICE: 'addServiceModal',
 };

@@ -18,7 +18,7 @@ const Auth = () => (
             name: 'spa-outline',
             type: 'material-community',
             color: 'white',
-            size: 50,
+            size: 40,
           }}
         />
         <S.TitleText size="XXXL" family="REGULAR">

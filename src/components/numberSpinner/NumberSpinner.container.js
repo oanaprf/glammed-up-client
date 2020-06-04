@@ -10,10 +10,10 @@ const NumberSpinner = withStateHandlers(
     onChangeText: () => value => ({
       value,
     }),
-    onIncrement: ({ value, step = 1, max = 999 }) => () => ({
+    onIncrement: ({ value }, { step = 1, max = 999 }) => () => ({
       value: +value + step <= max ? +value + step : value,
     }),
-    onDecrement: ({ value, step = 1 }) => () => ({
+    onDecrement: ({ value }, { step = 1 }) => () => ({
       value: +value - step >= 0 ? +value - step : value,
     }),
   }

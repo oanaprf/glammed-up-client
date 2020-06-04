@@ -1,2 +1,3 @@
 export { default as ServiceDetailsModal } from './serviceDetailsModal';
-export { default as CreateAppointmentModal } from './createAppointmentModal';
+export { default as BookAppointmentModal } from './bookAppointmentModal';
+export { default as AddServiceModal } from './addServiceModal';

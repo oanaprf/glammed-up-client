@@ -9,7 +9,7 @@ import { Email, Password } from '../common';
 
 const SignUp = ({ formValues, onChange, onPress }) => (
   <>
-    <Spacer height={30} />
+    <Spacer height={10} />
     <FirstName value={formValues.firstName} onChange={onChange} />
     <S.SmallSpacer />
     <LastName value={formValues.lastName} onChange={onChange} />

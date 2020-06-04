@@ -2,14 +2,14 @@ import React from 'react';
 
 import { TextInput } from '@@components';
 
-const FirstName = props => (
+const Name = props => (
   <TextInput
     {...{
       dark: true,
-      name: 'firstName',
+      name: 'name',
       ...props,
     }}
   />
 );
 
-export default FirstName;
+export default Name;
