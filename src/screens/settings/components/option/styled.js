@@ -5,7 +5,7 @@ import { ButtonText } from '@@components';
 export const Option = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
-  padding: 20px 0 20px 20px;
+  padding: 20px 0;
 `;
 
 export const StyledIcon = styled(Icon)`
