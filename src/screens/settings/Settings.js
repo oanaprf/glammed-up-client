@@ -15,10 +15,11 @@ const Settings = ({ navigation }) => (
       </S.Title>
     </S.Header>
     <S.Body>
+      <Option icon="award" label="becomeProvider" />
       <Option icon="globe" label="changeLanguage" />
       <Option icon="edit-2" label="changeTheme" />
       <Option icon="lock" label="changePassword" />
-      <Option icon="info" label="about" />
+      <Option icon="help-circle" label="help" />
       <Option icon="power" label="logout" />
     </S.Body>
   </S.Container>

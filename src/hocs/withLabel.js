@@ -6,7 +6,12 @@ import * as S from './styled';
 
 export default label => Component => props => (
   <View>
-    <S.StyledLabel family="BOLD" size="XS" uppercase>
+    <S.StyledLabel
+      family="BOLD"
+      size="XS"
+      uppercase
+      noLabelPadding={props.noLabelPadding}
+    >
       {t(label)}
     </S.StyledLabel>
     <Component {...props} />

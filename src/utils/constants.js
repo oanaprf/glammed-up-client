@@ -14,4 +14,5 @@ export const MODALS = {
   SERVICE_DETAILS: 'serviceDetailsModal',
   BOOK_APPOINTMENT: 'bookAppointmentModal',
   ADD_SERVICE: 'addServiceModal',
+  EDIT_USER: 'editUserModal',
 };

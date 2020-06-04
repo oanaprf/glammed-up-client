@@ -18,7 +18,7 @@ const AddServiceModal = () => (
   <Modal
     name={C.MODALS.ADD_SERVICE}
     style={{ width: '90%', height: 500 }}
-    title={t('profile.addService')}
+    title={t('service.addService')}
   >
     <S.ModalContainer>
       <S.FlexContainer>

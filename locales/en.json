@@ -38,9 +38,17 @@
     "pageName": "Profile",
     "reviews": "Reviews",
     "services": "Services",
-    "addService": "Add service"
+    "editProfile": "Edit profile",
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phoneNumber": "phoneNumber",
+      "address": "address"
+    }
   },
   "service": {
+    "addService": "Add service",
     "fields": {
       "name": "Name",
       "category": "Category",
@@ -68,10 +76,11 @@
   },
   "settings": {
     "pageName": "Settings",
+    "becomeProvider": "Activate your beautician profile",
     "changeLanguage": "Change app language",
     "changeTheme": "Change app theme",
     "changePassword": "Change password",
-    "about": "About",
+    "help": "Help",
     "logout": "Log Out"
   },
   "common": {

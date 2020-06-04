@@ -38,9 +38,17 @@
     "pageName": "Profil",
     "reviews": "Recenzii",
     "services": "Servicii",
-    "addService": "Adaugă un serviciu"
+    "editProfile": "Editează profilul",
+    "fields": {
+      "firstName": "Prenume",
+      "lastName": "Nume",
+      "email": "Email",
+      "phoneNumber": "Număr de telefon",
+      "address": "Adresă"
+    }
   },
   "service": {
+    "addService": "Adaugă un serviciu",
     "fields": {
       "name": "Nume",
       "category": "Categorie",
@@ -68,10 +76,11 @@
   },
   "settings": {
     "pageName": "Setări",
+    "becomeProvider": "Activează profilul de cosmetician",
     "changeLanguage": "Schimbă limba aplicației",
     "changeTheme": "Schimbă tema aplicației",
     "changePassword": "Schimbă parola",
-    "about": "Despre aplicație",
+    "help": "Ajutor",
     "logout": "Deconectare"
   },
   "common": {
