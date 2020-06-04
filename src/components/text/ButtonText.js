@@ -10,6 +10,7 @@ const ButtonText = ({
   size = 'S',
   family = 'BOLD',
   uppercase = true,
+  style,
   ...rest
 }) => (
   <Text
@@ -17,7 +18,7 @@ const ButtonText = ({
       size,
       family,
       uppercase,
-      style: { color: theme.colors.white },
+      style: [{ color: theme.colors.white }, style],
       ...rest,
     }}
   >
@@ -30,6 +31,7 @@ ButtonText.propTypes = {
   size: PropTypes.string,
   family: PropTypes.string,
   uppercase: PropTypes.bool,
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 export default ButtonText;
