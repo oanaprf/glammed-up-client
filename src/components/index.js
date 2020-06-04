@@ -12,3 +12,4 @@ export { default as Tabs } from './tabs';
 export { default as Modal } from './modal';
 export { default as NoResults } from './noResults';
 export { default as Calendar } from './calendar';
+export { default as ImagePicker } from './imagePicker';

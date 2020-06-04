@@ -47,7 +47,8 @@
       "price": "Preț",
       "duration": "Durată",
       "pictures": "Poze"
-    }
+    },
+    "noImageSelected": "Nicio poză selectată"
   },
   "search": {
     "pageName": "Caută servicii",

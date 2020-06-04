@@ -9,10 +9,12 @@ export const NumberSpinner = styled.View`
   align-items: center;
   border-radius: ${({ rounded, theme }) =>
     rounded ? theme.borderRadius.XXXL : theme.borderRadius.XL}px;
-  ${Platform.select({
-    ios: 'box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);',
-    android: 'elevation: 1;',
-  })}
+  ${({ dark }) =>
+    !dark &&
+    Platform.select({
+      ios: 'box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);',
+      android: 'elevation: 3;',
+    })}
 `;
 
 export const StyledNumericInput = styled(NumericInput)`

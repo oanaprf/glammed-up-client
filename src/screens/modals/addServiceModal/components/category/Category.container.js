@@ -15,7 +15,7 @@ const Category = compose(
   withProps({
     options,
   }),
-  withLabel(t('service.fields.category'))
+  withLabel('service.fields.category')
 )(BaseCategory);
 
 export default Category;

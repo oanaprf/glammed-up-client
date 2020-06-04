@@ -47,7 +47,8 @@
       "price": "Price",
       "duration": "Duration",
       "pictures": "Pictures"
-    }
+    },
+    "noImageSelected": "No pictures selected"
   },
   "search": {
     "pageName": "Search services",
