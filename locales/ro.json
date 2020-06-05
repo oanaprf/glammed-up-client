@@ -104,7 +104,8 @@
     "receivingReviews": "primirea recenziilor pentru propriile servicii",
     "wishToContinue": "Dorești să continui?",
     "editCredentials": "Editează credențialele",
-    "changeLanguageIntro": "   Personalizează aplicația alegând limba pe care o preferi:",
+    "changeLanguageIntro": "   Alege una din următoarele limbi:",
+    "changeThemeIntro": "   Alege una din următoarele teme:",
     "ro": "română",
     "en": "engleză"
   },

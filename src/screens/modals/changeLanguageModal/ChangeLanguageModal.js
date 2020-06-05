@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
 
-import { t, theme } from '@@config';
+import { t } from '@@config';
 import * as C from '@@utils/constants';
 import { Modal, Spacer } from '@@components';
 
@@ -22,7 +22,6 @@ const ChangeLanguageModal = () => (
           {...{
             name: 'radio-button-checked',
             size: 20,
-            color: theme.colors.theme_black_pink.secondary,
           }}
         />
         <S.PaddedText family="BOLD" uppercase>
@@ -34,7 +33,6 @@ const ChangeLanguageModal = () => (
           {...{
             name: 'radio-button-unchecked',
             size: 20,
-            color: theme.colors.theme_black_pink.secondary,
           }}
         />
         <S.PaddedText family="BOLD" uppercase>

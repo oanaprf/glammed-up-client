@@ -9,6 +9,7 @@ import {
   BecomeProviderModal,
   EditCredentialsModal,
   ChangeLanguageModal,
+  ChangeThemeModal,
 } from '@@screens/modals';
 import { Spacer } from '@@components';
 
@@ -42,7 +43,11 @@ const Settings = ({ navigation, openModal }) => (
           onPress={() => openModal({ name: C.MODALS.CHANGE_LANGUAGE_MODAL })}
         />
         <Spacer height={30} />
-        <Option icon="edit-2" label="changeTheme" />
+        <Option
+          icon="edit-2"
+          label="changeTheme"
+          onPress={() => openModal({ name: C.MODALS.CHANGE_THEME_MODAL })}
+        />
         <Spacer height={30} />
         <Option icon="help-circle" label="help" />
         <Spacer height={30} />
@@ -52,6 +57,7 @@ const Settings = ({ navigation, openModal }) => (
     <BecomeProviderModal />
     <EditCredentialsModal />
     <ChangeLanguageModal />
+    <ChangeThemeModal />
   </S.Container>
 );
 
