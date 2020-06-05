@@ -91,8 +91,8 @@
   "settings": {
     "pageName": "Setări",
     "becomeProvider": "Activează profilul cosmetician",
-    "changeLanguage": "Schimbă limba aplicației",
-    "changeTheme": "Schimbă tema aplicației",
+    "changeLanguage": "Schimbă limba",
+    "changeTheme": "Schimbă tema",
     "changePassword": "Schimbă parola",
     "help": "Ajutor",
     "logout": "Deconectare",
@@ -103,7 +103,10 @@
     "receivingAppointments": "primirea de rezervări pentru propriile servicii",
     "receivingReviews": "primirea recenziilor pentru propriile servicii",
     "wishToContinue": "Dorești să continui?",
-    "editCredentials": "Editează credențialele"
+    "editCredentials": "Editează credențialele",
+    "changeLanguageIntro": "   Personalizează aplicația alegând limba pe care o preferi:",
+    "ro": "română",
+    "en": "engleză"
   },
   "common": {
     "save": "Salvează",

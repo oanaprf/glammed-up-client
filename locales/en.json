@@ -91,8 +91,8 @@
   "settings": {
     "pageName": "Settings",
     "becomeProvider": "Activate beautician profile",
-    "changeLanguage": "Change app language",
-    "changeTheme": "Change app theme",
+    "changeLanguage": "Change language",
+    "changeTheme": "Change theme",
     "changePassword": "Change password",
     "help": "Help",
     "logout": "Log Out",
@@ -103,7 +103,10 @@
     "receivingAppointments": " receiving appointments for you own services",
     "receivingReviews": "getting your services reviewed",
     "wishToContinue": "Do you wish to continue?",
-    "editCredentials": "Edit credentials"
+    "editCredentials": "Edit credentials",
+    "changeLanguageIntro": "   Personalize the app by choosing the language your prefer:",
+    "ro": "romanian",
+    "en": "english"
   },
   "common": {
     "save": "Save",

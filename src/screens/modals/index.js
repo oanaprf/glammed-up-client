@@ -6,3 +6,4 @@ export { default as BecomeProviderModal } from './becomeProviderModal';
 export { default as AddReviewModal } from './addReviewModal';
 export { default as AddManualAppointment } from './addManualAppointment';
 export { default as EditCredentialsModal } from './editCredentialsModal';
+export { default as ChangeLanguageModal } from './changeLanguageModal';
