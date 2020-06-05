@@ -5,7 +5,11 @@ import { View } from 'react-native';
 import { t } from '@@config';
 import { withOpenModal } from '@@hocs';
 import * as C from '@@utils/constants';
-import { BecomeProviderModal, EditCredentialsModal } from '@@screens/modals';
+import {
+  BecomeProviderModal,
+  EditCredentialsModal,
+  ChangeLanguageModal,
+} from '@@screens/modals';
 import { Spacer } from '@@components';
 
 import { Option, GoBackButton, Credentials } from './components';
@@ -32,7 +36,11 @@ const Settings = ({ navigation, openModal }) => (
           onPress={() => openModal({ name: C.MODALS.BECOME_PROVIDER })}
         />
         <Spacer height={30} />
-        <Option icon="globe" label="changeLanguage" />
+        <Option
+          icon="globe"
+          label="changeLanguage"
+          onPress={() => openModal({ name: C.MODALS.CHANGE_LANGUAGE_MODAL })}
+        />
         <Spacer height={30} />
         <Option icon="edit-2" label="changeTheme" />
         <Spacer height={30} />
@@ -43,6 +51,7 @@ const Settings = ({ navigation, openModal }) => (
     </S.Body>
     <BecomeProviderModal />
     <EditCredentialsModal />
+    <ChangeLanguageModal />
   </S.Container>
 );
 
