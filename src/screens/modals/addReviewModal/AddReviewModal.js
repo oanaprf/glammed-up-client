@@ -11,19 +11,18 @@ import * as S from './styled';
 const AddReviewModal = () => (
   <Modal
     name={C.MODALS.ADD_REVIEW}
-    style={{ width: '90%', height: 450 }}
+    style={{ width: '90%' }}
     title={t('review.addReview')}
   >
     <S.ModalContainer>
-      <S.FlexContainer>
-        <S.PaddedContainer>
-          <ServiceInfo />
-        </S.PaddedContainer>
-        <Spacer height={30} />
-        <Rating />
-        <Spacer height={10} />
-        <Comment />
-      </S.FlexContainer>
+      <S.PaddedContainer>
+        <ServiceInfo />
+      </S.PaddedContainer>
+      <Spacer height={30} />
+      <Rating />
+      <Spacer height={10} />
+      <Comment />
+      <Spacer height={10} />
       <SaveButton />
     </S.ModalContainer>
   </Modal>

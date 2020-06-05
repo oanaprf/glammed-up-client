@@ -17,22 +17,21 @@ import * as S from './styled';
 const AddServiceModal = () => (
   <Modal
     name={C.MODALS.ADD_SERVICE}
-    style={{ width: '90%', height: 500 }}
+    style={{ width: '90%' }}
     title={t('service.addService')}
   >
     <S.ModalContainer>
-      <S.FlexContainer>
-        <Name />
-        <Spacer height={10} />
-        <Category />
-        <Spacer height={10} />
-        <S.RowContainer>
-          <Price />
-          <Duration />
-        </S.RowContainer>
-        <Spacer height={10} />
-        <ServiceImagePicker />
-      </S.FlexContainer>
+      <Name />
+      <Spacer height={10} />
+      <Category />
+      <Spacer height={10} />
+      <S.RowContainer>
+        <Price />
+        <Duration />
+      </S.RowContainer>
+      <Spacer height={10} />
+      <ServiceImagePicker />
+      <Spacer height={10} />
       <SaveButton />
     </S.ModalContainer>
   </Modal>

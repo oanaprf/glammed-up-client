@@ -10,24 +10,13 @@ const UserInfoCard = () => (
     <S.StyledRow>
       <Icon
         {...{
-          name: 'mail',
-          type: 'feather',
-          size: 22,
-          color: theme.colors.white,
-        }}
-      />
-      <S.StyledText family="REGULAR">oanaprofir12@gmail.com</S.StyledText>
-    </S.StyledRow>
-    <S.StyledRow>
-      <Icon
-        {...{
           name: 'phone',
           type: 'feather',
           size: 22,
-          color: theme.colors.white,
+          color: theme.colors.theme_black_pink.secondary,
         }}
       />
-      <S.StyledText family="REGULAR">0769117933</S.StyledText>
+      <S.StyledText size="M">0769117933</S.StyledText>
     </S.StyledRow>
     <S.StyledRow>
       <Icon
@@ -35,7 +24,7 @@ const UserInfoCard = () => (
           name: 'map-pin',
           type: 'feather',
           size: 22,
-          color: theme.colors.white,
+          color: theme.colors.theme_black_pink.secondary,
         }}
       />
       <S.StyledText family="REGULAR">

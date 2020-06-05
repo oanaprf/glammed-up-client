@@ -102,11 +102,13 @@
     "addingManualAppointment": "adăugarea manuală a rezervărilor",
     "receivingAppointments": "primirea de rezervări pentru propriile servicii",
     "receivingReviews": "primirea recenziilor pentru propriile servicii",
-    "wishToContinue": "Dorești să continui?"
+    "wishToContinue": "Dorești să continui?",
+    "editCredentials": "Editează credențialele"
   },
   "common": {
     "save": "Salvează",
     "yes": "Da",
-    "no": "Nu"
+    "no": "Nu",
+    "edit": "Editează"
   }
 }

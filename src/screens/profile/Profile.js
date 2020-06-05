@@ -20,9 +20,9 @@ const Profile = () => (
       <AvatarBar />
       <S.EmptyView />
       <Text size="XL">Oana Profir</Text>
-      <Spacer />
+      <Spacer height={10} />
       <UserInfoCard />
-      <Spacer />
+      <Spacer height={10} />
       <S.StyledTabs
         tabLabels={[
           <Text family="BOLD" uppercase>

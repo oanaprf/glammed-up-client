@@ -50,8 +50,8 @@
       "firstName": "First name",
       "lastName": "Last name",
       "email": "Email",
-      "phoneNumber": "phoneNumber",
-      "address": "address"
+      "phoneNumber": "Phone number",
+      "address": "Address"
     }
   },
   "service": {
@@ -102,11 +102,13 @@
     "addingManualAppointment": "adding manual appointments",
     "receivingAppointments": " receiving appointments for you own services",
     "receivingReviews": "getting your services reviewed",
-    "wishToContinue": "Do you wish to continue?"
+    "wishToContinue": "Do you wish to continue?",
+    "editCredentials": "Edit credentials"
   },
   "common": {
-    "save": "Salvează",
+    "save": "Save",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "edit": "Edit"
   }
 }
