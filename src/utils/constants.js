@@ -20,4 +20,5 @@ export const MODALS = {
   ADD_MANUAL_APPOINTMENT: 'addManualAppointment',
   EDIT_CREDENTIALS_MODAL: 'editCredentialsModal',
   CHANGE_LANGUAGE_MODAL: 'changeLanguageModal',
+  CHANGE_THEME_MODAL: 'changeThemeModal',
 };

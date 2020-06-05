@@ -104,7 +104,8 @@
     "receivingReviews": "getting your services reviewed",
     "wishToContinue": "Do you wish to continue?",
     "editCredentials": "Edit credentials",
-    "changeLanguageIntro": "   Personalize the app by choosing the language your prefer:",
+    "changeLanguageIntro": "   Choose one of the following languages:",
+    "changeThemeIntro": "   Choose one of the following themes:",
     "ro": "romanian",
     "en": "english"
   },
