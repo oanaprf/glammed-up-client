@@ -14,7 +14,7 @@ export const RowContainer = styled.View`
 `;
 
 export const StyledMediumImage = styled.Image`
-  width: 75px;
-  height: 75px;
+  width: 150px;
+  height: 150px;
   border-radius: ${({ theme }) => theme.borderRadius.L}px;
 `;

@@ -77,7 +77,7 @@ const BecomeProviderModal = () => (
           <Text>{t('settings.receivingReviews')}</Text>
         </S.RowContainer>
       </View>
-      <Spacer height={20} />
+      <Spacer height={10} />
       <S.ButtonsContainer>
         <S.YesButton rounded>
           <ButtonText>{t('common.yes')}</ButtonText>

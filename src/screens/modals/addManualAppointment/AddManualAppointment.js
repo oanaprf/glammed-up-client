@@ -1,11 +1,10 @@
 import React from 'react';
-import { Icon } from 'react-native-elements';
 
-import { t, theme } from '@@config';
+import { t } from '@@config';
 import * as C from '@@utils/constants';
-import { Modal, Button, Spacer } from '@@components';
+import { Modal, Spacer } from '@@components';
 
-import { Date, Time, Client, Service } from './components';
+import { Date, Time, Client, Service, SaveButton } from './components';
 import * as S from './styled';
 
 const AddManualAppointment = () => (
@@ -27,17 +26,8 @@ const AddManualAppointment = () => (
       </S.RowContainer>
       <Spacer height={5} />
       <Service />
-      <Spacer height={15} />
-      <Button rounded>
-        <Icon
-          {...{
-            name: 'check',
-            type: 'feather',
-            size: 25,
-            color: theme.colors.white,
-          }}
-        />
-      </Button>
+      <Spacer height={10} />
+      <SaveButton />
     </S.ModalContainer>
   </Modal>
 );

@@ -4,25 +4,23 @@ import { t } from '@@config';
 import * as C from '@@utils/constants';
 import { Modal, Spacer } from '@@components';
 
-import { ServiceDetails, Date, Time, SaveButton } from './components';
+import { Email, Password, SaveButton } from './components';
 import * as S from './styled';
 
-const BookAppointmentModal = () => (
+const EditCredentialsModal = () => (
   <Modal
-    name={C.MODALS.BOOK_APPOINTMENT}
+    name={C.MODALS.EDIT_CREDENTIALS_MODAL}
     style={{ width: '90%' }}
-    title={t('appointments.bookAppointment')}
+    title={t('settings.editCredentials')}
   >
     <S.ModalContainer>
-      <ServiceDetails />
-      <Spacer />
-      <Date />
-      <Spacer height={5} />
-      <Time />
+      <Email />
+      <Spacer height={10} />
+      <Password />
       <Spacer height={10} />
       <SaveButton />
     </S.ModalContainer>
   </Modal>
 );
 
-export default BookAppointmentModal;
+export default EditCredentialsModal;
