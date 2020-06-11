@@ -1,6 +1,5 @@
 import React from 'react';
-import { Modal as BaseModal } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Modal as BaseModal, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { theme } from '@@config';

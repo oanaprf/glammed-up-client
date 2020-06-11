@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Platform, UIManager, ScrollView } from 'react-native';
+import {
+  View,
+  Platform,
+  UIManager,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 import { DropdownItem, DropdownInput } from './components';
@@ -24,19 +30,21 @@ const Dropdown = ({
   rounded,
   ...rest
 }) => (
-  <View style={{ position: 'relative', zIndex: 99 }} {...rest}>
+  <View style={{ position: 'relative' }} {...rest}>
     <S.StyledList {...{ dark, rounded, opened, maxHeight }}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        {options.map(option => (
-          <DropdownItem
-            key={option.key}
-            {...{
-              option,
-              setValue,
-              setOpened,
-            }}
-          />
-        ))}
+        <TouchableOpacity activeOpacity={1}>
+          {options.map(option => (
+            <DropdownItem
+              key={option.key}
+              {...{
+                option,
+                setValue,
+                setOpened,
+              }}
+            />
+          ))}
+        </TouchableOpacity>
       </ScrollView>
     </S.StyledList>
     <DropdownInput

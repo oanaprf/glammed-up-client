@@ -8,6 +8,7 @@ import { TextInput } from '../../../textInput';
 
 const DropdownInput = ({ onPress, ...rest }) => (
   <TextInput
+    style={{ position: 'relative', zIndex: 2 }}
     {...{ editable: false, ...rest }}
     Icon={
       <TouchableOpacity

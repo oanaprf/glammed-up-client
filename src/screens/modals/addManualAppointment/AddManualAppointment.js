@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 
 import { t } from '@@config';
 import * as C from '@@utils/constants';
@@ -14,6 +15,8 @@ const AddManualAppointment = () => (
     title={t('appointments.addManualAppointment')}
   >
     <S.ModalContainer>
+      <Service />
+      <Spacer height={10} />
       <Date />
       <Spacer height={5} />
       <S.RowContainer>
@@ -25,9 +28,9 @@ const AddManualAppointment = () => (
         </S.FlexContainer>
       </S.RowContainer>
       <Spacer height={5} />
-      <Service />
-      <Spacer height={10} />
-      <SaveButton />
+      <View style={{ zIndex: -1 }}>
+        <SaveButton />
+      </View>
     </S.ModalContainer>
   </Modal>
 );

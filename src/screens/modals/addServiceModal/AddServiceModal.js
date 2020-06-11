@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 
 import { t } from '@@config';
 import * as C from '@@utils/constants';
@@ -30,7 +31,9 @@ const AddServiceModal = () => (
         <Duration />
       </S.RowContainer>
       <Spacer height={10} />
-      <ServiceImagePicker />
+      <View style={{ zIndex: -1 }}>
+        <ServiceImagePicker />
+      </View>
       <Spacer height={10} />
       <SaveButton />
     </S.ModalContainer>

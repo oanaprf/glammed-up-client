@@ -8,6 +8,7 @@ export const RowContainer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  z-index: -1;
 `;
 
 export const FlexContainer = styled.View`

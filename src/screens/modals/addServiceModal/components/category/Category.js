@@ -7,6 +7,7 @@ const Category = props => (
     {...{
       dark: true,
       name: 'category',
+      maxHeight: 250,
       ...props,
     }}
   />

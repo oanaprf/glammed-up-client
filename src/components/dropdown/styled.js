@@ -1,9 +1,8 @@
 import styled from 'styled-components/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import { Text } from '../text';
 
-export const StyledTouchableOpacity = styled(TouchableOpacity)`
+export const StyledTouchableOpacity = styled.TouchableOpacity`
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 15px;
@@ -16,6 +15,7 @@ export const StyledText = styled(Text)`
 
 export const StyledList = styled.View`
   position: absolute;
+  z-index: 1;
   align-items: stretch;
   padding-top: 60px;
   padding-left: 20px;
