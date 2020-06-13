@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import { t } from '@@config';
-import { withOpenModal } from '@@hocs';
 import * as C from '@@utils/constants';
 import {
   BecomeProviderModal,
@@ -16,7 +15,7 @@ import { Spacer } from '@@components';
 import { Option, GoBackButton, Credentials } from './components';
 import * as S from './styled';
 
-const Settings = ({ navigation, openModal }) => (
+const Settings = ({ navigation, openModal, onLogout }) => (
   <S.Container>
     <S.Header>
       <GoBackButton navigation={navigation} />
@@ -51,7 +50,7 @@ const Settings = ({ navigation, openModal }) => (
         <Spacer height={30} />
         <Option icon="help-circle" label="help" />
         <Spacer height={30} />
-        <Option icon="power" label="logout" />
+        <Option icon="power" label="logout" onPress={onLogout} />
       </View>
     </S.Body>
     <BecomeProviderModal />
@@ -64,6 +63,7 @@ const Settings = ({ navigation, openModal }) => (
 Settings.propTypes = {
   navigation: PropTypes.object.isRequired,
   openModal: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
 };
 
-export default withOpenModal(Settings);
+export default Settings;
