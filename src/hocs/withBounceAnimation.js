@@ -15,24 +15,28 @@ export default ({ outputRange, duration }) =>
       }),
     })),
     withHandlers({
-      onPressIn: ({ animatedValue, onPressIn }) => ev => {
-        onPressIn && onPressIn(ev);
-        animatedValue.setValue(0);
-        Animated.timing(animatedValue, {
-          toValue: 1,
-          duration,
-          easing: Easing.linear,
-          useNativeDriver: true,
-        }).start();
+      onPressIn: ({ animatedValue, onPressIn, disabled }) => ev => {
+        if (!disabled) {
+          onPressIn && onPressIn(ev);
+          animatedValue.setValue(0);
+          Animated.timing(animatedValue, {
+            toValue: 1,
+            duration,
+            easing: Easing.linear,
+            useNativeDriver: true,
+          }).start();
+        }
       },
-      onPressOut: ({ animatedValue, onPressOut }) => ev => {
-        onPressOut && onPressOut(ev);
-        Animated.timing(animatedValue, {
-          toValue: 0,
-          duration,
-          easing: Easing.linear,
-          useNativeDriver: true,
-        }).start();
+      onPressOut: ({ animatedValue, onPressOut, disabled }) => ev => {
+        if (!disabled) {
+          onPressOut && onPressOut(ev);
+          Animated.timing(animatedValue, {
+            toValue: 0,
+            duration,
+            easing: Easing.linear,
+            useNativeDriver: true,
+          }).start();
+        }
       },
     })
   );
