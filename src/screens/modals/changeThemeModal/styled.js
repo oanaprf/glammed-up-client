@@ -1,15 +1,18 @@
 import styled from 'styled-components/native';
-import { Text } from '@@components';
+import { Text, RadioGroup } from '@@components';
 
 export const ModalContainer = styled.View`
   padding: 10px;
 `;
 
+export const StyleRadioGroup = styled(RadioGroup)`
+  margin-left: 20px;
+`;
+
 export const RowContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-left: 10px;
-  padding: 5px;
+  padding: 7px;
 `;
 
 export const FlexContainer = styled.View`
@@ -27,6 +30,6 @@ export const JustifiedText = styled(Text)`
 export const ColorView = styled.View`
   border-radius: ${({ theme }) => theme.borderRadius.XL}px;
   background-color: ${({ color }) => color};
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
 `;

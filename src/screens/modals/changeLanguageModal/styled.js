@@ -1,14 +1,12 @@
 import styled from 'styled-components/native';
-import { Text } from '@@components';
+import { Text, RadioGroup } from '@@components';
 
 export const ModalContainer = styled.View`
   padding: 10px;
 `;
 
-export const RowContainer = styled.View`
-  flex-direction: row;
-  margin-left: 10px;
-  padding: 5px;
+export const StyleRadioGroup = styled(RadioGroup)`
+  margin-left: 20px;
 `;
 
 export const FlexContainer = styled.View`
@@ -16,7 +14,7 @@ export const FlexContainer = styled.View`
 `;
 
 export const PaddedText = styled(Text)`
-  padding-left: 10px;
+  padding: 7px 0px 7px 10px;
 `;
 
 export const JustifiedText = styled(Text)`
