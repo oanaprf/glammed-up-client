@@ -10,19 +10,14 @@ import * as C from '@@utils/constants';
 import { ServiceDetails } from './components';
 import * as S from './styled';
 
-const servicePicture = require('@@assets/images/nails.jpg');
-const defaultPicture = require('@@assets/images/nails.jpg');
-
-const pictures = [servicePicture, defaultPicture];
-
-const ServiceDetailsModal = ({ openModal }) => (
+const ServiceDetailsModal = ({ openModal, service }) => (
   <Modal
     name={C.MODALS.SERVICE_DETAILS}
     style={{ width: '90%', overflow: 'hidden' }}
   >
     <>
       <SliderBox
-        images={pictures}
+        images={service.pictures}
         sliderBoxHeight={300}
         ImageComponentStyle={{
           borderTopLeftRadius: theme.borderRadius.L,
@@ -31,7 +26,7 @@ const ServiceDetailsModal = ({ openModal }) => (
         }}
       />
       <S.ServiceDetailsContainer>
-        <ServiceDetails />
+        <ServiceDetails service={service} />
         <Button
           rounded
           onPress={() => openModal({ name: C.MODALS.BOOK_APPOINTMENT })}
@@ -45,6 +40,7 @@ const ServiceDetailsModal = ({ openModal }) => (
 
 ServiceDetailsModal.propTypes = {
   openModal: PropTypes.func.isRequired,
+  service: PropTypes.object.isRequired,
 };
 
 export default withOpenModal(ServiceDetailsModal);

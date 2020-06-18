@@ -1,42 +1,55 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Icon } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 import { theme } from '@@config';
 import { Text } from '@@components';
+import {
+  getPrice,
+  getName,
+  getRating,
+  getProviderName,
+} from '@@store/modules/services/selectors';
 
 import * as S from './styled';
 
-const ServiceInfo = () => (
+const ServiceInfo = ({ service = {} }) => (
   <View>
     <S.RowContainer>
       <Text size="M" family="BOLD">
-        Unghii cu gel
+        {getName(service)}
       </Text>
       <S.RowContainer>
         <S.TextWithPadding size="M" family="BOLD">
-          100
+          {`${getPrice(service)}`}
         </S.TextWithPadding>
         <Text>lei</Text>
       </S.RowContainer>
     </S.RowContainer>
     <S.RowContainer>
-      <Text>Oana Profir</Text>
-      <S.RowContainer>
-        <S.TextWithPadding size="M" family="BOLD">
-          5
-        </S.TextWithPadding>
-        <Icon
-          {...{
-            name: 'star',
-            type: 'antdesign',
-            size: 18,
-            color: theme.colors.warning,
-          }}
-        />
-      </S.RowContainer>
+      <Text>{getProviderName(service)}</Text>
+      {service.rating && (
+        <S.RowContainer>
+          <S.TextWithPadding size="M" family="BOLD">
+            {`${getRating(service)}`}
+          </S.TextWithPadding>
+          <Icon
+            {...{
+              name: 'star',
+              type: 'antdesign',
+              size: 18,
+              color: theme.colors.warning,
+            }}
+          />
+        </S.RowContainer>
+      )}
     </S.RowContainer>
   </View>
 );
+
+ServiceInfo.propTypes = {
+  service: PropTypes.object.isRequired,
+};
 
 export default ServiceInfo;

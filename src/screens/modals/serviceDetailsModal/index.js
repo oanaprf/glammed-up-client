@@ -1,1 +1,1 @@
-export { default } from './ServiceDetailsModal';
+export { default } from './ServiceDetailsModal.container';

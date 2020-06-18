@@ -16,7 +16,9 @@ const Service = ({
 }) => (
   <S.CardContainer style={style}>
     <TouchableOpacity
-      onPress={() => openModal({ name: C.MODALS.SERVICE_DETAILS })}
+      onPress={() =>
+        openModal({ name: C.MODALS.SERVICE_DETAILS, data: service })
+      }
       activeOpacity={0.8}
     >
       <S.ServicePicture source={servicePicture}>
