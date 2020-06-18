@@ -3,7 +3,14 @@ import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from './actionTypes';
 
 export default handleActions(
   {
-    [FETCH_START]: (state, { payload: { name } }) => ({
+    [FETCH_START]: (
+      state,
+      {
+        payload: {
+          source: { name },
+        },
+      }
+    ) => ({
       ...state,
       [name]: {
         ...(state[name] || {}),

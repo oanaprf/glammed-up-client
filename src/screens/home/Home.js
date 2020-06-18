@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { ScrollView } from 'react-native';
 
 import { t } from '@@config';
-import { Service } from '@@screens/common';
 import { ServiceDetailsModal, BookAppointmentModal } from '@@screens/modals';
-import { Spacer, ButtonText, Text } from '@@components';
+import { ButtonText } from '@@components';
 
 import * as S from './styled';
-import { SettingsButton, MostPopularServices } from './components';
+import { SettingsButton, MostPopularServices, Services } from './components';
 
 const Home = ({ navigation }) => (
   <S.Container>
@@ -26,13 +25,7 @@ const Home = ({ navigation }) => (
         }}
       >
         <MostPopularServices />
-        <Text size="M" family="BOLD">
-          {t('home.allServices')}
-        </Text>
-        <Spacer height={5} />
-        {[0, 1, 2].map(v => (
-          <Service key={v} />
-        ))}
+        <Services />
       </ScrollView>
     </S.Body>
     <ServiceDetailsModal />

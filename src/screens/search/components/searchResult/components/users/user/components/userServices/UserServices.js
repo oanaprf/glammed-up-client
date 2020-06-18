@@ -14,7 +14,7 @@ const User = () => (
     }}
   >
     {[0, 1, 2, 3].map(v => (
-      <S.StyledService key={v} userService />
+      <S.StyledService key={v} isUserService />
     ))}
   </ScrollView>
 );

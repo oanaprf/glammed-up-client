@@ -3,38 +3,53 @@ import PropTypes from 'prop-types';
 import { Icon } from 'react-native-elements';
 
 import { theme } from '@@config';
+import {
+  getPrice,
+  getName,
+  getRating,
+  getProviderName,
+} from '@@store/modules/services/selectors';
 import * as S from './styled';
 
-const ServiceDetails = ({ userService }) => (
+const ServiceDetails = ({ isUserService, service = {} }) => (
   <S.ServiceDetails>
     <S.RowContainer>
       <S.RowContainer>
-        <S.WhiteTextWithPadding family="BOLD">100</S.WhiteTextWithPadding>
+        <S.WhiteTextWithPadding family="BOLD">
+          {`${getPrice(service)}`}
+        </S.WhiteTextWithPadding>
         <S.WhiteText size="XS">lei</S.WhiteText>
       </S.RowContainer>
-      <S.RowContainer>
-        <S.WhiteTextWithPadding family="BOLD">5</S.WhiteTextWithPadding>
-        <Icon
-          {...{
-            name: 'star',
-            type: 'antdesign',
-            size: 18,
-            color: theme.colors.warning,
-          }}
-        />
-      </S.RowContainer>
+      {service.rating && (
+        <S.RowContainer>
+          <S.WhiteTextWithPadding family="BOLD">
+            {`${getRating(service)}`}
+          </S.WhiteTextWithPadding>
+          <Icon
+            {...{
+              name: 'star',
+              type: 'antdesign',
+              size: 18,
+              color: theme.colors.warning,
+            }}
+          />
+        </S.RowContainer>
+      )}
     </S.RowContainer>
     <S.RowContainer>
-      <S.WhiteText family="BOLD" numberOfLines={2}>
-        Unghii cu gel
+      <S.WhiteText family="BOLD" numberOfLines={2} style={{ flex: 0.9 }}>
+        {getName(service)}
       </S.WhiteText>
-      {!userService && <S.WhiteText size="XS">Oana Profir</S.WhiteText>}
+      {!isUserService && (
+        <S.WhiteText size="XS">{getProviderName(service)}</S.WhiteText>
+      )}
     </S.RowContainer>
   </S.ServiceDetails>
 );
 
 ServiceDetails.propTypes = {
-  userService: PropTypes.bool,
+  isUserService: PropTypes.bool,
+  service: PropTypes.object.isRequired,
 };
 
 export default ServiceDetails;

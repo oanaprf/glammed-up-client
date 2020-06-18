@@ -6,13 +6,13 @@ import * as C from '@@utils/constants';
 import { ServiceDetails as DefaultServiceDetails } from './components';
 import * as S from './styled';
 
-const servicePicture = require('@@assets/images/nails.jpg');
-
 const Service = ({
   openModal,
   style,
-  userService,
+  isUserService,
   ServiceDetails = DefaultServiceDetails,
+  service,
+  servicePicture,
 }) => (
   <S.CardContainer style={style}>
     <TouchableOpacity
@@ -23,7 +23,7 @@ const Service = ({
         <S.StyledLinearGradient
           colors={['transparent', 'transparent', 'rgba(0,0,0,0.5)']}
         />
-        <ServiceDetails userService={userService} />
+        <ServiceDetails isUserService={isUserService} service={service} />
       </S.ServicePicture>
     </TouchableOpacity>
   </S.CardContainer>
@@ -32,8 +32,10 @@ const Service = ({
 Service.propTypes = {
   openModal: PropTypes.func.isRequired,
   style: PropTypes.array,
-  userService: PropTypes.bool,
+  isUserService: PropTypes.bool,
   ServiceDetails: PropTypes.func,
+  servicePicture: PropTypes.any.isRequired,
+  service: PropTypes.object.isRequired,
 };
 
 export default Service;

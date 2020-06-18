@@ -15,4 +15,5 @@ export const fetchFail = createAction(FETCH_FAIL, ({ name, error }) => ({
   error,
 }));
 
-export const fetch = (source, config) => fetchStart({ source, config });
+export const fetch = (source, config = { method: 'GET' }) =>
+  fetchStart({ source, config });
