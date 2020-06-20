@@ -1,13 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Icon } from 'react-native-elements';
 
 import { t, theme } from '@@config';
 import { TextInput } from '@@components';
 
-const SearchBar = () => (
+const SearchBar = ({ searchBy, onSearch }) => (
   <TextInput
     dark
     placeholder={t('search.search')}
+    value={searchBy}
+    onChangeText={onSearch}
     Icon={
       <Icon
         {...{
@@ -20,5 +23,10 @@ const SearchBar = () => (
     }
   />
 );
+
+SearchBar.propTypes = {
+  searchBy: PropTypes.string.isRequired,
+  onSearch: PropTypes.func.isRequired,
+};
 
 export default SearchBar;

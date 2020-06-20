@@ -9,3 +9,9 @@ export const fetchMostPopularServices = () =>
     name: 'mostPopularServices',
     url: routes.mostPopularServices,
   });
+
+export const searchServices = (searchBy, category) =>
+  fetch.actions.fetch({
+    name: 'search',
+    url: routes.search(searchBy, category),
+  });

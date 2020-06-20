@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-
+import PropTypes from 'prop-types';
 import * as S from './styled';
 
-const User = () => (
+const User = ({ services }) => (
   <ScrollView
     showsVerticalScrollIndicator={false}
     contentContainerStyle={{
@@ -13,10 +13,14 @@ const User = () => (
       justifyContent: 'space-evenly',
     }}
   >
-    {[0, 1, 2, 3].map(v => (
-      <S.StyledService key={v} isUserService />
+    {services.map(service => (
+      <S.StyledService key={service._id} isUserService service={service} />
     ))}
   </ScrollView>
 );
+
+User.propTypes = {
+  services: PropTypes.array.isRequired,
+};
 
 export default User;

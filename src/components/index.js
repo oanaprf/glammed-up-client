@@ -13,5 +13,5 @@ export { default as Modal } from './modal';
 export { default as NoResults } from './noResults';
 export { default as Calendar } from './calendar';
 export { default as ImagePicker } from './imagePicker';
-export { default as LoaderIcon } from './loaderIcon';
+export { LoaderIcon, BigLoaderIcon } from './loaderIcon';
 export { default as RadioGroup } from './radioGroup';

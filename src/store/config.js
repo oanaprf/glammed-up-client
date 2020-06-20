@@ -1,4 +1,5 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+/* eslint-disable no-undef */
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
@@ -17,4 +18,10 @@ const middleware = [
   auth.middleware,
 ];
 
-export default createStore(reducer, applyMiddleware(...middleware));
+export default createStore(
+  reducer,
+  compose(
+    applyMiddleware(...middleware)
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);

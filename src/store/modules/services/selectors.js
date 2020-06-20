@@ -1,4 +1,5 @@
 import getOr from 'lodash/fp/getOr';
+import { createSelector } from 'reselect';
 
 import { fetch } from '@@store/middlewares';
 import { U } from '@@utils';
@@ -12,9 +13,21 @@ export const getProviderName = getOr('-', 'provider.fullName');
 export const getPictures = service =>
   U.getLength(service.pictures) ? service.pictures : [defaultPicture];
 
+export const isSearchLoading = fetch.selectors.isLoading('search');
+
 export const getServices = fetch.selectors.getData('services', []);
 
 export const getMostPopularServices = fetch.selectors.getData(
   'mostPopularServices',
   []
+);
+
+export const getSearchedServices = createSelector(
+  fetch.selectors.getData('search', []),
+  getOr([], 'services')
+);
+
+export const getSearchedUsers = createSelector(
+  fetch.selectors.getData('search', []),
+  getOr([], 'users')
 );

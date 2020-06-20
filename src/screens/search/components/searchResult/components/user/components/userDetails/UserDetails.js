@@ -1,15 +1,21 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 import { theme } from '@@config';
 import { Text } from '@@components';
+import {
+  getFullName,
+  getPhoneNumber,
+  getAddress,
+} from '@@store/modules/user/selectors';
 
 import * as S from './styled';
 
-const UserDetails = () => (
+const UserDetails = ({ user }) => (
   <S.UserDetailsContainer>
     <Text size="L" family="BOLD">
-      Oana Profir
+      {getFullName(user)}
     </Text>
     <S.RowContainer>
       <Icon
@@ -20,7 +26,7 @@ const UserDetails = () => (
           color: theme.colors.theme_black_pink.secondary,
         }}
       />
-      <S.StyledText size="XS">0769117933</S.StyledText>
+      <S.StyledText size="XS">{getPhoneNumber(user)}</S.StyledText>
     </S.RowContainer>
     <S.RowContainer>
       <Icon
@@ -31,11 +37,13 @@ const UserDetails = () => (
           color: theme.colors.theme_black_pink.secondary,
         }}
       />
-      <S.StyledText size="XS">
-        Strada Ion Berindei 2, bloc OD 47, scara A, etaj 7, apart. 30
-      </S.StyledText>
+      <S.StyledText size="XS">{getAddress(user)}</S.StyledText>
     </S.RowContainer>
   </S.UserDetailsContainer>
 );
+
+UserDetails.propTypes = {
+  user: PropTypes.object.isRequired,
+};
 
 export default UserDetails;

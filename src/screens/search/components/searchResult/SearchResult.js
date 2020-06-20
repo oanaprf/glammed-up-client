@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Spacer } from '@@components';
 import { Service } from '@@screens/common';
 
-import { Users } from './components';
+import { User } from './components';
 
 const SearchResult = ({ users, services }) => (
   <>
@@ -17,8 +17,11 @@ const SearchResult = ({ users, services }) => (
         paddingVertical: 5,
       }}
     >
-      {users && <Users users={users} />}
-      {services && [0, 1, 2].map(v => <Service key={v} />)}
+      {users && users.map(user => <User key={user._id} user={user} />)}
+      {services &&
+        services.map(service => (
+          <Service key={service._id} service={service} />
+        ))}
     </ScrollView>
   </>
 );

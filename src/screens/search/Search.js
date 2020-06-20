@@ -5,10 +5,20 @@ import { t } from '@@config';
 import { ServiceDetailsModal } from '@@screens/modals';
 import { ButtonText } from '@@components';
 
-import { SearchBar, Categories, SearchResult } from './components';
+import {
+  SearchBar,
+  Categories,
+  SearchResult,
+  SelectedCategory,
+} from './components';
 import * as S from './styled';
 
-const Search = ({ isSearching, users, services }) => (
+const Search = ({
+  searchBy,
+  setSearchBy,
+  selectedCategory,
+  setSelectedCategory,
+}) => (
   <S.Container>
     <S.Header>
       <ButtonText size="XL" family="REGULAR">
@@ -17,18 +27,28 @@ const Search = ({ isSearching, users, services }) => (
     </S.Header>
     <S.Body>
       <S.SearchBarContainer>
-        <SearchBar />
+        <SearchBar {...{ searchBy, setSearchBy, selectedCategory }} />
       </S.SearchBarContainer>
-      {isSearching ? <SearchResult {...{ users, services }} /> : <Categories />}
+      {selectedCategory ? (
+        <SelectedCategory
+          {...{ selectedCategory, setSelectedCategory, searchBy }}
+        />
+      ) : null}
+      {searchBy || selectedCategory ? (
+        <SearchResult />
+      ) : (
+        <Categories setSelectedCategory={setSelectedCategory} />
+      )}
     </S.Body>
     <ServiceDetailsModal />
   </S.Container>
 );
 
 Search.propTypes = {
-  isSearching: PropTypes.bool.isRequired,
-  users: PropTypes.array.isRequired,
-  services: PropTypes.array.isRequired,
+  searchBy: PropTypes.string.isRequired,
+  setSearchBy: PropTypes.func.isRequired,
+  selectedCategory: PropTypes.string.isRequired,
+  setSelectedCategory: PropTypes.func.isRequired,
 };
 
 export default Search;

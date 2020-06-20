@@ -17,8 +17,8 @@ const icons = {
   OTHER: require('@@assets/images/others.png'),
 };
 
-const Category = ({ category }) => (
-  <S.ButtonContainer>
+const Category = ({ category, onSelectCategory }) => (
+  <S.ButtonContainer onPress={onSelectCategory}>
     <>
       <S.StyledImage source={icons[category]} />
       <S.StyledText size="M" family="REGULAR">
@@ -30,6 +30,7 @@ const Category = ({ category }) => (
 
 Category.propTypes = {
   category: PropTypes.string.isRequired,
+  onSelectCategory: PropTypes.func.isRequired,
 };
 
 export default Category;

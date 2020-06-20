@@ -1,11 +1,11 @@
-import { withProps } from 'recompose';
+import { compose } from 'recompose';
 
+import { withUseState } from '@@hocs';
 import BaseSearch from './Search';
 
-const Search = withProps({
-  isSearching: true,
-  users: [1, 2],
-  services: [1],
-})(BaseSearch);
+const Search = compose(
+  withUseState('searchBy', ''),
+  withUseState('selectedCategory', '')
+)(BaseSearch);
 
 export default Search;
