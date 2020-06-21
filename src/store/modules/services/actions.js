@@ -15,3 +15,9 @@ export const searchServices = (searchBy, category) =>
     name: 'search',
     url: routes.search(searchBy, category),
   });
+
+export const fetchUserServices = id =>
+  fetch.actions.fetch({
+    name: 'userServices',
+    url: routes.userServices(id),
+  });

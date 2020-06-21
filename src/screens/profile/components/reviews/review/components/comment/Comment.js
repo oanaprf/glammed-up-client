@@ -1,15 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { getComment } from '@@store/modules/reviews/selectors';
 
 import * as S from './styled';
 
-const Comment = () => (
+const Comment = ({ review = {} }) => (
   <S.CommentTextContainer>
     <S.CommentText numberOfLines={4} size="XS" family="REGULAR">
-      Unghii foarte frumoase la un pret foarte bun Unghii foarte frumoase la
-      Unghii foarte frumoase la un pret foarte bun un pret foarte bun Unghii
-      foarte frumoase la un pret foarte bun un pret foarte bun
+      {getComment(review)}
     </S.CommentText>
   </S.CommentTextContainer>
 );
+
+Comment.propTypes = {
+  review: PropTypes.object.isRequired,
+};
 
 export default Comment;

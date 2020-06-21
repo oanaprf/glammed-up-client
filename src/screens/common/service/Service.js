@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 
 import * as C from '@@utils/constants';
+import { getFirstPicture } from '@@store/modules/services/selectors';
 import { ServiceDetails as DefaultServiceDetails } from './components';
 import * as S from './styled';
 
@@ -12,7 +13,6 @@ const Service = ({
   isUserService,
   ServiceDetails = DefaultServiceDetails,
   service,
-  servicePicture,
 }) => (
   <S.CardContainer style={style}>
     <TouchableOpacity
@@ -21,7 +21,7 @@ const Service = ({
       }
       activeOpacity={0.8}
     >
-      <S.ServicePicture source={servicePicture}>
+      <S.ServicePicture source={getFirstPicture(service)}>
         <S.StyledLinearGradient
           colors={['transparent', 'transparent', 'rgba(0,0,0,0.5)']}
         />
@@ -36,7 +36,6 @@ Service.propTypes = {
   style: PropTypes.array,
   isUserService: PropTypes.bool,
   ServiceDetails: PropTypes.func,
-  servicePicture: PropTypes.any.isRequired,
   service: PropTypes.object.isRequired,
 };
 

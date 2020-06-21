@@ -12,4 +12,5 @@ export const StyledButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.theme_black_pink.secondary};
   border-radius: ${({ theme }) => theme.borderRadius.L}px;
   padding: 15px;
+  align-self: center;
 `;

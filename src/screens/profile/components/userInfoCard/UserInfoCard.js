@@ -1,11 +1,13 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 import { theme } from '@@config';
+import { getPhoneNumber, getAddress } from '@@store/modules/user/selectors';
 
 import * as S from './styled';
 
-const UserInfoCard = () => (
+const UserInfoCard = ({ user }) => (
   <S.CardContainer>
     <S.StyledRow>
       <Icon
@@ -16,7 +18,7 @@ const UserInfoCard = () => (
           color: theme.colors.theme_black_pink.secondary,
         }}
       />
-      <S.StyledText size="M">0769117933</S.StyledText>
+      <S.StyledText size="M">{getPhoneNumber(user)}</S.StyledText>
     </S.StyledRow>
     <S.StyledRow>
       <Icon
@@ -27,11 +29,13 @@ const UserInfoCard = () => (
           color: theme.colors.theme_black_pink.secondary,
         }}
       />
-      <S.StyledText family="REGULAR">
-        Strada Ion Berindei 2, bloc OD 47, scara A, etaj 7, apart. 30
-      </S.StyledText>
+      <S.StyledText family="REGULAR">{getAddress(user)}</S.StyledText>
     </S.StyledRow>
   </S.CardContainer>
 );
+
+UserInfoCard.propTypes = {
+  user: PropTypes.object.isRequired,
+};
 
 export default UserInfoCard;

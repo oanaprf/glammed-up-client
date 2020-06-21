@@ -1,20 +1,29 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 import { Text } from '@@components';
 import { theme } from '@@config';
+import {
+  getRating,
+  getProviderFullName,
+  getServiceName,
+} from '@@store/modules/reviews/selectors';
+
 import * as S from './styled';
 
-const ServiceInfo = () => (
+const ServiceInfo = ({ review = {} }) => (
   <S.InfoContainer>
     <S.ServiceInfoContainer>
       <S.TextWithPadding family="BOLD" numberOfLines={1}>
-        Unghii cu gels
+        {getServiceName(review)}
       </S.TextWithPadding>
-      <Text>by Narcisa Petcu </Text>
+      <Text>{getProviderFullName(review)}</Text>
     </S.ServiceInfoContainer>
     <S.RatingContainer>
-      <S.TextWithPadding family="BOLD">{'4.5'}</S.TextWithPadding>
+      <S.TextWithPadding family="BOLD">{`${getRating(
+        review
+      )}`}</S.TextWithPadding>
       <Icon
         {...{
           name: 'star',
@@ -26,5 +35,9 @@ const ServiceInfo = () => (
     </S.RatingContainer>
   </S.InfoContainer>
 );
+
+ServiceInfo.propTypes = {
+  review: PropTypes.object.isRequired,
+};
 
 export default ServiceInfo;

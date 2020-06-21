@@ -9,7 +9,7 @@ import * as C from '@@utils/constants';
 
 import * as S from './styled';
 
-const UserServices = ({ openModal }) => (
+const UserServices = ({ openModal, services }) => (
   <ScrollView
     showsVerticalScrollIndicator={false}
     contentContainerStyle={{
@@ -19,8 +19,8 @@ const UserServices = ({ openModal }) => (
       justifyContent: 'space-evenly',
     }}
   >
-    {[0, 1, 2, 3].map(v => (
-      <S.StyledService key={v} isUserService />
+    {services.map(service => (
+      <S.StyledService key={service._id} isUserService service={service} />
     ))}
     <S.StyledButton onPress={() => openModal({ name: C.MODALS.ADD_SERVICE })}>
       <Icon
@@ -37,6 +37,7 @@ const UserServices = ({ openModal }) => (
 
 UserServices.propTypes = {
   openModal: PropTypes.func.isRequired,
+  services: PropTypes.array.isRequired,
 };
 
 export default withOpenModal(UserServices);

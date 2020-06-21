@@ -2,13 +2,23 @@ import { createSelector } from 'reselect';
 import isEmpty from 'lodash/fp/isEmpty';
 import getOr from 'lodash/fp/getOr';
 
-import { auth } from '@@store/middlewares';
+import { auth, fetch } from '@@store/middlewares';
+
+const defaultProfilePicture = require('@@assets/images/avatar.png');
+
+export const getFullName = getOr('', 'fullName');
+export const getPhoneNumber = getOr('', 'phoneNumber');
+export const getAddress = getOr('', 'address');
+export const getProfilePicture = getOr(defaultProfilePicture, 'profilePicture');
 
 export const isLoggedIn = createSelector(
   auth.selectors.getUserData,
   user => !isEmpty(user)
 );
 
-export const getFullName = getOr('-', 'fullName');
-export const getPhoneNumber = getOr('-', 'phoneNumber');
-export const getAddress = getOr('-', 'address');
+export const getCurrentUserId = createSelector(
+  auth.selectors.getUserData,
+  ({ _id }) => _id
+);
+
+export const getProfile = fetch.selectors.getData('profile', {});
