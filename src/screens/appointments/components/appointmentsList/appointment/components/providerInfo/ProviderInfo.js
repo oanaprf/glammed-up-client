@@ -1,12 +1,14 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 import { theme } from '@@config';
 import { Spacer } from '@@components';
+import { getPhoneNumber, getAddress } from '@@store/modules/user/selectors';
 
 import * as S from '../../styled';
 
-const ProviderInfo = () => (
+const ProviderInfo = ({ provider = {} }) => (
   <>
     <S.RowContainer>
       <Icon
@@ -17,7 +19,7 @@ const ProviderInfo = () => (
           color: theme.colors.black,
         }}
       />
-      <S.FlexText size="XS">0769117933</S.FlexText>
+      <S.FlexText size="XS">{getPhoneNumber(provider)}</S.FlexText>
     </S.RowContainer>
     <Spacer height={2} />
     <S.RowContainer>
@@ -29,11 +31,13 @@ const ProviderInfo = () => (
           color: theme.colors.black,
         }}
       />
-      <S.FlexText size="XS">
-        Strada Ion Berindei 2, bloc OD 47, scara A, etaj 7, apart. 30
-      </S.FlexText>
+      <S.FlexText size="XS">{getAddress(provider)}</S.FlexText>
     </S.RowContainer>
   </>
 );
+
+ProviderInfo.propTypes = {
+  provider: PropTypes.object.isRequired,
+};
 
 export default ProviderInfo;

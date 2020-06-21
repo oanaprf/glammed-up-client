@@ -39,6 +39,13 @@
       "time": "Ora",
       "client": "Client",
       "service": "Serviciu"
+    },
+    "status": {
+      "PENDING_APPROVAL": "INIȚIATĂ",
+      "APPROVED": "APROBATĂ",
+      "REJECTED": "REFUZATĂ",
+      "COMPLETED": "TERMINATĂ",
+      "CANCELLED": "ANULATĂ"
     }
   },
   "profile": {

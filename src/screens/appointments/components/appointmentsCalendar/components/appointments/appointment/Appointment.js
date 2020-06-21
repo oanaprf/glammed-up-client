@@ -1,17 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { getFirstPicture } from '@@store/modules/services/selectors';
 
 import { AppointmentInfo } from './components';
 import * as S from './styled';
 
-const servicePicture = require('@@assets/images/nails.jpg');
-
-const Review = () => (
+const Appointment = ({ appointment = {} }) => (
   <S.CardContainer>
     <S.AppointmentInfo>
-      <AppointmentInfo />
+      <AppointmentInfo appointment={appointment} />
     </S.AppointmentInfo>
-    <S.ServicePicture source={servicePicture} />
+    <S.ServicePicture source={getFirstPicture(appointment.service)} />
   </S.CardContainer>
 );
 
-export default Review;
+Appointment.propTypes = {
+  appointment: PropTypes.object.isRequired,
+};
+
+export default Appointment;

@@ -1,1 +1,1 @@
-export { default } from './AppointmentsCalendar';
+export { default } from './AppointmentsCalendar.container';

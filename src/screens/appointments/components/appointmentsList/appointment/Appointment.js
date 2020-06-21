@@ -1,18 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Spacer } from '@@components';
 
 import { AppointmentInfo, ProviderInfo } from './components';
 import * as S from './styled';
 
-const Review = () => (
+const Appointment = ({ appointment = {} }) => (
   <S.CardContainer>
     <S.AppointmentInfo>
-      <AppointmentInfo />
+      <AppointmentInfo appointment={appointment} />
       <Spacer height={10} />
-      <ProviderInfo />
+      <ProviderInfo provider={appointment.provider} />
     </S.AppointmentInfo>
   </S.CardContainer>
 );
 
-export default Review;
+Appointment.propTypes = {
+  appointment: PropTypes.object.isRequired,
+};
+
+export default Appointment;

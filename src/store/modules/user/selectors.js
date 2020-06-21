@@ -16,6 +16,11 @@ export const isLoggedIn = createSelector(
   user => !isEmpty(user)
 );
 
+export const isCurrentUserProvider = createSelector(
+  auth.selectors.getUserData,
+  ({ isProvider }) => isProvider
+);
+
 export const getCurrentUserId = createSelector(
   auth.selectors.getUserData,
   ({ _id }) => _id

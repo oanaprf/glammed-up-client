@@ -39,6 +39,13 @@
       "time": "Time",
       "client": "Client",
       "service": "Service"
+    },
+    "status": {
+      "PENDING_APPROVAL": "PENDING APPROVAL",
+      "APPROVED": "APPROVED",
+      "REJECTED": "REJECTED",
+      "COMPLETED": "COMPLETED",
+      "CANCELLED": "CANCELLED"
     }
   },
   "profile": {

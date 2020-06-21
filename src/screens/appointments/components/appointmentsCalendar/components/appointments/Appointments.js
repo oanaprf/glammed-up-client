@@ -11,7 +11,7 @@ import * as C from '@@utils/constants';
 import Appointment from './appointment';
 import * as S from './styled';
 
-const Appointments = ({ openModal }) => (
+const Appointments = ({ openModal, appointments = [] }) => (
   <>
     <Spacer height={10} />
     <ScrollView
@@ -21,9 +21,9 @@ const Appointments = ({ openModal }) => (
         alignItems: 'center',
       }}
     >
-      <Appointment />
-      <Appointment />
-      <Appointment />
+      {appointments.map(appointment => (
+        <Appointment key={appointment._id} appointment={appointment} />
+      ))}
       <S.StyledButton
         onPress={() => openModal({ name: C.MODALS.ADD_MANUAL_APPOINTMENT })}
       >
@@ -42,6 +42,7 @@ const Appointments = ({ openModal }) => (
 
 Appointments.propTypes = {
   openModal: PropTypes.func.isRequired,
+  appointments: PropTypes.array,
 };
 
 export default withOpenModal(Appointments);

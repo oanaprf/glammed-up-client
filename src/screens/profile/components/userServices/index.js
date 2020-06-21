@@ -1,1 +1,1 @@
-export { default } from './UserServices';
+export { default } from './UserServices.container';

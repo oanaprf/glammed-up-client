@@ -4,8 +4,6 @@ import { Calendar as BaseCalendar } from 'react-native-calendars';
 import { withUseState } from '@@hocs';
 import { theme } from '@@config';
 
-const today = Date();
-
 const Calendar = compose(
   withUseState('selectedDay', {}),
   withHandlers({
@@ -15,7 +13,6 @@ const Calendar = compose(
     },
   }),
   withProps(({ selectedDay }) => ({
-    minDate: today,
     ...(selectedDay && {
       markedDates: { [selectedDay.dateString]: { selected: true } },
     }),

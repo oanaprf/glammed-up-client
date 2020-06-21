@@ -15,6 +15,7 @@ export const getPictures = service =>
   U.getLength(service.pictures) ? service.pictures : [defaultPicture];
 
 export const isSearchLoading = fetch.selectors.isLoading('search');
+export const areUserServicesLoading = fetch.selectors.isLoading('userServices');
 
 export const getServices = fetch.selectors.getData('services', []);
 

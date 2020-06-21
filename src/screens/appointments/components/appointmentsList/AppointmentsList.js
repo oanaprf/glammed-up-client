@@ -1,24 +1,27 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { Spacer } from '@@components';
 
 import Appointment from './appointment';
 
-const AppointmentList = () => (
+const AppointmentsList = ({ appointments = [] }) => (
   <>
     <Spacer height={10} />
     <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingVertical: 5, alignItems: 'center' }}
     >
-      <Appointment />
-      <Appointment />
-      <Appointment />
-      <Appointment />
-      <Appointment />
+      {appointments.map(appointment => (
+        <Appointment key={appointment._id} appointment={appointment} />
+      ))}
     </ScrollView>
   </>
 );
 
-export default AppointmentList;
+AppointmentsList.propTypes = {
+  appointments: PropTypes.array,
+};
+
+export default AppointmentsList;

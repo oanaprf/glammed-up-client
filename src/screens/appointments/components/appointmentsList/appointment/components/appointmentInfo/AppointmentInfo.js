@@ -1,25 +1,40 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Text } from '@@components';
+import {
+  getDate,
+  getTime,
+  getStatus,
+} from '@@store/modules/appointments/selectors';
+import {
+  getServiceName,
+  getProviderFullName,
+} from '@@store/modules/reviews/selectors';
+import { t } from '@@config';
 
 import * as S from './styled';
 
-const AppointmentInfo = () => (
+const AppointmentInfo = ({ appointment = {} }) => (
   <>
     <S.RowContainer>
       <Text family="BOLD" numberOfLines={1}>
-        Unghii cu gels
+        {getServiceName(appointment)}
       </Text>
-      <Text family="BOLD">12.04.2020</Text>
+      <Text family="BOLD">{getDate(appointment)}</Text>
     </S.RowContainer>
     <S.RowContainer>
-      <Text size="XS">by Narcisa Petcu </Text>
-      <S.StyledText family="BOLD">13:30</S.StyledText>
+      <Text size="XS">{getProviderFullName(appointment)}</Text>
+      <S.StyledText family="BOLD">{getTime(appointment)}</S.StyledText>
     </S.RowContainer>
     <S.StyledText family="BOLD" uppercase size="XS">
-      Finalizată
+      {t(`appointments.status.${getStatus(appointment)}`)}
     </S.StyledText>
   </>
 );
+
+AppointmentInfo.propTypes = {
+  appointment: PropTypes.object.isRequired,
+};
 
 export default AppointmentInfo;
