@@ -8,7 +8,7 @@ const defaultPicture = require('@@assets/images/image-placeholder.png');
 
 export const getPrice = getOr('', 'price');
 export const getName = getOr('', 'name');
-export const getRating = getOr('', 'rating');
+export const getRating = getOr('', 'averageRating');
 export const getProviderName = getOr('', 'provider.fullName');
 export const getFirstPicture = getOr(defaultPicture, 'pictures.0');
 export const getPictures = service =>

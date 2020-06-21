@@ -29,7 +29,7 @@ const ServiceInfo = ({ service = {} }) => (
     </S.RowContainer>
     <S.RowContainer>
       <Text>{getProviderName(service)}</Text>
-      {service.rating && (
+      {service.averageRating && (
         <S.RowContainer>
           <S.TextWithPadding size="M" family="BOLD">
             {`${getRating(service)}`}

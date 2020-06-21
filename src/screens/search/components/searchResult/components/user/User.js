@@ -15,7 +15,7 @@ const User = ({ user }) => (
       />
       <UserDetails user={user} />
     </S.RowContainer>
-    <UserServices services={user.services} />
+    <UserServices user={user} />
   </S.CardContainer>
 );
 

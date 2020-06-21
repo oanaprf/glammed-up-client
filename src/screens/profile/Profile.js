@@ -39,7 +39,9 @@ const Profile = ({ user = {}, reviews = [], services = [] }) => (
           </Text>,
         ]}
         tabContents={[
-          ...(user.isProvider ? [<UserServices services={services} />] : []),
+          ...(user.isProvider
+            ? [<UserServices services={services} user={user} />]
+            : []),
           <Reviews reviews={reviews} />,
         ]}
       />

@@ -20,7 +20,7 @@ const ServiceDetails = ({ isUserService, service = {} }) => (
         </S.WhiteTextWithPadding>
         <S.WhiteText size="XS">lei</S.WhiteText>
       </S.RowContainer>
-      {service.rating && (
+      {service.averageRating && (
         <S.RowContainer>
           <S.WhiteTextWithPadding family="BOLD">
             {`${getRating(service)}`}

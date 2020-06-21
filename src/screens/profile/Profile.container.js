@@ -21,17 +21,10 @@ const Profile = compose(
     }
   ),
   withOnMount(
-    ({
-      // eslint-disable-next-line no-shadow
-      user,
-      currentUserId,
-      fetchProfile,
-      fetchUserReviews,
-      fetchUserServices,
-    }) => {
+    ({ currentUserId, fetchProfile, fetchUserReviews, fetchUserServices }) => {
       fetchProfile(currentUserId);
       fetchUserReviews(currentUserId);
-      user.isProvider && fetchUserServices(currentUserId);
+      fetchUserServices(currentUserId);
     }
   )
 )(BaseProfile);

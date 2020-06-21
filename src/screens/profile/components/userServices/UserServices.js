@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
 import { theme } from '@@config';
 import { withOpenModal } from '@@hocs';
 import * as C from '@@utils/constants';
+import { U } from '@@utils';
 
 import * as S from './styled';
 
-const UserServices = ({ openModal, services }) => (
+const UserServices = ({ openModal, services, user }) => (
   <ScrollView
     showsVerticalScrollIndicator={false}
     contentContainerStyle={{
@@ -20,7 +21,15 @@ const UserServices = ({ openModal, services }) => (
     }}
   >
     {services.map(service => (
-      <S.StyledService key={service._id} isUserService service={service} />
+      <S.StyledService
+        key={service._id}
+        isUserService
+        service={{
+          ...service,
+          providerId: user._id,
+          provider: U.pickProviderDetails(user),
+        }}
+      />
     ))}
     <S.StyledButton onPress={() => openModal({ name: C.MODALS.ADD_SERVICE })}>
       <Icon
@@ -38,6 +47,7 @@ const UserServices = ({ openModal, services }) => (
 UserServices.propTypes = {
   openModal: PropTypes.func.isRequired,
   services: PropTypes.array.isRequired,
+  user: PropTypes.object.isRequired,
 };
 
 export default withOpenModal(UserServices);
