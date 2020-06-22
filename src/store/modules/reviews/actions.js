@@ -3,6 +3,6 @@ import { routes } from '@@utils';
 
 export const fetchUserReviews = id =>
   fetch.actions.fetch({
-    name: 'userReviews',
+    name: `user/${id}/reviews`,
     url: routes.userReviews(id),
   });

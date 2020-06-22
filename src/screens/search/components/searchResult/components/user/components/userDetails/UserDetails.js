@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
+import { TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { theme } from '@@config';
@@ -12,11 +13,13 @@ import {
 
 import * as S from './styled';
 
-const UserDetails = ({ user }) => (
+const UserDetails = ({ user, onProviderNamePress }) => (
   <S.UserDetailsContainer>
-    <Text size="L" family="BOLD">
-      {getFullName(user)}
-    </Text>
+    <TouchableOpacity onPress={onProviderNamePress} activeOpacity={0.6}>
+      <Text size="L" family="BOLD">
+        {getFullName(user)}
+      </Text>
+    </TouchableOpacity>
     <S.RowContainer>
       <Icon
         {...{
@@ -44,6 +47,7 @@ const UserDetails = ({ user }) => (
 
 UserDetails.propTypes = {
   user: PropTypes.object.isRequired,
+  onProviderNamePress: PropTypes.func.isRequired,
 };
 
 export default UserDetails;

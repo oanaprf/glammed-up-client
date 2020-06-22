@@ -10,4 +10,4 @@ export const logout = auth.actions.logoutStart;
 export const signUp = auth.actions.signUpStart;
 
 export const fetchProfile = id =>
-  fetch.actions.fetch({ name: 'profile', url: routes.profile(id) });
+  fetch.actions.fetch({ name: `user/${id}/data`, url: routes.profile(id) });

@@ -34,4 +34,5 @@ export const getSearchedUsers = createSelector(
   getOr([], 'users')
 );
 
-export const getUserServices = fetch.selectors.getData('userServices', []);
+export const getUserServices = (state, { userId }) =>
+  fetch.selectors.getData(`user/${userId}/services`, [])(state);

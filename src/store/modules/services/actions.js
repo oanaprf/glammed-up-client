@@ -18,6 +18,6 @@ export const searchServices = (searchBy, category) =>
 
 export const fetchUserServices = id =>
   fetch.actions.fetch({
-    name: 'userServices',
+    name: `user/${id}/services`,
     url: routes.userServices(id),
   });

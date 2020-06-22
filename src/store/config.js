@@ -1,16 +1,21 @@
 /* eslint-disable no-undef */
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 
 import { fetch, auth } from './middlewares';
 import { modal } from './modules';
+
+const logger = createLogger({
+  collapsed: true,
+});
 
 const reducer = combineReducers({
   api: fetch.reducer,
   auth: auth.reducer,
   modal: modal.reducer,
 });
+
 const middleware = [
   thunk,
   ...(process.env.NODE_ENV === 'development' ? [logger] : []),

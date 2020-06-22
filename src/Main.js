@@ -10,6 +10,7 @@ import { Home, Search, Appointments, Profile, Settings, Auth } from '@@screens';
 import { theme } from '@@config';
 
 const HomeStackNavigator = createStackNavigator();
+const SearchStackNavigator = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const HomeStack = () => (
@@ -23,6 +24,19 @@ const HomeStack = () => (
     <HomeStackNavigator.Screen name="Home" component={Home} />
     <HomeStackNavigator.Screen name="Settings" component={Settings} />
   </HomeStackNavigator.Navigator>
+);
+
+const SearchStack = () => (
+  <SearchStackNavigator.Navigator
+    screenOptions={{
+      headerShown: false,
+      animationEnabled: false,
+    }}
+    initialRouteName="Search"
+  >
+    <SearchStackNavigator.Screen name="Search" component={Search} />
+    <SearchStackNavigator.Screen name="Profile" component={Profile} />
+  </SearchStackNavigator.Navigator>
 );
 
 const Main = ({ translationsLoaded, isLoggedIn }) => (
@@ -39,7 +53,7 @@ const Main = ({ translationsLoaded, isLoggedIn }) => (
             <NavigationContainer>
               <Tab.Navigator tabBar={TabBar} initialRouteName="Home">
                 <Tab.Screen name="Home" component={HomeStack} />
-                <Tab.Screen name="Search" component={Search} />
+                <Tab.Screen name="Search" component={SearchStack} />
                 <Tab.Screen name="Profile" component={Profile} />
                 <Tab.Screen name="Appointments" component={Appointments} />
               </Tab.Navigator>

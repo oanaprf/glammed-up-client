@@ -26,4 +26,5 @@ export const getCurrentUserId = createSelector(
   ({ _id }) => _id
 );
 
-export const getProfile = fetch.selectors.getData('profile', {});
+export const getProfile = (state, { userId }) =>
+  fetch.selectors.getData(`user/${userId}/data`, {})(state);

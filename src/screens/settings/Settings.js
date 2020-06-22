@@ -11,14 +11,15 @@ import {
   ChangeThemeModal,
 } from '@@screens/modals';
 import { Spacer } from '@@components';
+import { GoBackButton } from '@@screens/common';
 
-import { Option, GoBackButton, Credentials } from './components';
+import { Option, Credentials } from './components';
 import * as S from './styled';
 
 const Settings = ({ navigation, openModal, onLogout }) => (
   <S.Container>
     <S.Header>
-      <GoBackButton navigation={navigation} />
+      <GoBackButton navigation={navigation} label={t('home.pageName')} />
       <S.Title size="XL" family="REGULAR">
         {t('settings.pageName')}
       </S.Title>

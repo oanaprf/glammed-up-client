@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
 import PropTypes from 'prop-types';
+import getOr from 'lodash/fp/getOr';
 
 import { Spacer, Text } from '@@components';
 import { t } from '@@config';
@@ -10,14 +11,25 @@ import {
   EditUserModal,
   AddReviewModal,
 } from '@@screens/modals';
+import { GoBackButton } from '@@screens/common';
 import { getFullName } from '@@store/modules/user/selectors';
 
 import { AvatarBar, UserInfoCard, Reviews, UserServices } from './components';
 import * as S from './styled';
 
-const Profile = ({ user = {}, reviews = [], services = [] }) => (
+const Profile = ({
+  user = {},
+  reviews = [],
+  services = [],
+  route,
+  navigation,
+}) => (
   <S.Container>
-    <S.Header />
+    <S.Header>
+      {getOr('', 'params.userId')(route) ? (
+        <GoBackButton navigation={navigation} label={t('search.pageName')} />
+      ) : null}
+    </S.Header>
     <S.Body>
       <AvatarBar user={user} />
       <S.EmptyView />
@@ -57,6 +69,8 @@ Profile.propTypes = {
   user: PropTypes.object.isRequired,
   reviews: PropTypes.array,
   services: PropTypes.array,
+  navigation: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired,
 };
 
 export default Profile;

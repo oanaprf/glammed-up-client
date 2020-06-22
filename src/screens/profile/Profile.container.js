@@ -1,5 +1,6 @@
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
+import getOr from 'lodash/fp/getOr';
 
 import { withOnMount } from '@@hocs';
 import { user, reviews, services } from '@@store/modules';
@@ -8,11 +9,9 @@ import BaseProfile from './Profile';
 
 const Profile = compose(
   connect(
-    state => ({
+    (state, { route }) => ({
       currentUserId: user.selectors.getCurrentUserId(state),
-      user: user.selectors.getProfile(state),
-      reviews: reviews.selectors.getUserReviews(state),
-      services: services.selectors.getUserServices(state),
+      userId: getOr('', 'params.userId')(route),
     }),
     {
       fetchProfile: user.actions.fetchProfile,
@@ -20,11 +19,27 @@ const Profile = compose(
       fetchUserServices: services.actions.fetchUserServices,
     }
   ),
+  connect((state, { userId, currentUserId }) => ({
+    user: user.selectors.getProfile(state, { userId: userId || currentUserId }),
+    reviews: reviews.selectors.getUserReviews(state, {
+      userId: userId || currentUserId,
+    }),
+    services: services.selectors.getUserServices(state, {
+      userId: userId || currentUserId,
+    }),
+  })),
   withOnMount(
-    ({ currentUserId, fetchProfile, fetchUserReviews, fetchUserServices }) => {
-      fetchProfile(currentUserId);
-      fetchUserReviews(currentUserId);
-      fetchUserServices(currentUserId);
+    ({
+      route,
+      currentUserId,
+      fetchProfile,
+      fetchUserReviews,
+      fetchUserServices,
+    }) => {
+      const userId = getOr('', 'params.userId')(route);
+      fetchProfile(userId || currentUserId);
+      fetchUserReviews(userId || currentUserId);
+      fetchUserServices(userId || currentUserId);
     }
   )
 )(BaseProfile);

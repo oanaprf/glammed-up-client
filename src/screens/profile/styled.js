@@ -9,8 +9,7 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex: 0.15;
 `;
 

@@ -9,28 +9,32 @@ import * as S from './styled';
 
 const UserInfoCard = ({ user }) => (
   <S.CardContainer>
-    <S.StyledRow>
-      <Icon
-        {...{
-          name: 'phone',
-          type: 'feather',
-          size: 22,
-          color: theme.colors.theme_black_pink.secondary,
-        }}
-      />
-      <S.StyledText size="M">{getPhoneNumber(user)}</S.StyledText>
-    </S.StyledRow>
-    <S.StyledRow>
-      <Icon
-        {...{
-          name: 'map-pin',
-          type: 'feather',
-          size: 22,
-          color: theme.colors.theme_black_pink.secondary,
-        }}
-      />
-      <S.StyledText family="REGULAR">{getAddress(user)}</S.StyledText>
-    </S.StyledRow>
+    {getPhoneNumber(user) ? (
+      <S.StyledRow>
+        <Icon
+          {...{
+            name: 'phone',
+            type: 'feather',
+            size: 22,
+            color: theme.colors.theme_black_pink.secondary,
+          }}
+        />
+        <S.StyledText size="M">{getPhoneNumber(user)}</S.StyledText>
+      </S.StyledRow>
+    ) : null}
+    {getAddress(user) ? (
+      <S.StyledRow>
+        <Icon
+          {...{
+            name: 'map-pin',
+            type: 'feather',
+            size: 22,
+            color: theme.colors.theme_black_pink.secondary,
+          }}
+        />
+        <S.StyledText family="REGULAR">{getAddress(user)}</S.StyledText>
+      </S.StyledRow>
+    ) : null}
   </S.CardContainer>
 );
 
