@@ -7,8 +7,15 @@ import * as C from '@@utils/constants';
 import { theme } from '@@config';
 import * as S from './styled';
 
-const EditButton = ({ openModal }) => (
-  <S.StyledButton onPress={() => openModal({ name: C.MODALS.EDIT_USER })}>
+const EditButton = ({ openModal, isOwnProfile }) => (
+  <S.StyledButton
+    {...{
+      ...(isOwnProfile && {
+        onPress: () => openModal({ name: C.MODALS.EDIT_USER }),
+      }),
+      isOwnProfile,
+    }}
+  >
     <Icon
       {...{
         name: 'edit-2',
@@ -22,6 +29,7 @@ const EditButton = ({ openModal }) => (
 
 EditButton.propTypes = {
   openModal: PropTypes.func.isRequired,
+  isOwnProfile: PropTypes.bool.isRequired,
 };
 
 export default withOpenModal(EditButton);

@@ -11,4 +11,5 @@ export const StyledButton = styled(Button)`
     ios: 'box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);',
     android: 'elevation: 3;',
   })}}
+  opacity: ${({ isOwnProfile }) => (isOwnProfile ? 1 : 0)}
 `;

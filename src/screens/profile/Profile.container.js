@@ -10,8 +10,9 @@ import BaseProfile from './Profile';
 const Profile = compose(
   connect(
     (state, { route }) => ({
-      currentUserId: user.selectors.getCurrentUserId(state),
-      userId: getOr('', 'params.userId')(route),
+      userId:
+        getOr('', 'params.userId')(route) ||
+        user.selectors.getCurrentUserId(state),
     }),
     {
       fetchProfile: user.actions.fetchProfile,
@@ -19,27 +20,21 @@ const Profile = compose(
       fetchUserServices: services.actions.fetchUserServices,
     }
   ),
-  connect((state, { userId, currentUserId }) => ({
-    user: user.selectors.getProfile(state, { userId: userId || currentUserId }),
+  connect((state, { userId }) => ({
+    isOwnProfile: user.selectors.isOwnProfile(state, { userId }),
+    user: user.selectors.getProfile(state, { userId }),
     reviews: reviews.selectors.getUserReviews(state, {
-      userId: userId || currentUserId,
+      userId,
     }),
     services: services.selectors.getUserServices(state, {
-      userId: userId || currentUserId,
+      userId,
     }),
   })),
   withOnMount(
-    ({
-      route,
-      currentUserId,
-      fetchProfile,
-      fetchUserReviews,
-      fetchUserServices,
-    }) => {
-      const userId = getOr('', 'params.userId')(route);
-      fetchProfile(userId || currentUserId);
-      fetchUserReviews(userId || currentUserId);
-      fetchUserServices(userId || currentUserId);
+    ({ userId, fetchProfile, fetchUserReviews, fetchUserServices }) => {
+      fetchProfile(userId);
+      fetchUserReviews(userId);
+      fetchUserServices(userId);
     }
   )
 )(BaseProfile);

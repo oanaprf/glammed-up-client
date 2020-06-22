@@ -5,9 +5,9 @@ import { getProfilePicture } from '@@store/modules/user/selectors';
 import { EditButton, RatingButton } from './components';
 import * as S from './styled';
 
-const AvatarBar = ({ user }) => (
+const AvatarBar = ({ user, isOwnProfile }) => (
   <S.AvatarBar>
-    <EditButton />
+    <EditButton isOwnProfile={isOwnProfile} />
     <S.ProfilePicture source={getProfilePicture(user)} />
     <RatingButton />
   </S.AvatarBar>
@@ -15,6 +15,7 @@ const AvatarBar = ({ user }) => (
 
 AvatarBar.propTypes = {
   user: PropTypes.object.isRequired,
+  isOwnProfile: PropTypes.bool.isRequired,
 };
 
 export default AvatarBar;

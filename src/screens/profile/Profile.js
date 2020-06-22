@@ -23,6 +23,7 @@ const Profile = ({
   services = [],
   route,
   navigation,
+  isOwnProfile,
 }) => (
   <S.Container>
     <S.Header>
@@ -31,7 +32,7 @@ const Profile = ({
       ) : null}
     </S.Header>
     <S.Body>
-      <AvatarBar user={user} />
+      <AvatarBar {...{ user, isOwnProfile }} />
       <S.EmptyView />
       <Text size="XL">{getFullName(user)}</Text>
       <Spacer height={10} />
@@ -52,7 +53,7 @@ const Profile = ({
         ]}
         tabContents={[
           ...(user.isProvider
-            ? [<UserServices services={services} user={user} />]
+            ? [<UserServices {...{ user, services, isOwnProfile }} />]
             : []),
           <Reviews reviews={reviews} />,
         ]}
@@ -71,6 +72,7 @@ Profile.propTypes = {
   services: PropTypes.array,
   navigation: PropTypes.object.isRequired,
   route: PropTypes.object.isRequired,
+  isOwnProfile: PropTypes.bool.isRequired,
 };
 
 export default Profile;

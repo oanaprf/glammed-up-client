@@ -10,7 +10,7 @@ import { U } from '@@utils';
 
 import * as S from './styled';
 
-const UserServices = ({ openModal, services, user }) => (
+const UserServices = ({ openModal, services, user, isOwnProfile }) => (
   <ScrollView
     showsVerticalScrollIndicator={false}
     contentContainerStyle={{
@@ -31,16 +31,18 @@ const UserServices = ({ openModal, services, user }) => (
         }}
       />
     ))}
-    <S.StyledButton onPress={() => openModal({ name: C.MODALS.ADD_SERVICE })}>
-      <Icon
-        {...{
-          name: 'plus',
-          type: 'feather',
-          size: 25,
-          color: theme.colors.white,
-        }}
-      />
-    </S.StyledButton>
+    {isOwnProfile ? (
+      <S.StyledButton onPress={() => openModal({ name: C.MODALS.ADD_SERVICE })}>
+        <Icon
+          {...{
+            name: 'plus',
+            type: 'feather',
+            size: 25,
+            color: theme.colors.white,
+          }}
+        />
+      </S.StyledButton>
+    ) : null}
   </ScrollView>
 );
 
@@ -48,6 +50,7 @@ UserServices.propTypes = {
   openModal: PropTypes.func.isRequired,
   services: PropTypes.array.isRequired,
   user: PropTypes.object.isRequired,
+  isOwnProfile: PropTypes.bool.isRequired,
 };
 
 export default withOpenModal(UserServices);

@@ -3,6 +3,7 @@ import isEmpty from 'lodash/fp/isEmpty';
 import getOr from 'lodash/fp/getOr';
 
 import { auth, fetch } from '@@store/middlewares';
+import { U } from '@@utils';
 
 const defaultProfilePicture = require('@@assets/images/avatar.png');
 
@@ -28,3 +29,9 @@ export const getCurrentUserId = createSelector(
 
 export const getProfile = (state, { userId }) =>
   fetch.selectors.getData(`user/${userId}/data`, {})(state);
+
+export const isOwnProfile = createSelector(
+  getCurrentUserId,
+  U.getProp('userId'),
+  (currentUserId, userId) => currentUserId === userId
+);
