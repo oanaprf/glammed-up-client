@@ -1,8 +1,11 @@
 import getOr from 'lodash/fp/getOr';
 import { createSelector } from 'reselect';
 
-import { fetch } from '@@store/middlewares';
 import { U } from '@@utils';
+import { fetch } from '@@store/middlewares';
+
+import { selectors as modalSelectors } from '../modal';
+import { selectors as userSelectors } from '../user';
 
 const defaultPicture = require('@@assets/images/image-placeholder.png');
 
@@ -36,3 +39,9 @@ export const getSearchedUsers = createSelector(
 
 export const getUserServices = (state, { userId }) =>
   fetch.selectors.getData(`user/${userId}/services`, [])(state);
+
+export const isOwnService = createSelector(
+  modalSelectors.getModalData,
+  userSelectors.getCurrentUserId,
+  ({ providerId }, currentUserId) => providerId === currentUserId
+);

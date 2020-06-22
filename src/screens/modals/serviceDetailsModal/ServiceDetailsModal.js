@@ -10,7 +10,7 @@ import * as C from '@@utils/constants';
 import { ServiceDetails } from './components';
 import * as S from './styled';
 
-const ServiceDetailsModal = ({ openModal, service }) => (
+const ServiceDetailsModal = ({ openModal, service, isOwnService }) => (
   <Modal
     name={C.MODALS.SERVICE_DETAILS}
     style={{ width: '90%', overflow: 'hidden' }}
@@ -27,12 +27,14 @@ const ServiceDetailsModal = ({ openModal, service }) => (
       />
       <S.ServiceDetailsContainer>
         <ServiceDetails service={service} />
-        <Button
-          rounded
-          onPress={() => openModal({ name: C.MODALS.BOOK_APPOINTMENT })}
-        >
-          <ButtonText>{t('appointments.bookAppointment')}</ButtonText>
-        </Button>
+        {isOwnService ? null : (
+          <Button
+            rounded
+            onPress={() => openModal({ name: C.MODALS.BOOK_APPOINTMENT })}
+          >
+            <ButtonText>{t('appointments.bookAppointment')}</ButtonText>
+          </Button>
+        )}
       </S.ServiceDetailsContainer>
     </>
   </Modal>
@@ -41,6 +43,7 @@ const ServiceDetailsModal = ({ openModal, service }) => (
 ServiceDetailsModal.propTypes = {
   openModal: PropTypes.func.isRequired,
   service: PropTypes.object.isRequired,
+  isOwnService: PropTypes.bool.isRequired,
 };
 
 export default withOpenModal(ServiceDetailsModal);
