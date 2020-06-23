@@ -9,7 +9,7 @@ import { getPhoneNumber, getAddress } from '@@store/modules/user/selectors';
 import * as S from '../../styled';
 
 const ProviderInfo = ({ provider = {} }) => (
-  <>
+  <S.ProviderInfoContainer>
     <S.RowContainer>
       <Icon
         {...{
@@ -33,7 +33,7 @@ const ProviderInfo = ({ provider = {} }) => (
       />
       <S.FlexText size="XS">{getAddress(provider)}</S.FlexText>
     </S.RowContainer>
-  </>
+  </S.ProviderInfoContainer>
 );
 
 ProviderInfo.propTypes = {

@@ -9,7 +9,6 @@ import {
   ServiceDetailsModal,
   AddServiceModal,
   EditUserModal,
-  AddReviewModal,
 } from '@@screens/modals';
 import { GoBackButton } from '@@screens/common';
 import { getFullName } from '@@store/modules/user/selectors';
@@ -62,7 +61,6 @@ const Profile = ({
     <ServiceDetailsModal />
     <AddServiceModal />
     <EditUserModal />
-    <AddReviewModal />
   </S.Container>
 );
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { t } from '@@config';
 import * as C from '@@utils/constants';
@@ -8,7 +9,7 @@ import { ServiceInfo } from '@@screens/common';
 import { SaveButton, Rating, Comment } from './components';
 import * as S from './styled';
 
-const AddReviewModal = () => (
+const AddReviewModal = ({ service }) => (
   <Modal
     name={C.MODALS.ADD_REVIEW}
     style={{ width: '90%' }}
@@ -16,7 +17,7 @@ const AddReviewModal = () => (
   >
     <S.ModalContainer>
       <S.PaddedContainer>
-        <ServiceInfo />
+        <ServiceInfo service={service} />
       </S.PaddedContainer>
       <Spacer height={30} />
       <Rating />
@@ -27,5 +28,9 @@ const AddReviewModal = () => (
     </S.ModalContainer>
   </Modal>
 );
+
+AddReviewModal.propTypes = {
+  service: PropTypes.object.isRequired,
+};
 
 export default AddReviewModal;
