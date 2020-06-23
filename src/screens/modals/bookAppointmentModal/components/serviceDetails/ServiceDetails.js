@@ -1,28 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Icon } from 'react-native-elements';
 
 import { theme } from '@@config';
 import { Text } from '@@components';
+import {
+  getName,
+  getPrice,
+  getRating,
+  getProviderName,
+} from '@@store/modules/services/selectors';
 import * as S from './styled';
 
-const ServiceDetails = () => (
+const ServiceDetails = ({ service }) => (
   <S.ServiceDetailsContainer>
     <S.RowContainer>
       <Text size="M" family="BOLD">
-        Unghii cu gel
+        {getName(service)}
       </Text>
       <S.RowContainer>
         <S.TextWithPadding size="M" family="BOLD">
-          100
+          {`${getPrice(service)}`}
         </S.TextWithPadding>
         <Text>lei</Text>
       </S.RowContainer>
     </S.RowContainer>
     <S.RowContainer>
-      <Text>Oana Profir</Text>
+      <Text>{getProviderName(service)}</Text>
       <S.RowContainer>
         <S.TextWithPadding size="M" family="BOLD">
-          5
+          {`${getRating(service)}`}
         </S.TextWithPadding>
         <Icon
           {...{
@@ -36,5 +43,9 @@ const ServiceDetails = () => (
     </S.RowContainer>
   </S.ServiceDetailsContainer>
 );
+
+ServiceDetails.propTypes = {
+  service: PropTypes.object.isRequired,
+};
 
 export default ServiceDetails;

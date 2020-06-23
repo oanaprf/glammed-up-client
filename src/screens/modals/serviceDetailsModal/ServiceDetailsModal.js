@@ -30,7 +30,9 @@ const ServiceDetailsModal = ({ openModal, service, isOwnService }) => (
         {isOwnService ? null : (
           <Button
             rounded
-            onPress={() => openModal({ name: C.MODALS.BOOK_APPOINTMENT })}
+            onPress={() =>
+              openModal({ name: C.MODALS.BOOK_APPOINTMENT, data: service })
+            }
           >
             <ButtonText>{t('appointments.bookAppointment')}</ButtonText>
           </Button>

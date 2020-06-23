@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import { t } from '@@config';
@@ -8,14 +9,14 @@ import { Modal, Spacer } from '@@components';
 import { ServiceDetails, Date, Time, SaveButton } from './components';
 import * as S from './styled';
 
-const BookAppointmentModal = () => (
+const BookAppointmentModal = ({ service }) => (
   <Modal
     name={C.MODALS.BOOK_APPOINTMENT}
     style={{ width: '90%' }}
     title={t('appointments.bookAppointment')}
   >
     <S.ModalContainer>
-      <ServiceDetails />
+      <ServiceDetails service={service} />
       <Spacer />
       <Date />
       <Spacer height={5} />
@@ -27,5 +28,9 @@ const BookAppointmentModal = () => (
     </S.ModalContainer>
   </Modal>
 );
+
+BookAppointmentModal.propTypes = {
+  service: PropTypes.object.isRequired,
+};
 
 export default BookAppointmentModal;

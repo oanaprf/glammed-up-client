@@ -1,1 +1,1 @@
-export { default } from './BookAppointmentModal';
+export { default } from './BookAppointmentModal.container';
