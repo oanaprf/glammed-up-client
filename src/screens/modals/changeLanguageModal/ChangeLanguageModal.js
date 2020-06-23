@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { t } from '@@config';
 import * as C from '@@utils/constants';
@@ -8,7 +9,11 @@ import { Modal, Spacer } from '@@components';
 import { SaveButton } from './components';
 import * as S from './styled';
 
-const ChangeLanguageModal = () => (
+const ChangeLanguageModal = ({
+  selectedOption,
+  selectedLanguage,
+  onChange,
+}) => (
   <Modal
     name={C.MODALS.CHANGE_LANGUAGE_MODAL}
     style={{ width: '80%' }}
@@ -26,11 +31,18 @@ const ChangeLanguageModal = () => (
             {t('settings.en')}
           </S.PaddedText>,
         ]}
+        {...{ selectedOption, onChange }}
       />
       <Spacer height={10} />
-      <SaveButton />
+      <SaveButton selectedLanguage={selectedLanguage} />
     </S.ModalContainer>
   </Modal>
 );
+
+ChangeLanguageModal.propTypes = {
+  selectedOption: PropTypes.number.isRequired,
+  selectedLanguage: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default ChangeLanguageModal;

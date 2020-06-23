@@ -1,1 +1,1 @@
-export { default } from './ChangeLanguageModal';
+export { default } from './ChangeLanguageModal.container';
