@@ -1,10 +1,13 @@
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
+import getOr from 'lodash/fp/getOr';
 
 import { withOnMount } from '@@hocs';
 import { user, services, appointments } from '@@store/modules';
 
 import BaseAddManualAppointment from './AddManualAppointment';
+
+const today = new Date();
 
 const AddManualAppointment = compose(
   connect(state => ({
@@ -24,10 +27,23 @@ const AddManualAppointment = compose(
       fetchFreeSpots: appointments.actions.fetchFreeSpots,
     }
   ),
-  withOnMount(({ fetchServiceNames, fetchClientNames, currentUserId }) => {
-    fetchServiceNames(currentUserId);
-    fetchClientNames();
-  })
+  withOnMount(
+    ({
+      fetchServiceNames,
+      fetchClientNames,
+      currentUserId,
+      fetchFreeSpots,
+      serviceNames,
+    }) => {
+      fetchServiceNames(currentUserId);
+      fetchClientNames();
+      fetchFreeSpots(
+        currentUserId,
+        today.toJSON().substring(0, 10),
+        getOr(60, '[0].duration', serviceNames)
+      );
+    }
+  )
 )(BaseAddManualAppointment);
 
 export default AddManualAppointment;

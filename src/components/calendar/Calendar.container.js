@@ -5,7 +5,7 @@ import { withUseState } from '@@hocs';
 import { theme } from '@@config';
 
 const Calendar = compose(
-  withUseState('selectedDay', {}),
+  withUseState('selectedDay', ({ selectedDay = {} }) => selectedDay),
   withHandlers({
     onDayPress: ({ onChange, setSelectedDay }) => day => {
       onChange && onChange(day);

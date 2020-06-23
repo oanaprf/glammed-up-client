@@ -10,6 +10,7 @@ const Date2 = props => (
     {...{
       name: 'date',
       minDate: today,
+      selectedDay: { dateString: today.toJSON().substring(0, 10) },
       ...props,
     }}
   />

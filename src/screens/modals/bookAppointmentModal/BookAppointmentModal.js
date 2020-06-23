@@ -9,7 +9,7 @@ import { Modal, Spacer } from '@@components';
 import { ServiceDetails, Date, Time, SaveButton } from './components';
 import * as S from './styled';
 
-const BookAppointmentModal = ({ service }) => (
+const BookAppointmentModal = ({ service, fetchFreeSpots, freeSpots }) => (
   <Modal
     name={C.MODALS.BOOK_APPOINTMENT}
     style={{ width: '90%' }}
@@ -18,9 +18,9 @@ const BookAppointmentModal = ({ service }) => (
     <S.ModalContainer>
       <ServiceDetails service={service} />
       <Spacer />
-      <Date />
+      <Date {...{ service, fetchFreeSpots }} />
       <Spacer height={5} />
-      <Time />
+      <Time freeSpots={freeSpots} />
       <Spacer height={10} />
       <View style={{ zIndex: -1 }}>
         <SaveButton />
@@ -31,6 +31,8 @@ const BookAppointmentModal = ({ service }) => (
 
 BookAppointmentModal.propTypes = {
   service: PropTypes.object.isRequired,
+  fetchFreeSpots: PropTypes.func.isRequired,
+  freeSpots: PropTypes.array,
 };
 
 export default BookAppointmentModal;
