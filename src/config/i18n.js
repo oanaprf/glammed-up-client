@@ -1,4 +1,4 @@
-import I18n from 'ex-react-native-i18n';
+import I18n from 'i18n-js';
 import { AsyncStorage } from 'react-native';
 import * as Localization from 'expo-localization';
 
@@ -16,7 +16,6 @@ export const initI18n = async () => {
     const savedLanguage = await AsyncStorage.getItem('@APP:language');
     const localeLanguage = await Localization.locale;
     I18n.locale = savedLanguage || localeLanguage.substr(0, 2);
-    I18n.initAsync();
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error('Unable to get language', err);

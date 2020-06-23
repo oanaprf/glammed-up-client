@@ -17,7 +17,7 @@ const RadioGroup = ({
       <S.RowContainer
         key={index}
         onPress={() => {
-          onChange && onChange();
+          onChange && onChange(index);
           setSelectedOption(index);
         }}
         activeOpacity={0.6}
