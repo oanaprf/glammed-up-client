@@ -21,3 +21,7 @@ export const RowContainer = styled.View`
   align-items: center;
   justify-content: space-between;
 `;
+
+export const ProviderInfoContainer = styled.View`
+  flex: 1;
+`;

@@ -7,7 +7,7 @@ import * as S from './styled';
 
 const AvatarBar = ({ user, isOwnProfile }) => (
   <S.AvatarBar>
-    <EditButton isOwnProfile={isOwnProfile} />
+    <EditButton {...{ user, isOwnProfile }} />
     <S.ProfilePicture source={getProfilePicture(user)} />
     <RatingButton />
   </S.AvatarBar>

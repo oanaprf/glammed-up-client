@@ -2,13 +2,19 @@ import React from 'react';
 
 import { Calendar } from '@@components';
 
-const Date = props => (
+const today = new Date();
+const tomorrow = new Date(today);
+tomorrow.setDate(tomorrow.getDate() + 1);
+
+const Date2 = props => (
   <Calendar
     {...{
       name: 'date',
+      minDate: tomorrow,
+      selectedDay: { dateString: tomorrow.toJSON().substring(0, 10) },
       ...props,
     }}
   />
 );
 
-export default Date;
+export default Date2;

@@ -1,1 +1,1 @@
-export { default } from './AddManualAppointment';
+export { default } from './AddManualAppointment.container';

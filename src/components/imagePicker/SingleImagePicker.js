@@ -4,12 +4,12 @@ import { TouchableOpacity } from 'react-native';
 
 import * as S from './styled';
 
-const defaultImage = require('@@assets/images/image-placeholder.png');
+const defaultImage = require('@@assets/images/avatar.png');
 
 const SingleImagePicker = ({ images, onSelectImage, ...rest }) => (
   <TouchableOpacity activeOpacity={0.6} onPress={onSelectImage}>
     <S.StyledMediumImage
-      source={images.length ? { uri: images[0] } : defaultImage}
+      source={images.length && images[0] ? { uri: images[0] } : defaultImage}
       {...rest}
     />
   </TouchableOpacity>

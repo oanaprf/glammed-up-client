@@ -1,1 +1,1 @@
-export { default } from './AddReviewModal';
+export { default } from './AddReviewModal.container';

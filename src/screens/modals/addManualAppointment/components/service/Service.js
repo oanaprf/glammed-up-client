@@ -1,4 +1,5 @@
 import React from 'react';
+import getOr from 'lodash/fp/getOr';
 
 import { Dropdown } from '@@components';
 
@@ -8,11 +9,7 @@ const Service = props => (
       name: 'service',
       dark: true,
       maxHeight: 150,
-      options: [
-        { key: '123', value: 'Unghii cu gel' },
-        { key: '1234', value: 'Unghii semi' },
-        { key: '1235', value: 'Unghii acrilice' },
-      ],
+      value: getOr('', 'options.0.key', props),
       ...props,
     }}
   />

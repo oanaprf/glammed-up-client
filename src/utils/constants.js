@@ -10,6 +10,14 @@ export const CATEGORIES = {
   OTHER: 'OTHER',
 };
 
+export const APPOINTMENT_STATUS = {
+  PENDING_APPROVAL: 'PENDING_APPROVAL',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED',
+};
+
 export const MODALS = {
   SERVICE_DETAILS: 'serviceDetailsModal',
   BOOK_APPOINTMENT: 'bookAppointmentModal',

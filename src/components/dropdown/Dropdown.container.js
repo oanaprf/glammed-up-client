@@ -5,7 +5,7 @@ import BaseDropdown from './Dropdown';
 
 const Dropdown = compose(
   withUseState('opened', false),
-  withUseState('value', '')
+  withUseState('value', ({ value }) => value)
 )(BaseDropdown);
 
 export default Dropdown;

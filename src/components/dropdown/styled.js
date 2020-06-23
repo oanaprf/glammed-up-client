@@ -17,12 +17,12 @@ export const StyledList = styled.View`
   position: absolute;
   z-index: 1;
   align-items: stretch;
-  padding-top: 60px;
+  padding-top: 50px;
   padding-left: 20px;
   padding-right: 20px;
 
   width: 100%;
-  height: ${({ opened, maxHeight }) => (opened ? maxHeight : 0)}px;
+  height: ${({ opened, count }) => (opened ? count * 30 + 80 : 0)}px;
 
   background-color: ${({ theme, dark }) =>
     dark ? theme.colors.lightGrey : theme.colors.white};

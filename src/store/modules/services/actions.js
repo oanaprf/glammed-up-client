@@ -21,3 +21,9 @@ export const fetchUserServices = id =>
     name: `user/${id}/services`,
     url: routes.userServices(id),
   });
+
+export const fetchServiceNamesByProvider = id =>
+  fetch.actions.fetch({
+    name: `user/${id}/serviceNames`,
+    url: routes.userServiceNames(id),
+  });

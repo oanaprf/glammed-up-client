@@ -5,17 +5,18 @@ import { withUseState } from '@@hocs';
 import { theme } from '@@config';
 
 const Calendar = compose(
-  withUseState('selectedDay', {}),
+  withUseState('selectedDay', ({ selectedDay = {} }) => selectedDay),
   withHandlers({
     onDayPress: ({ onChange, setSelectedDay }) => day => {
       onChange && onChange(day);
       setSelectedDay(day);
     },
   }),
-  withProps(({ selectedDay }) => ({
+  withProps(({ selectedDay, minDate }) => ({
     ...(selectedDay && {
       markedDates: { [selectedDay.dateString]: { selected: true } },
     }),
+    ...(minDate && { minDate }),
     theme: {
       arrowColor: theme.colors.theme_black_pink.secondary,
       dotColor: theme.colors.theme_black_pink.secondary,

@@ -7,7 +7,7 @@ import SingleImagePicker from './SingleImagePicker';
 import MultipleImagePicker from './MultipleImagePicker';
 
 const ImagePicker = compose(
-  withUseState('images', []),
+  withUseState('images', ({ images }) => images || []),
   withOnMount(async () => {
     if (Platform.OS === 'ios') {
       await ExpoImagePicker.requestCameraRollPermissionsAsync();
