@@ -1,8 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { t } from '@@config';
 import * as C from '@@utils/constants';
 import { Modal, Spacer } from '@@components';
+import {
+  getFirstName,
+  getLastName,
+  getPhoneNumber,
+  getAddress,
+} from '@@store/modules/user/selectors';
 
 import {
   SaveButton,
@@ -14,7 +21,7 @@ import {
 } from './components';
 import * as S from './styled';
 
-const EditUserModal = () => (
+const EditUserModal = ({ user }) => (
   <Modal
     name={C.MODALS.EDIT_USER}
     style={{ width: '90%' }}
@@ -23,22 +30,26 @@ const EditUserModal = () => (
     <S.ModalContainer>
       <S.RowContainer>
         <S.HalfFlex>
-          <ProfilePicture />
+          <ProfilePicture images={[user.profilePicture]} />
         </S.HalfFlex>
         <S.HalfFlex>
-          <FirstName />
+          <FirstName value={getFirstName(user)} />
           <Spacer height={5} />
-          <LastName />
+          <LastName value={getLastName(user)} />
         </S.HalfFlex>
       </S.RowContainer>
       <Spacer height={5} />
-      <PhoneNumber />
+      <PhoneNumber value={getPhoneNumber(user)} />
       <Spacer height={5} />
-      <Address />
+      <Address value={getAddress(user)} />
       <Spacer height={10} />
       <SaveButton />
     </S.ModalContainer>
   </Modal>
 );
+
+EditUserModal.propTypes = {
+  user: PropTypes.object.isRequired,
+};
 
 export default EditUserModal;

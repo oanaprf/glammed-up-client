@@ -7,6 +7,8 @@ import { U } from '@@utils';
 
 const defaultProfilePicture = require('@@assets/images/avatar.png');
 
+export const getFirstName = getOr('', 'firstName');
+export const getLastName = getOr('', 'lastName');
 export const getFullName = getOr('', 'fullName');
 export const getPhoneNumber = getOr('', 'phoneNumber');
 export const getAddress = getOr('', 'address');
