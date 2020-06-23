@@ -12,3 +12,9 @@ export const fetchProviderAppointments = (id, date) =>
     name: 'providerAppointments',
     url: routes.providerAppointments(id, date),
   });
+
+export const fetchFreeSpots = (id, date, duration) =>
+  fetch.actions.fetch({
+    name: 'freeSpots',
+    url: routes.freeSpots(id, date, duration),
+  });

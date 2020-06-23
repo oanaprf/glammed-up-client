@@ -29,7 +29,10 @@ export const getClientAppointments = fetch.selectors.getData(
   'clientAppointments',
   []
 );
+
 export const getProviderAppointments = fetch.selectors.getData(
   'providerAppointments',
   []
 );
+
+export const getFreeSpots = fetch.selectors.getData('freeSpots', []);

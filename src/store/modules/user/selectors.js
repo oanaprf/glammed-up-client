@@ -35,3 +35,5 @@ export const isOwnProfile = createSelector(
   U.getProp('userId'),
   (currentUserId, userId) => currentUserId === userId
 );
+
+export const getClientNames = fetch.selectors.getData('clientNames', []);

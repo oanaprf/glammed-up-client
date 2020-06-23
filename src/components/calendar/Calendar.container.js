@@ -12,10 +12,11 @@ const Calendar = compose(
       setSelectedDay(day);
     },
   }),
-  withProps(({ selectedDay }) => ({
+  withProps(({ selectedDay, minDate }) => ({
     ...(selectedDay && {
       markedDates: { [selectedDay.dateString]: { selected: true } },
     }),
+    ...(minDate && { minDate }),
     theme: {
       arrowColor: theme.colors.theme_black_pink.secondary,
       dotColor: theme.colors.theme_black_pink.secondary,

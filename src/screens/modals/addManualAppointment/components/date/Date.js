@@ -1,14 +1,18 @@
+/* eslint-disable no-use-before-define */
 import React from 'react';
 
 import { Calendar } from '@@components';
 
-const Date = props => (
+const today = new Date();
+
+const Date2 = props => (
   <Calendar
     {...{
       name: 'date',
+      minDate: today,
       ...props,
     }}
   />
 );
 
-export default Date;
+export default Date2;

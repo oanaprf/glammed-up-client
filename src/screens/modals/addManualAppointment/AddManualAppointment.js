@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { t } from '@@config';
 import * as C from '@@utils/constants';
@@ -8,23 +9,29 @@ import { Modal, Spacer } from '@@components';
 import { Date, Time, Client, Service, SaveButton } from './components';
 import * as S from './styled';
 
-const AddManualAppointment = () => (
+const AddManualAppointment = ({
+  serviceNames = [],
+  clientNames = [],
+  fetchFreeSpots,
+  currentUserId,
+  freeSpots = [],
+}) => (
   <Modal
     name={C.MODALS.ADD_MANUAL_APPOINTMENT}
     style={{ width: '90%' }}
     title={t('appointments.addManualAppointment')}
   >
     <S.ModalContainer>
-      <Service />
+      <Service serviceNames={serviceNames} />
       <Spacer height={10} />
-      <Date />
+      <Date {...{ fetchFreeSpots, currentUserId, serviceNames }} />
       <Spacer height={5} />
       <S.RowContainer>
         <S.FlexContainer>
-          <Time />
+          <Time freeSpots={freeSpots} />
         </S.FlexContainer>
         <S.FlexContainer>
-          <Client />
+          <Client clientNames={clientNames} />
         </S.FlexContainer>
       </S.RowContainer>
       <Spacer height={5} />
@@ -34,5 +41,13 @@ const AddManualAppointment = () => (
     </S.ModalContainer>
   </Modal>
 );
+
+AddManualAppointment.propTypes = {
+  serviceNames: PropTypes.array,
+  clientNames: PropTypes.array,
+  freeSpots: PropTypes.array,
+  currentUserId: PropTypes.string.isRequired,
+  fetchFreeSpots: PropTypes.func.isRequired,
+};
 
 export default AddManualAppointment;

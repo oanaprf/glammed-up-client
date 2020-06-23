@@ -8,10 +8,6 @@ const Client = props => (
       name: 'client',
       dark: true,
       maxHeight: 150,
-      options: [
-        { key: '123', value: 'Maria Popescu' },
-        { key: '1234', value: 'Andra Radu' },
-      ],
       ...props,
     }}
   />

@@ -11,3 +11,9 @@ export const signUp = auth.actions.signUpStart;
 
 export const fetchProfile = id =>
   fetch.actions.fetch({ name: `user/${id}/data`, url: routes.profile(id) });
+
+export const fetchClientNames = () =>
+  fetch.actions.fetch({
+    name: 'clientNames',
+    url: routes.clientNames,
+  });

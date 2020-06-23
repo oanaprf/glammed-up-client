@@ -45,3 +45,6 @@ export const isOwnService = createSelector(
   userSelectors.getCurrentUserId,
   ({ providerId }, currentUserId) => providerId === currentUserId
 );
+
+export const getServiceNamesByProvider = (state, { currentUserId }) =>
+  fetch.selectors.getData(`user/${currentUserId}/serviceNames`, [])(state);

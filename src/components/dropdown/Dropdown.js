@@ -7,6 +7,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import compose from 'lodash/fp/compose';
+import getOr from 'lodash/fp/getOr';
+import find from 'lodash/fp/find';
 
 import { DropdownItem, DropdownInput } from './components';
 import * as S from './styled';
@@ -20,7 +23,7 @@ if (
 
 const Dropdown = ({
   placeholder,
-  options,
+  options = [],
   maxHeight = 200,
   opened,
   setOpened,
@@ -31,7 +34,9 @@ const Dropdown = ({
   ...rest
 }) => (
   <View style={{ position: 'relative' }} {...rest}>
-    <S.StyledList {...{ dark, rounded, opened, maxHeight }}>
+    <S.StyledList
+      {...{ dark, rounded, opened, maxHeight, count: options.length }}
+    >
       <ScrollView showsVerticalScrollIndicator={false}>
         <TouchableOpacity activeOpacity={1}>
           {options.map(option => (
@@ -48,7 +53,17 @@ const Dropdown = ({
       </ScrollView>
     </S.StyledList>
     <DropdownInput
-      {...{ opened, setOpened, value, dark, rounded, placeholder }}
+      {...{
+        opened,
+        setOpened,
+        value: compose(
+          getOr('', 'value'),
+          find(({ key }) => key === value)
+        )(options),
+        dark,
+        rounded,
+        placeholder,
+      }}
     />
   </View>
 );

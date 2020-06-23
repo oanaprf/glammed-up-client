@@ -42,7 +42,7 @@ const Appointments = ({
         ]}
       />
     </S.Body>
-    <AddManualAppointment />
+    {isCurrentUserProvider ? <AddManualAppointment /> : null}
     <AddReviewModal />
   </S.Container>
 );
