@@ -17,6 +17,8 @@ export const TextInputWrapper = styled.View`
       ios: 'box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);',
       android: 'elevation: 3;',
     })}
+  border: ${({ error, theme }) =>
+    error ? `2px solid ${theme.colors.error}` : '2px solid transparent'}
 `;
 
 export const StyledTextInput = styled.TextInput`

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 import { TextInput } from '@@components';
 import { theme } from '@@config';
@@ -9,6 +10,7 @@ const Email = props => (
     {...{
       dark: true,
       name: 'email',
+      error: props.submitting && !props.value,
       ...props,
     }}
     Icon={
@@ -23,5 +25,10 @@ const Email = props => (
     }
   />
 );
+
+Email.propTypes = {
+  value: PropTypes.string.isRequired,
+  submitting: PropTypes.bool.isRequired,
+};
 
 export default Email;

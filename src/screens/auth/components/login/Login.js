@@ -9,12 +9,12 @@ import * as S from './styled';
 import { LoginButton } from './components';
 import { Email, Password } from '../common';
 
-const Login = ({ formValues, onChange, onLogin }) => (
+const Login = ({ formValues, setFormValues, onLogin, submitting }) => (
   <>
     <Spacer height={30} />
-    <Email value={formValues.email} onChange={onChange} />
+    <Email {...{ formValues, setFormValues, submitting }} />
     <S.SmallSpacer />
-    <Password value={formValues.password} onChange={onChange} />
+    <Password {...{ formValues, setFormValues, submitting }} />
     <S.MediumSpacer />
     <LoginButton onPress={onLogin} />
     <S.SmallSpacer />
@@ -38,10 +38,11 @@ const Login = ({ formValues, onChange, onLogin }) => (
 
 Login.propTypes = {
   formValues: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
   onLogin: PropTypes.func.isRequired,
+  setFormValues: PropTypes.func.isRequired,
   onFacebookLogin: PropTypes.func.isRequired,
   onGoogleLogin: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
 };
 
 export default Login;
