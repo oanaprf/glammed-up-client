@@ -13,25 +13,25 @@ const RadioGroup = ({
   style,
 }) => (
   <View style={style}>
-    {options.map((option, index) => (
+    {options.map(({ value, Component }) => (
       <S.RowContainer
-        key={index}
+        key={value}
         onPress={() => {
-          onChange && onChange(index);
-          setSelectedOption(index);
+          onChange && onChange(value);
+          setSelectedOption(value);
         }}
         activeOpacity={0.6}
       >
         <Icon
           {...{
             name:
-              index === selectedOption
+              value === selectedOption
                 ? 'radio-button-checked'
                 : 'radio-button-unchecked',
             size: 20,
           }}
         />
-        {option}
+        {Component}
       </S.RowContainer>
     ))}
   </View>
@@ -39,7 +39,7 @@ const RadioGroup = ({
 
 RadioGroup.propTypes = {
   options: PropTypes.array.isRequired,
-  selectedOption: PropTypes.number.isRequired,
+  selectedOption: PropTypes.string.isRequired,
   setSelectedOption: PropTypes.func.isRequired,
   onChange: PropTypes.func,
   style: PropTypes.array,

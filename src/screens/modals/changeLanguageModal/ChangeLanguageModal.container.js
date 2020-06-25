@@ -1,20 +1,19 @@
 import { compose, withProps, withHandlers } from 'recompose';
-import I18n from 'i18n-js';
+import { connect } from 'react-redux';
 
 import { withUseState } from '@@hocs';
+import { preferences } from '@@store/modules';
 
 import BaseChangeLanguageModal from './ChangeLanguageModal';
 
-const languages = ['ro', 'en'];
-
 const ChangeLanguageModal = compose(
-  withUseState('selectedLanguage', () => I18n.locale),
+  connect(state => ({ language: preferences.selectors.getLanguage(state) })),
+  withUseState('selectedLanguage', ({ language }) => language),
   withHandlers({
-    onChange: ({ setSelectedLanguage }) => index =>
-      setSelectedLanguage(languages[index]),
+    onChange: ({ setSelectedLanguage }) => value => setSelectedLanguage(value),
   }),
   withProps(({ selectedLanguage }) => ({
-    selectedOption: languages.indexOf(selectedLanguage),
+    selectedOption: selectedLanguage,
   }))
 )(BaseChangeLanguageModal);
 

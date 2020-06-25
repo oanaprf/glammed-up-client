@@ -1,6 +1,7 @@
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import getOr from 'lodash/fp/getOr';
+import isEmpty from 'lodash/fp/isEmpty';
 
 import { modal, appointments } from '@@store/modules';
 import { withOnMount } from '@@hocs';
@@ -22,7 +23,7 @@ const BookAppointmentModal = compose(
   ),
   withOnMount(
     ({ service, fetchFreeSpots }) =>
-      service &&
+      !isEmpty(service) &&
       fetchFreeSpots(
         service.providerId,
         tomorrow.toJSON().substring(0, 10),

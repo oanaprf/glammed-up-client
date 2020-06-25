@@ -4,7 +4,7 @@ import BaseRadioGroup from './RadioGroup';
 
 const RadioGroup = withUseState(
   'selectedOption',
-  ({ selectedOption }) => selectedOption || 0
+  ({ selectedOption }) => selectedOption
 )(BaseRadioGroup);
 
 export default RadioGroup;
