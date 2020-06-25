@@ -1,13 +1,12 @@
 import styled from 'styled-components/native';
-import { Icon } from 'react-native-elements';
-import { ButtonText } from '@@components';
+import { ButtonText, SecondaryColorIcon } from '@@components';
 
 export const Option = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
 `;
 
-export const StyledIcon = styled(Icon)`
+export const StyledIcon = styled(SecondaryColorIcon)`
   width: 45px;
 `;
 

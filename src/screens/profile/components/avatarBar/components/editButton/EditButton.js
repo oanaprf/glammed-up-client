@@ -21,7 +21,7 @@ const EditButton = ({ openModal, isOwnProfile, user }) => (
         name: 'edit-2',
         type: 'feather',
         size: 24,
-        color: theme.colors.theme_black_pink.primary,
+        color: theme.colors.black,
       }}
     />
   </S.StyledButton>

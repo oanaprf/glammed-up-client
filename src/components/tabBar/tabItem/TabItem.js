@@ -38,7 +38,7 @@ const TabItem = ({
         name: icons[route.name],
         type: 'feather',
         size: 25,
-        color: theme.colors.theme_black_pink.primary,
+        color: theme.colors.black,
       }}
     />
     {isActive && <S.Point isActive={isActive} />}
