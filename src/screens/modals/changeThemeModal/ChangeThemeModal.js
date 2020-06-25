@@ -20,12 +20,30 @@ const ChangeThemeModal = ({ selectedOption, selectedTheme, onChange }) => (
       <Spacer height={5} />
       <S.StyleRadioGroup
         options={[
-          { value: 'PURPLE', Component: <Option value="PURPLE" /> },
-          { value: 'FUCHSIA', Component: <Option value="FUCHSIA" /> },
-          { value: 'FIRE', Component: <Option value="FIRE" /> },
-          { value: 'ORANGE', Component: <Option value="ORANGE" /> },
-          { value: 'AQUA', Component: <Option value="AQUA" /> },
-          { value: 'BLUE', Component: <Option value="BLUE" /> },
+          {
+            value: C.THEME_COLORS.FIRE,
+            Component: <Option value={C.THEME_COLORS.FIRE} />,
+          },
+          {
+            value: C.THEME_COLORS.FUCHSIA,
+            Component: <Option value={C.THEME_COLORS.FUCHSIA} />,
+          },
+          {
+            value: C.THEME_COLORS.PURPLE,
+            Component: <Option value={C.THEME_COLORS.PURPLE} />,
+          },
+          {
+            value: C.THEME_COLORS.LILA,
+            Component: <Option value={C.THEME_COLORS.LILA} />,
+          },
+          {
+            value: C.THEME_COLORS.BLUE,
+            Component: <Option value={C.THEME_COLORS.BLUE} />,
+          },
+          {
+            value: C.THEME_COLORS.AQUA,
+            Component: <Option value={C.THEME_COLORS.AQUA} />,
+          },
         ]}
         {...{ selectedOption, onChange }}
       />

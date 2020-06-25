@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { Button, Text } from '@@components';
 
 export const CredentialsContainer = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.theme_black_pink.primary};
+  background-color: ${({ theme }) => theme.theme_colors.primary};
   border-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   flex-direction: row;
   justify-content: space-around;

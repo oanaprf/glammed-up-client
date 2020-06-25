@@ -7,13 +7,26 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
+import * as C from '@@utils/constants';
 import { TabBar, SplashScreen } from '@@components';
 import { Home, Search, Appointments, Profile, Settings, Auth } from '@@screens';
-import { theme, theme_purple } from '@@config';
+import {
+  theme,
+  themeFuchsia,
+  themePurple,
+  themeAqua,
+  themeBlue,
+  themeFire,
+  themeLila,
+} from '@@config';
 
 const themeMapping = {
-  FUCHSIA: theme,
-  PURPLE: theme_purple,
+  [C.THEME_COLORS.FUCHSIA]: themeFuchsia,
+  [C.THEME_COLORS.PURPLE]: themePurple,
+  [C.THEME_COLORS.AQUA]: themeAqua,
+  [C.THEME_COLORS.BLUE]: themeBlue,
+  [C.THEME_COLORS.FIRE]: themeFire,
+  [C.THEME_COLORS.LILA]: themeLila,
 };
 
 const HomeStackNavigator = createStackNavigator();
@@ -47,7 +60,12 @@ const SearchStack = () => (
 );
 
 const Main = ({ translationsLoaded, isLoggedIn, themeName }) => (
-  <ThemeProvider theme={themeMapping[themeName]}>
+  <ThemeProvider
+    theme={{
+      ...theme,
+      ...themeMapping[themeName],
+    }}
+  >
     <SafeAreaView style={{ flex: 0, backgroundColor: theme.colors.black }} />
     <StatusBar barStyle="light-content" />
     {

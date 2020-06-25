@@ -5,7 +5,7 @@ import { Tabs, Text } from '@@components';
 export const Container = styled.View`
   flex: 1;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.theme_black_pink.primary};
+  background-color: ${({ theme }) => theme.theme_colors.primary};
 `;
 
 export const StyledTitle = styled.View`

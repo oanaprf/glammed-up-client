@@ -33,7 +33,7 @@ export const ModalCloseIcon = styled(Icon)`
   height: 45px;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.theme_black_pink.secondary};
+  background-color: ${({ theme }) => theme.theme_colors.secondary};
   border-top-right-radius: ${({ theme }) => theme.borderRadius.L}px;
   border-bottom-left-radius: ${({ theme }) => theme.borderRadius.L}px;
 `;

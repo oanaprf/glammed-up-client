@@ -13,7 +13,7 @@ export const TabLabel = styled.TouchableOpacity`
     `border-bottom-width: 6px;
    border-bottom-left-radius: ${theme.borderRadius.M}px;
    border-bottom-right-radius: ${theme.borderRadius.M}px;
-   border-bottom-color: ${theme.colors.theme_black_pink.secondary}`}
+   border-bottom-color: ${theme.theme_colors.secondary}`}
 `;
 
 export const TabContent = styled.View`

@@ -24,8 +24,7 @@ export const HorizontalBarWrapper = styled.View`
 
 export const HorizontalBar = styled.View`
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }) =>
-    theme.colors.theme_black_pink.secondary};
+  border-bottom-color: ${({ theme }) => theme.theme_colors.secondary};
   flex-grow: 2;
 `;
 

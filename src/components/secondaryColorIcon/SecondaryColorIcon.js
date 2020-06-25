@@ -3,18 +3,30 @@ import React from 'react';
 import { Icon } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
-import { theme, theme_purple } from '@@config';
+import {
+  themeFuchsia,
+  themePurple,
+  themeAqua,
+  themeBlue,
+  themeFire,
+  themeLila,
+} from '@@config';
+import * as C from '@@utils/constants';
 
 const themeMapping = {
-  FUCHSIA: theme,
-  PURPLE: theme_purple,
+  [C.THEME_COLORS.FUCHSIA]: themeFuchsia,
+  [C.THEME_COLORS.PURPLE]: themePurple,
+  [C.THEME_COLORS.AQUA]: themeAqua,
+  [C.THEME_COLORS.BLUE]: themeBlue,
+  [C.THEME_COLORS.FIRE]: themeFire,
+  [C.THEME_COLORS.LILA]: themeLila,
 };
 
 const SecondaryColorIcon = ({ themeName, ...rest }) => (
   <Icon
     {...{
       ...rest,
-      color: themeMapping[themeName].colors.theme_black_pink.secondary,
+      color: themeMapping[themeName].theme_colors.secondary,
     }}
   />
 );

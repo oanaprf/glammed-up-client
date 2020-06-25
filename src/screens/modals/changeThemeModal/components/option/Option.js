@@ -2,15 +2,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import * as C from '@@utils/constants';
 import * as S from '../../styled';
 
 const colorMapping = {
-  PURPLE: '#b900cb',
-  FUCHSIA: '#fc00ff',
-  FIRE: '#FA2A4C',
-  ORANGE: '#ff6a00',
-  AQUA: '#00C2BA',
-  BLUE: '#0057FF',
+  [C.THEME_COLORS.PURPLE]: '#D150F8',
+  [C.THEME_COLORS.FUCHSIA]: '#fc00ff',
+  [C.THEME_COLORS.LILA]: '#AEA9FD',
+  [C.THEME_COLORS.FIRE]: '#FA2A4C',
+  [C.THEME_COLORS.AQUA]: '#00C2BA',
+  [C.THEME_COLORS.BLUE]: '#24B0D7',
 };
 
 const Option = ({ value }) => (
