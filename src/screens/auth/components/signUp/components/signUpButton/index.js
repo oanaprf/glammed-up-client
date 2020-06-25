@@ -1,1 +1,1 @@
-export { default } from './SignUpButton';
+export { default } from './SignUpButton.container';

@@ -85,7 +85,7 @@ export default ({ dispatch }) => next => async action => {
       method: 'POST',
       data: payload,
     })
-      .then(({ data: { data } }) => dispatch(signUpSuccess({ data })))
+      .then(({ data }) => dispatch(signUpSuccess({ data })))
       .catch(error => dispatch(signUpFail({ error })));
   } else if (type === LOGOUT_START) {
     firebase
