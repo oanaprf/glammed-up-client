@@ -1,10 +1,15 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Icon } from 'react-native-elements';
 
-import { Modal, ButtonText, Text, Spacer } from '@@components';
+import {
+  Modal,
+  ButtonText,
+  Text,
+  Spacer,
+  SecondaryColorIcon,
+} from '@@components';
 import * as C from '@@utils/constants';
-import { t, theme } from '@@config';
+import { t } from '@@config';
 
 import * as S from './styled';
 
@@ -12,12 +17,11 @@ const BecomeProviderModal = () => (
   <Modal name={C.MODALS.BECOME_PROVIDER} style={{ width: '90%' }}>
     <S.ModalContainer>
       <S.WandContainer>
-        <Icon
+        <SecondaryColorIcon
           {...{
             name: 'magic-wand',
             type: 'simple-line-icon',
             size: 40,
-            color: theme.colors.theme_black_pink.secondary,
           }}
         />
       </S.WandContainer>
@@ -30,48 +34,44 @@ const BecomeProviderModal = () => (
       <Spacer height={10} />
       <View>
         <S.RowContainer>
-          <Icon
+          <SecondaryColorIcon
             {...{
               name: 'chevron-right',
               type: 'feather',
               size: 20,
-              color: theme.colors.theme_black_pink.secondary,
             }}
           />
           <Text>{t('settings.addingServices')}</Text>
         </S.RowContainer>
         <Spacer height={5} />
         <S.RowContainer>
-          <Icon
+          <SecondaryColorIcon
             {...{
               name: 'chevron-right',
               type: 'feather',
               size: 20,
-              color: theme.colors.theme_black_pink.secondary,
             }}
           />
           <Text>{t('settings.addingManualAppointment')}</Text>
         </S.RowContainer>
         <Spacer height={5} />
         <S.RowContainer>
-          <Icon
+          <SecondaryColorIcon
             {...{
               name: 'chevron-right',
               type: 'feather',
               size: 20,
-              color: theme.colors.theme_black_pink.secondary,
             }}
           />
           <Text>{t('settings.receivingAppointments')}</Text>
         </S.RowContainer>
         <Spacer height={5} />
         <S.RowContainer>
-          <Icon
+          <SecondaryColorIcon
             {...{
               name: 'chevron-right',
               type: 'feather',
               size: 20,
-              color: theme.colors.theme_black_pink.secondary,
             }}
           />
           <Text>{t('settings.receivingReviews')}</Text>

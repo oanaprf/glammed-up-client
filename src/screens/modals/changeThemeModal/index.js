@@ -1,1 +1,1 @@
-export { default } from './ChangeThemeModal';
+export { default } from './ChangeThemeModal.container';

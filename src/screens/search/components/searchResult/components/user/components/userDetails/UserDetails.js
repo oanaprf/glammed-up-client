@@ -1,10 +1,8 @@
 import React from 'react';
-import { Icon } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { theme } from '@@config';
-import { Text } from '@@components';
+import { Text, SecondaryColorIcon } from '@@components';
 import {
   getFullName,
   getPhoneNumber,
@@ -21,23 +19,21 @@ const UserDetails = ({ user, onProviderNamePress }) => (
       </Text>
     </TouchableOpacity>
     <S.RowContainer>
-      <Icon
+      <SecondaryColorIcon
         {...{
           name: 'phone',
           type: 'feather',
           size: 15,
-          color: theme.colors.theme_black_pink.secondary,
         }}
       />
       <S.StyledText size="XS">{getPhoneNumber(user)}</S.StyledText>
     </S.RowContainer>
     <S.RowContainer>
-      <Icon
+      <SecondaryColorIcon
         {...{
           name: 'map-pin',
           type: 'feather',
           size: 15,
-          color: theme.colors.theme_black_pink.secondary,
         }}
       />
       <S.StyledText size="XS">{getAddress(user)}</S.StyledText>

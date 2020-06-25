@@ -11,7 +11,7 @@ export const AvatarBar = styled.View`
 `;
 
 export const StyledButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.theme_black_pink.secondary};
+  background-color: ${({ theme }) => theme.theme_colors.secondary};
   flex-direction: row;
   justify-content: space-between;
 `;

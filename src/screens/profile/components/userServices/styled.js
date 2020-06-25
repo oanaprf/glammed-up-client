@@ -9,7 +9,7 @@ export const StyledService = styled(Service)`
 `;
 
 export const StyledButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.theme_black_pink.secondary};
+  background-color: ${({ theme }) => theme.theme_colors.secondary};
   border-radius: ${({ theme }) => theme.borderRadius.L}px;
   padding: 15px;
   align-self: center;

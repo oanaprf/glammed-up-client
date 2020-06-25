@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { t, theme } from '@@config';
+import { t } from '@@config';
 
 import * as S from './styled';
 
@@ -12,7 +12,6 @@ const Option = ({ icon, label, onPress }) => (
         name: icon,
         type: 'feather',
         size: 25,
-        color: theme.colors.theme_black_pink.secondary,
       }}
     />
     <S.StyledText>{t(`settings.${label}`)}</S.StyledText>

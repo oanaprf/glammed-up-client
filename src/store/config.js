@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
 import { fetch, auth } from './middlewares';
-import { modal } from './modules';
+import { modal, preferences } from './modules';
 
 const logger = createLogger({
   collapsed: true,
@@ -14,6 +14,7 @@ const reducer = combineReducers({
   api: fetch.reducer,
   auth: auth.reducer,
   modal: modal.reducer,
+  preferences: preferences.reducer,
 });
 
 const middleware = [
@@ -26,7 +27,7 @@ const middleware = [
 export default createStore(
   reducer,
   compose(
-    applyMiddleware(...middleware)
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );

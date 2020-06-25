@@ -24,12 +24,22 @@ const ChangeLanguageModal = ({
       <Spacer height={5} />
       <S.StyleRadioGroup
         options={[
-          <S.PaddedText family="BOLD" uppercase>
-            {t('settings.ro')}
-          </S.PaddedText>,
-          <S.PaddedText family="BOLD" uppercase>
-            {t('settings.en')}
-          </S.PaddedText>,
+          {
+            value: 'ro',
+            Component: (
+              <S.PaddedText family="BOLD" uppercase>
+                {t('settings.ro')}
+              </S.PaddedText>
+            ),
+          },
+          {
+            value: 'en',
+            Component: (
+              <S.PaddedText family="BOLD" uppercase>
+                {t('settings.en')}
+              </S.PaddedText>
+            ),
+          },
         ]}
         {...{ selectedOption, onChange }}
       />
@@ -40,7 +50,7 @@ const ChangeLanguageModal = ({
 );
 
 ChangeLanguageModal.propTypes = {
-  selectedOption: PropTypes.number.isRequired,
+  selectedOption: PropTypes.string.isRequired,
   selectedLanguage: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

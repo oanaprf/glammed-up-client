@@ -1,8 +1,7 @@
 import React from 'react';
-import { Icon } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
-import { theme } from '@@config';
+import { SecondaryColorIcon } from '@@components';
 import { getPhoneNumber, getAddress } from '@@store/modules/user/selectors';
 
 import * as S from './styled';
@@ -11,12 +10,11 @@ const UserInfoCard = ({ user }) => (
   <S.CardContainer>
     {getPhoneNumber(user) ? (
       <S.StyledRow>
-        <Icon
+        <SecondaryColorIcon
           {...{
             name: 'phone',
             type: 'feather',
             size: 22,
-            color: theme.colors.theme_black_pink.secondary,
           }}
         />
         <S.StyledText size="M">{getPhoneNumber(user)}</S.StyledText>
@@ -24,12 +22,11 @@ const UserInfoCard = ({ user }) => (
     ) : null}
     {getAddress(user) ? (
       <S.StyledRow>
-        <Icon
+        <SecondaryColorIcon
           {...{
             name: 'map-pin',
             type: 'feather',
             size: 22,
-            color: theme.colors.theme_black_pink.secondary,
           }}
         />
         <S.StyledText family="REGULAR">{getAddress(user)}</S.StyledText>

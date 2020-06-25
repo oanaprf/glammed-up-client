@@ -30,3 +30,12 @@ export const MODALS = {
   CHANGE_LANGUAGE_MODAL: 'changeLanguageModal',
   CHANGE_THEME_MODAL: 'changeThemeModal',
 };
+
+export const THEME_COLORS = {
+  PURPLE: 'PURPLE',
+  FUCHSIA: 'FUCHSIA',
+  FIRE: 'FIRE',
+  LILA: 'LILA',
+  AQUA: 'AQUA',
+  BLUE: 'BLUE',
+};

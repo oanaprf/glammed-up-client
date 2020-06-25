@@ -1,14 +1,15 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { t } from '@@config';
 import * as C from '@@utils/constants';
 import { Modal, Spacer } from '@@components';
 
-import { SaveButton } from './components';
+import { SaveButton, Option } from './components';
 import * as S from './styled';
 
-const ChangeThemeModal = () => (
+const ChangeThemeModal = ({ selectedOption, selectedTheme, onChange }) => (
   <Modal
     name={C.MODALS.CHANGE_THEME_MODAL}
     style={{ width: '80%' }}
@@ -19,48 +20,43 @@ const ChangeThemeModal = () => (
       <Spacer height={5} />
       <S.StyleRadioGroup
         options={[
-          <S.RowContainer>
-            <S.PaddedText family="BOLD" uppercase>
-              PURPLE
-            </S.PaddedText>
-            <S.ColorView color="#b900cb" />
-          </S.RowContainer>,
-          <S.RowContainer>
-            <S.PaddedText family="BOLD" uppercase>
-              FUCHSIA
-            </S.PaddedText>
-            <S.ColorView color="#fc00ff" />
-          </S.RowContainer>,
-          <S.RowContainer>
-            <S.PaddedText family="BOLD" uppercase>
-              FIRE
-            </S.PaddedText>
-            <S.ColorView color="#FA2A4C" />
-          </S.RowContainer>,
-          <S.RowContainer>
-            <S.PaddedText family="BOLD" uppercase>
-              ORANGE
-            </S.PaddedText>
-            <S.ColorView color="#ff6a00" />
-          </S.RowContainer>,
-          <S.RowContainer>
-            <S.PaddedText family="BOLD" uppercase>
-              AQUA
-            </S.PaddedText>
-            <S.ColorView color="#00C2BA" />
-          </S.RowContainer>,
-          <S.RowContainer>
-            <S.PaddedText family="BOLD" uppercase>
-              BLUE
-            </S.PaddedText>
-            <S.ColorView color="#0057FF" />
-          </S.RowContainer>,
+          {
+            value: C.THEME_COLORS.FIRE,
+            Component: <Option value={C.THEME_COLORS.FIRE} />,
+          },
+          {
+            value: C.THEME_COLORS.FUCHSIA,
+            Component: <Option value={C.THEME_COLORS.FUCHSIA} />,
+          },
+          {
+            value: C.THEME_COLORS.PURPLE,
+            Component: <Option value={C.THEME_COLORS.PURPLE} />,
+          },
+          {
+            value: C.THEME_COLORS.LILA,
+            Component: <Option value={C.THEME_COLORS.LILA} />,
+          },
+          {
+            value: C.THEME_COLORS.BLUE,
+            Component: <Option value={C.THEME_COLORS.BLUE} />,
+          },
+          {
+            value: C.THEME_COLORS.AQUA,
+            Component: <Option value={C.THEME_COLORS.AQUA} />,
+          },
         ]}
+        {...{ selectedOption, onChange }}
       />
       <Spacer height={10} />
-      <SaveButton />
+      <SaveButton selectedTheme={selectedTheme} />
     </S.ModalContainer>
   </Modal>
 );
+
+ChangeThemeModal.propTypes = {
+  selectedOption: PropTypes.string.isRequired,
+  selectedTheme: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default ChangeThemeModal;

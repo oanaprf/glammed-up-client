@@ -19,7 +19,7 @@ export const ButtonsContainer = styled.View`
 `;
 
 export const YesButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.theme_black_pink.secondary};
+  background-color: ${({ theme }) => theme.theme_colors.secondary};
   flex: 0.45;
 `;
 
@@ -30,7 +30,7 @@ export const NoButton = styled(Button)`
 export const WandContainer = styled.View`
   border-radius: ${({ theme }) => theme.borderRadius.XXXL}px;
   border-width: 3px;
-  border-color: ${({ theme }) => theme.colors.theme_black_pink.secondary};
+  border-color: ${({ theme }) => theme.theme_colors.secondary};
   align-self: center;
   width: 70px;
   height: 70px;

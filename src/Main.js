@@ -1,13 +1,33 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
 
+import * as C from '@@utils/constants';
 import { TabBar, SplashScreen } from '@@components';
 import { Home, Search, Appointments, Profile, Settings, Auth } from '@@screens';
-import { theme } from '@@config';
+import {
+  theme,
+  themeFuchsia,
+  themePurple,
+  themeAqua,
+  themeBlue,
+  themeFire,
+  themeLila,
+} from '@@config';
+
+const themeMapping = {
+  [C.THEME_COLORS.FUCHSIA]: themeFuchsia,
+  [C.THEME_COLORS.PURPLE]: themePurple,
+  [C.THEME_COLORS.AQUA]: themeAqua,
+  [C.THEME_COLORS.BLUE]: themeBlue,
+  [C.THEME_COLORS.FIRE]: themeFire,
+  [C.THEME_COLORS.LILA]: themeLila,
+};
 
 const HomeStackNavigator = createStackNavigator();
 const SearchStackNavigator = createStackNavigator();
@@ -39,8 +59,13 @@ const SearchStack = () => (
   </SearchStackNavigator.Navigator>
 );
 
-const Main = ({ translationsLoaded, isLoggedIn }) => (
-  <>
+const Main = ({ translationsLoaded, isLoggedIn, themeName }) => (
+  <ThemeProvider
+    theme={{
+      ...theme,
+      ...themeMapping[themeName],
+    }}
+  >
     <SafeAreaView style={{ flex: 0, backgroundColor: theme.colors.black }} />
     <StatusBar barStyle="light-content" />
     {
@@ -68,12 +93,13 @@ const Main = ({ translationsLoaded, isLoggedIn }) => (
         <SplashScreen />
       )
     }
-  </>
+  </ThemeProvider>
 );
 
 Main.propTypes = {
   translationsLoaded: PropTypes.bool.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
+  themeName: PropTypes.string.isRequired,
 };
 
 export default Main;

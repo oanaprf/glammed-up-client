@@ -23,7 +23,7 @@ export const Point = styled.View`
   height: 5px;
   border-radius: ${({ theme }) => theme.borderRadius.XXL}px;
   background-color: ${({ theme, isActive }) =>
-    isActive ? theme.colors.theme_black_pink.secondary : theme.colors.black};
+    isActive ? theme.theme_colors.secondary : theme.colors.black};
   margin-top: 5px;
 `;
 
