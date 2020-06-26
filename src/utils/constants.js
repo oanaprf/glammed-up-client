@@ -29,6 +29,7 @@ export const MODALS = {
   EDIT_CREDENTIALS_MODAL: 'editCredentialsModal',
   CHANGE_LANGUAGE_MODAL: 'changeLanguageModal',
   CHANGE_THEME_MODAL: 'changeThemeModal',
+  APPROVE_APPOINTMENT_MODAL: 'approveAppointmentModal',
 };
 
 export const THEME_COLORS = {

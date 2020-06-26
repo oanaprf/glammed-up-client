@@ -8,3 +8,4 @@ export { default as AddManualAppointment } from './addManualAppointment';
 export { default as EditCredentialsModal } from './editCredentialsModal';
 export { default as ChangeLanguageModal } from './changeLanguageModal';
 export { default as ChangeThemeModal } from './changeThemeModal';
+export { default as ApproveAppointmentModal } from './approveAppointmentModal';
