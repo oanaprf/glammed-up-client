@@ -1,4 +1,4 @@
-import { compose, withProps } from 'recompose';
+import { compose, withProps, withHandlers } from 'recompose';
 
 import { withLabel } from '@@hocs';
 
@@ -11,9 +11,14 @@ const mapFreeSpotsToOptions = value => ({
 
 const Time = compose(
   withLabel('appointments.fields.time'),
-  withProps(({ freeSpots }) => ({
+  withProps(({ freeSpots, formValues }) => ({
     options: freeSpots.map(mapFreeSpotsToOptions),
-  }))
+    value: formValues.time,
+  })),
+  withHandlers({
+    onChangeText: ({ formValues, setFormValues }) => value =>
+      setFormValues({ ...formValues, time: value }),
+  })
 )(BaseTime);
 
 export default Time;

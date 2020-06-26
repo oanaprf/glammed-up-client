@@ -32,6 +32,7 @@ const Dropdown = ({
   dark,
   rounded,
   error,
+  onChangeText,
   ...rest
 }) => (
   <View style={{ position: 'relative' }} {...rest}>
@@ -47,6 +48,7 @@ const Dropdown = ({
                 option,
                 setValue,
                 setOpened,
+                onChangeText,
               }}
             />
           ))}
@@ -81,6 +83,7 @@ Dropdown.propTypes = {
   dark: PropTypes.bool,
   rounded: PropTypes.bool,
   error: PropTypes.bool,
+  onChangeText: PropTypes.func,
 };
 
 export default Dropdown;

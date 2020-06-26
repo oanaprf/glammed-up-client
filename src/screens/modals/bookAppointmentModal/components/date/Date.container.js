@@ -6,8 +6,12 @@ import BaseDate from './Date';
 const Date = compose(
   withLabel('appointments.fields.date'),
   withHandlers({
-    onChange: ({ fetchFreeSpots, service }) => ({ dateString }) =>
-      fetchFreeSpots(service.providerId, dateString, service.duration),
+    onChange: ({ fetchFreeSpots, service, formValues, setFormValues }) => ({
+      dateString,
+    }) => {
+      setFormValues({ ...formValues, date: dateString });
+      fetchFreeSpots(service.providerId, dateString, service.duration);
+    },
   })
 )(BaseDate);
 

@@ -46,7 +46,8 @@
       "REJECTED": "REJECTED",
       "COMPLETED": "COMPLETED",
       "CANCELLED": "CANCELLED"
-    }
+    },
+    "sms": "You have a new appointment on {{date}} at {{time}}"
   },
   "profile": {
     "pageName": "Profile",

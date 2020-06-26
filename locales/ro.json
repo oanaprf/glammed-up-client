@@ -46,7 +46,8 @@
       "REJECTED": "REFUZATĂ",
       "COMPLETED": "TERMINATĂ",
       "CANCELLED": "ANULATĂ"
-    }
+    },
+    "sms": "Ai o nouă programare în data de {{date}} la ora {{time}}"
   },
   "profile": {
     "pageName": "Profil",

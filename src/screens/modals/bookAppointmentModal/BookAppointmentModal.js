@@ -9,7 +9,15 @@ import { Modal, Spacer } from '@@components';
 import { ServiceDetails, Date, Time, SaveButton } from './components';
 import * as S from './styled';
 
-const BookAppointmentModal = ({ service, fetchFreeSpots, freeSpots }) => (
+const BookAppointmentModal = ({
+  service,
+  fetchFreeSpots,
+  freeSpots,
+  formValues,
+  setFormValues,
+  submitting,
+  setSubmitting,
+}) => (
   <Modal
     name={C.MODALS.BOOK_APPOINTMENT}
     style={{ width: '90%' }}
@@ -18,12 +26,14 @@ const BookAppointmentModal = ({ service, fetchFreeSpots, freeSpots }) => (
     <S.ModalContainer>
       <ServiceDetails service={service} />
       <Spacer />
-      <Date {...{ service, fetchFreeSpots }} />
+      <Date
+        {...{ service, fetchFreeSpots, formValues, setFormValues, submitting }}
+      />
       <Spacer height={5} />
-      <Time freeSpots={freeSpots} />
+      <Time {...{ freeSpots, formValues, setFormValues, submitting }} />
       <Spacer height={10} />
       <View style={{ zIndex: -1 }}>
-        <SaveButton />
+        <SaveButton {...{ service, formValues, setSubmitting }} />
       </View>
     </S.ModalContainer>
   </Modal>
@@ -33,6 +43,10 @@ BookAppointmentModal.propTypes = {
   service: PropTypes.object.isRequired,
   fetchFreeSpots: PropTypes.func.isRequired,
   freeSpots: PropTypes.array,
+  formValues: PropTypes.object.isRequired,
+  setFormValues: PropTypes.func.isRequired,
+  setSubmitting: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
 };
 
 export default BookAppointmentModal;

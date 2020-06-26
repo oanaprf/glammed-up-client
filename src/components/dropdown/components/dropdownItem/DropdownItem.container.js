@@ -4,7 +4,8 @@ import { LayoutAnimation } from 'react-native';
 import BaseDropdownItem from './DropdownItem';
 
 const DropdownItem = withHandlers({
-  onPress: ({ option, setValue, setOpened }) => () => {
+  onPress: ({ option, setValue, setOpened, onChangeText }) => () => {
+    onChangeText(option.key);
     setValue(option.key);
     setOpened(false);
     LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);

@@ -24,3 +24,4 @@ export const userServiceNames = id => `/provider/${id}/serviceNames`;
 export const clientNames = 'clientNames';
 export const freeSpots = (id, date, duration) =>
   `provider/${id}/free-spots?date=${date}&duration=${duration}`;
+export const bookAppointment = '/appointment';

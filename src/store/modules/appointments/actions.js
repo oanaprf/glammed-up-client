@@ -18,3 +18,12 @@ export const fetchFreeSpots = (id, date, duration) =>
     name: 'freeSpots',
     url: routes.freeSpots(id, date, duration),
   });
+
+export const bookAppointment = params =>
+  fetch.actions.fetch(
+    {
+      name: 'clientAppointments',
+      url: routes.bookAppointment,
+    },
+    { method: 'POST', data: params }
+  );
