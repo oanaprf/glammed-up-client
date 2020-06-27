@@ -19,7 +19,9 @@ export const getFirstPicture = ({ pictures = [] }) =>
     ? `data:image/png;base64,${pictures[0]}`
     : Image.resolveAssetSource(defaultPicture).uri;
 export const getPictures = service =>
-  U.getLength(service.pictures) ? service.pictures : [defaultPicture];
+  U.getLength(service.pictures)
+    ? service.pictures.map(pic => ({ uri: `data:image/png;base64,${pic}` }))
+    : [defaultPicture];
 
 export const isSearchLoading = fetch.selectors.isLoading('search');
 export const areUserServicesLoading = fetch.selectors.isLoading('userServices');

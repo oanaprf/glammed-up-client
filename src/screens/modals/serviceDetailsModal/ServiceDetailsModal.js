@@ -6,6 +6,7 @@ import { Modal, ButtonText, Button } from '@@components';
 import { theme, t } from '@@config';
 import { withOpenModal } from '@@hocs';
 import * as C from '@@utils/constants';
+import { getPictures } from '@@store/modules/services/selectors';
 
 import { ServiceDetails } from './components';
 import * as S from './styled';
@@ -17,7 +18,7 @@ const ServiceDetailsModal = ({ openModal, service, isOwnService }) => (
   >
     <>
       <SliderBox
-        images={service.pictures}
+        images={getPictures(service)}
         sliderBoxHeight={300}
         ImageComponentStyle={{
           borderTopLeftRadius: theme.borderRadius.L,

@@ -22,7 +22,7 @@ const ImagePicker = compose(
       } = await ExpoImagePicker.launchImageLibraryAsync({
         mediaTypes: ExpoImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
-        quality: 0,
+        quality: 0.5,
         base64: true,
       });
       if (!cancelled) {
