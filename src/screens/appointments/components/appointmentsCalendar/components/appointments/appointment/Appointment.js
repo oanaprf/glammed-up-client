@@ -11,7 +11,7 @@ const Appointment = ({ appointment = {} }) => (
     <S.AppointmentInfo>
       <AppointmentInfo appointment={appointment} />
     </S.AppointmentInfo>
-    <S.ServicePicture source={getFirstPicture(appointment.service)} />
+    <S.ServicePicture source={{ uri: getFirstPicture(appointment.service) }} />
   </S.CardContainer>
 );
 

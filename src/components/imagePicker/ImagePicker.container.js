@@ -14,13 +14,19 @@ const ImagePicker = compose(
     }
   }),
   withHandlers({
-    onSelectImage: ({ images, setImages }) => async () => {
-      const { cancelled, uri } = await ExpoImagePicker.launchImageLibraryAsync({
+    onSelectImage: ({ images, setImages, onSelectImage }) => async () => {
+      const {
+        cancelled,
+        uri,
+        base64,
+      } = await ExpoImagePicker.launchImageLibraryAsync({
         mediaTypes: ExpoImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
-        quality: 1,
+        quality: 0,
+        base64: true,
       });
       if (!cancelled) {
+        onSelectImage && onSelectImage(base64);
         setImages([...images, uri]);
       }
     },

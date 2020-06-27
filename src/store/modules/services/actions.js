@@ -27,3 +27,12 @@ export const fetchServiceNamesByProvider = id =>
     name: `user/${id}/serviceNames`,
     url: routes.userServiceNames(id),
   });
+
+export const addService = params =>
+  fetch.actions.fetch(
+    {
+      name: `user/${params.providerId}/services`,
+      url: routes.addService,
+    },
+    { method: 'POST', data: params }
+  );

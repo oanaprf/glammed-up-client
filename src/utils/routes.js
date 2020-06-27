@@ -15,6 +15,7 @@ export const search = (name, category) =>
 export const profile = id => `/user/${id}`;
 export const userReviews = id => `/client/${id}/reviews`;
 export const userServices = id => `/provider/${id}/services`;
+export const addService = '/service';
 
 // appointments
 export const clientAppointments = id => `/client/${id}/appointments`;
