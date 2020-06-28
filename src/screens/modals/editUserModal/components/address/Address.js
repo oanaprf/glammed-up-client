@@ -16,6 +16,7 @@ const Address = props => (
     }}
   />
 );
+
 Address.propTypes = {
   submitting: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired,

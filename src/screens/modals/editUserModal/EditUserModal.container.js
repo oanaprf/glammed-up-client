@@ -9,16 +9,12 @@ import {
   getPhoneNumber,
   getAddress,
 } from '@@store/modules/user/selectors';
-import * as C from '@@utils/constants';
 
 import BaseEditUserModal from './EditUserModal';
 
 const EditUserModal = compose(
   connect(state => ({
     user: modal.selectors.getModalData(state),
-    isOpen: modal.selectors.isSpecificModalOpen(state, {
-      name: C.MODALS.EDIT_USER,
-    }),
   })),
   withUseState('formValues', {
     firstName: '',

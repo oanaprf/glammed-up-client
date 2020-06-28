@@ -32,9 +32,7 @@ const Settings = ({
     <S.Body>
       <View>
         <Spacer height={40} />
-        <Credentials
-          onPress={() => openModal({ name: C.MODALS.EDIT_CREDENTIALS_MODAL })}
-        />
+        <Credentials />
         <Spacer height={40} />
         {isCurrentUserProvider ? null : (
           <>

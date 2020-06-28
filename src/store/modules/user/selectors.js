@@ -13,6 +13,7 @@ export const getLastName = getOr('', 'lastName');
 export const getFullName = getOr('', 'fullName');
 export const getPhoneNumber = getOr('', 'phoneNumber');
 export const getAddress = getOr('', 'address');
+export const getEmail = getOr('', 'email');
 export const getProfilePicture = ({ profilePicture }) =>
   profilePicture
     ? `data:image/png;base64,${profilePicture}`

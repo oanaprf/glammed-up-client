@@ -1,1 +1,1 @@
-export { default } from './EditCredentialsModal';
+export { default } from './EditCredentialsModal.container';
