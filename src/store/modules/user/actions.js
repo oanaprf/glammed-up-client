@@ -26,3 +26,5 @@ export const editUser = (id, params) =>
     },
     { method: 'PUT', data: params }
   );
+
+export const becomeProvider = id => editUser(id, { isProvider: true });

@@ -1,1 +1,1 @@
-export { default } from './BecomeProviderModal';
+export { default } from './BecomeProviderModal.container';

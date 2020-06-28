@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import PropTypes from 'prop-types';
 
 import {
   Modal,
@@ -13,7 +14,7 @@ import { t } from '@@config';
 
 import * as S from './styled';
 
-const BecomeProviderModal = () => (
+const BecomeProviderModal = ({ onPressYes, onPressNo }) => (
   <Modal name={C.MODALS.BECOME_PROVIDER} style={{ width: '90%' }}>
     <S.ModalContainer>
       <S.WandContainer>
@@ -79,15 +80,20 @@ const BecomeProviderModal = () => (
       </View>
       <Spacer height={10} />
       <S.ButtonsContainer>
-        <S.YesButton rounded>
+        <S.YesButton rounded onPress={onPressYes}>
           <ButtonText>{t('common.yes')}</ButtonText>
         </S.YesButton>
-        <S.NoButton rounded>
+        <S.NoButton rounded onPress={onPressNo}>
           <ButtonText>{t('common.no')}</ButtonText>
         </S.NoButton>
       </S.ButtonsContainer>
     </S.ModalContainer>
   </Modal>
 );
+
+BecomeProviderModal.propTypes = {
+  onPressYes: PropTypes.func.isRequired,
+  onPressNo: PropTypes.func.isRequired,
+};
 
 export default BecomeProviderModal;

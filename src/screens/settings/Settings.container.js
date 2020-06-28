@@ -7,9 +7,14 @@ import { withOpenModal } from '@@hocs';
 import BaseSettings from './Settings';
 
 const Settings = compose(
-  connect(null, {
-    logout: user.actions.logout,
-  }),
+  connect(
+    state => ({
+      isCurrentUserProvider: user.selectors.isCurrentUserProvider(state),
+    }),
+    {
+      logout: user.actions.logout,
+    }
+  ),
   withOpenModal,
   withHandlers({
     onLogout: ({ logout }) => () => logout(),
