@@ -13,11 +13,13 @@ const ChangeLanguageModal = ({
   selectedOption,
   selectedLanguage,
   onChange,
+  onCloseModal,
 }) => (
   <Modal
     name={C.MODALS.CHANGE_LANGUAGE_MODAL}
     style={{ width: '80%' }}
     title={t('settings.changeLanguage')}
+    onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
       <S.JustifiedText>{t('settings.changeLanguageIntro')}</S.JustifiedText>
@@ -53,6 +55,7 @@ ChangeLanguageModal.propTypes = {
   selectedOption: PropTypes.string.isRequired,
   selectedLanguage: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
 };
 
 export default ChangeLanguageModal;

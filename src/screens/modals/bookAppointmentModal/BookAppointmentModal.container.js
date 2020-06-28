@@ -1,4 +1,4 @@
-import { compose } from 'recompose';
+import { compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import getOr from 'lodash/fp/getOr';
 import isEmpty from 'lodash/fp/isEmpty';
@@ -36,7 +36,15 @@ const BookAppointmentModal = compose(
     date: '',
     time: '',
   })),
-  withUseState('submitting', false)
+  withUseState('submitting', false),
+  withHandlers({
+    onCloseModal: ({ setFormValues, currentUserId }) => () =>
+      setFormValues({
+        clientId: currentUserId,
+        date: '',
+        time: '',
+      }),
+  })
 )(BaseBookAppointmentModal);
 
 export default BookAppointmentModal;

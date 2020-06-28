@@ -14,11 +14,13 @@ const EditCredentialsModal = ({
   submitting,
   setFormValues,
   setSubmitting,
+  onCloseModal,
 }) => (
   <Modal
     name={C.MODALS.EDIT_CREDENTIALS_MODAL}
     style={{ width: '90%' }}
     title={t('settings.editCredentials')}
+    onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
       <Email {...{ formValues, setFormValues, submitting }} />
@@ -35,6 +37,7 @@ EditCredentialsModal.propTypes = {
   formValues: PropTypes.object.isRequired,
   setFormValues: PropTypes.func.isRequired,
   setSubmitting: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
 

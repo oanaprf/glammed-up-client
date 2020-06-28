@@ -1,4 +1,4 @@
-import { compose } from 'recompose';
+import { compose, withHandlers } from 'recompose';
 
 import { withUseState } from '@@hocs';
 
@@ -12,7 +12,17 @@ const AddServiceModal = compose(
     duration: '',
     pictures: [],
   }),
-  withUseState('submitting', false)
+  withUseState('submitting', false),
+  withHandlers({
+    onCloseModal: ({ setFormValues }) => () =>
+      setFormValues({
+        name: '',
+        category: '',
+        price: '',
+        duration: '',
+        pictures: [],
+      }),
+  })
 )(BaseAddServiceModal);
 
 export default AddServiceModal;

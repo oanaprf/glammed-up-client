@@ -19,11 +19,13 @@ const AddManualAppointment = ({
   setFormValues,
   submitting,
   setSubmitting,
+  onCloseModal,
 }) => (
   <Modal
     name={C.MODALS.ADD_MANUAL_APPOINTMENT}
     style={{ width: '90%' }}
     title={t('appointments.addManualAppointment')}
+    onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
       <Service {...{ serviceNames, formValues, setFormValues, submitting }} />
@@ -66,6 +68,7 @@ AddManualAppointment.propTypes = {
   formValues: PropTypes.object.isRequired,
   setFormValues: PropTypes.func.isRequired,
   setSubmitting: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
 

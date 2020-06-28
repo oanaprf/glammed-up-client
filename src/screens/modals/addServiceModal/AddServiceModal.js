@@ -21,11 +21,13 @@ const AddServiceModal = ({
   setFormValues,
   submitting,
   setSubmitting,
+  onCloseModal,
 }) => (
   <Modal
     name={C.MODALS.ADD_SERVICE}
     style={{ width: '90%' }}
     title={t('service.addService')}
+    onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
       <Name {...{ formValues, setFormValues, submitting }} />
@@ -50,6 +52,7 @@ AddServiceModal.propTypes = {
   formValues: PropTypes.object.isRequired,
   setFormValues: PropTypes.func.isRequired,
   setSubmitting: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
 

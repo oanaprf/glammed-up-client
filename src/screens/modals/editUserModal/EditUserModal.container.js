@@ -1,4 +1,4 @@
-import { compose, withPropsOnChange } from 'recompose';
+import { compose, withPropsOnChange, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 
 import { withUseState } from '@@hocs';
@@ -32,7 +32,17 @@ const EditUserModal = compose(
       address: getAddress(user),
     })
   ),
-  withUseState('submitting', false)
+  withUseState('submitting', false),
+  withHandlers({
+    onCloseModal: ({ setFormValues, user }) => () =>
+      setFormValues({
+        firstName: getFirstName(user),
+        lastName: getLastName(user),
+        profilePicture: user.profilePicture,
+        phoneNumber: getPhoneNumber(user),
+        address: getAddress(user),
+      }),
+  })
 )(BaseEditUserModal);
 
 export default EditUserModal;

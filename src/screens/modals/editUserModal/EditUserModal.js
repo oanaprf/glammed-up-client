@@ -21,11 +21,13 @@ const EditUserModal = ({
   setFormValues,
   submitting,
   setSubmitting,
+  onCloseModal,
 }) => (
   <Modal
     name={C.MODALS.EDIT_USER}
     style={{ width: '90%' }}
     title={t('profile.editProfile')}
+    onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
       <S.RowContainer>
@@ -53,6 +55,7 @@ EditUserModal.propTypes = {
   formValues: PropTypes.object.isRequired,
   setFormValues: PropTypes.func.isRequired,
   setSubmitting: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
 

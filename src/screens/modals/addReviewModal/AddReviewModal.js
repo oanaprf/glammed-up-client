@@ -15,11 +15,13 @@ const AddReviewModal = ({
   setFormValues,
   submitting,
   setSubmitting,
+  onCloseModal,
 }) => (
   <Modal
     name={C.MODALS.ADD_REVIEW}
     style={{ width: '90%' }}
     title={t('review.addReview')}
+    onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
       <S.PaddedContainer>
@@ -40,6 +42,7 @@ AddReviewModal.propTypes = {
   formValues: PropTypes.object.isRequired,
   setFormValues: PropTypes.func.isRequired,
   setSubmitting: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
 

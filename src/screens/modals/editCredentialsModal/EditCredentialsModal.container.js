@@ -1,4 +1,4 @@
-import { compose, withPropsOnChange } from 'recompose';
+import { compose, withPropsOnChange, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 
 import { withUseState } from '@@hocs';
@@ -21,7 +21,14 @@ const EditCredentialsModal = compose(
       password: '',
     })
   ),
-  withUseState('submitting', false)
+  withUseState('submitting', false),
+  withHandlers({
+    onCloseModal: ({ setFormValues, user }) => () =>
+      setFormValues({
+        email: getEmail(user),
+        password: '',
+      }),
+  })
 )(BaseEditCredentialsModal);
 
 export default EditCredentialsModal;

@@ -9,11 +9,17 @@ import { Modal, Spacer } from '@@components';
 import { SaveButton, Option } from './components';
 import * as S from './styled';
 
-const ChangeThemeModal = ({ selectedOption, selectedTheme, onChange }) => (
+const ChangeThemeModal = ({
+  selectedOption,
+  selectedTheme,
+  onChange,
+  onCloseModal,
+}) => (
   <Modal
     name={C.MODALS.CHANGE_THEME_MODAL}
     style={{ width: '80%' }}
     title={t('settings.changeTheme')}
+    onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
       <S.JustifiedText>{t('settings.changeThemeIntro')}</S.JustifiedText>
@@ -57,6 +63,7 @@ ChangeThemeModal.propTypes = {
   selectedOption: PropTypes.string.isRequired,
   selectedTheme: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
 };
 
 export default ChangeThemeModal;

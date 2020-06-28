@@ -11,6 +11,8 @@ const ChangeLanguageModal = compose(
   withUseState('selectedLanguage', ({ language }) => language),
   withHandlers({
     onChange: ({ setSelectedLanguage }) => value => setSelectedLanguage(value),
+    onCloseModal: ({ setSelectedLanguage, language }) => () =>
+      setSelectedLanguage(language),
   }),
   withProps(({ selectedLanguage }) => ({
     selectedOption: selectedLanguage,

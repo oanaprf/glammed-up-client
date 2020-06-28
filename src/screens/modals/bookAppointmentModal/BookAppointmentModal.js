@@ -17,11 +17,13 @@ const BookAppointmentModal = ({
   setFormValues,
   submitting,
   setSubmitting,
+  onCloseModal,
 }) => (
   <Modal
     name={C.MODALS.BOOK_APPOINTMENT}
     style={{ width: '90%' }}
     title={t('appointments.bookAppointment')}
+    onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
       <ServiceDetails service={service} />
@@ -46,6 +48,7 @@ BookAppointmentModal.propTypes = {
   formValues: PropTypes.object.isRequired,
   setFormValues: PropTypes.func.isRequired,
   setSubmitting: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
 

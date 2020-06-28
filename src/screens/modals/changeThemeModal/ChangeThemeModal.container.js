@@ -11,6 +11,8 @@ const ChangeThemeModal = compose(
   withUseState('selectedTheme', ({ theme }) => theme),
   withHandlers({
     onChange: ({ setSelectedTheme }) => value => setSelectedTheme(value),
+    onCloseModal: ({ setSelectedTheme, theme }) => () =>
+      setSelectedTheme(theme),
   }),
   withProps(({ selectedTheme }) => ({
     selectedOption: selectedTheme,

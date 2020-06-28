@@ -1,4 +1,4 @@
-import { compose } from 'recompose';
+import { compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import getOr from 'lodash/fp/getOr';
 
@@ -51,6 +51,16 @@ const AddManualAppointment = compose(
     serviceId: getOr('', '[0]._id', serviceNames),
     clientId: '',
   })),
+  withHandlers({
+    onCloseModal: ({ setFormValues, currentUserId, serviceNames }) => () =>
+      setFormValues({
+        providerId: currentUserId,
+        date: '',
+        time: '',
+        serviceId: getOr('', '[0]._id', serviceNames),
+        clientId: '',
+      }),
+  }),
   withUseState('submitting', false)
 )(BaseAddManualAppointment);
 
