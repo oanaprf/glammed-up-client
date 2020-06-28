@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import * as C from '@@utils/constants';
-import { TabBar, SplashScreen } from '@@components';
+import { TabBar, SplashScreen, Toast } from '@@components';
 import { Home, Search, Appointments, Profile, Settings, Auth } from '@@screens';
 import {
   theme,
@@ -71,24 +71,27 @@ const Main = ({ translationsLoaded, isLoggedIn, themeName }) => (
     {
       // eslint-disable-next-line no-nested-ternary
       translationsLoaded ? (
-        isLoggedIn ? (
-          <SafeAreaView
-            style={{ flex: 1, backgroundColor: theme.colors.white }}
-          >
+        <>
+          <Toast />
+          {isLoggedIn ? (
+            <SafeAreaView
+              style={{ flex: 1, backgroundColor: theme.colors.white }}
+            >
+              <NavigationContainer>
+                <Tab.Navigator tabBar={TabBar} initialRouteName="Home">
+                  <Tab.Screen name="Home" component={HomeStack} />
+                  <Tab.Screen name="Search" component={SearchStack} />
+                  <Tab.Screen name="Profile" component={Profile} />
+                  <Tab.Screen name="Appointments" component={Appointments} />
+                </Tab.Navigator>
+              </NavigationContainer>
+            </SafeAreaView>
+          ) : (
             <NavigationContainer>
-              <Tab.Navigator tabBar={TabBar} initialRouteName="Home">
-                <Tab.Screen name="Home" component={HomeStack} />
-                <Tab.Screen name="Search" component={SearchStack} />
-                <Tab.Screen name="Profile" component={Profile} />
-                <Tab.Screen name="Appointments" component={Appointments} />
-              </Tab.Navigator>
+              <Auth />
             </NavigationContainer>
-          </SafeAreaView>
-        ) : (
-          <NavigationContainer>
-            <Auth />
-          </NavigationContainer>
-        )
+          )}
+        </>
       ) : (
         <SplashScreen />
       )

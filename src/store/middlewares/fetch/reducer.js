@@ -27,13 +27,9 @@ export default handleActions(
         error: undefined,
       },
     }),
-    [FETCH_FAIL]: (state, { payload: { name, error } }) => ({
+    [FETCH_FAIL]: (state, { payload: { error } }) => ({
       ...state,
-      [name]: {
-        ...(state[name] || {}),
-        isLoading: false,
-        error,
-      },
+      error,
     }),
   },
   {}

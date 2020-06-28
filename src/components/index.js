@@ -16,3 +16,4 @@ export { default as ImagePicker } from './imagePicker';
 export { LoaderIcon, BigLoaderIcon } from './loaderIcon';
 export { default as RadioGroup } from './radioGroup';
 export { default as SecondaryColorIcon } from './secondaryColorIcon';
+export { default as Toast } from './toast';
