@@ -46,7 +46,9 @@
       "REJECTED": "REFUZATĂ",
       "COMPLETED": "TERMINATĂ",
       "CANCELLED": "ANULATĂ"
-    }
+    },
+    "sms": "Ai o nouă programare în data de {{date}} la ora {{time}}",
+    "approveAppointment": "Revizuiește programarea"
   },
   "profile": {
     "pageName": "Profil",
@@ -120,6 +122,8 @@
     "save": "Salvează",
     "yes": "Da",
     "no": "Nu",
-    "edit": "Editează"
+    "edit": "Editează",
+    "approve": "Aprobă",
+    "reject": "Refuză"
   }
 }

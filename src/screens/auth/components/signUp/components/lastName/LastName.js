@@ -1,17 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { TextInput } from '@@components';
-import { t } from '@@config';
 
 const LastName = props => (
   <TextInput
     {...{
       dark: true,
-      placeholder: t('signUp.fields.lastName'),
       name: 'lastName',
+      error: props.submitting && !props.value,
       ...props,
     }}
   />
 );
+
+LastName.propTypes = {
+  value: PropTypes.string.isRequired,
+  submitting: PropTypes.bool.isRequired,
+};
 
 export default LastName;

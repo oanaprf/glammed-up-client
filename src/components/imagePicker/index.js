@@ -1,1 +1,1 @@
-export { default } from './ImagePicker.container';
+export { default } from './ImagePicker';

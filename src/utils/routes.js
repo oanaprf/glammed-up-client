@@ -15,6 +15,8 @@ export const search = (name, category) =>
 export const profile = id => `/user/${id}`;
 export const userReviews = id => `/client/${id}/reviews`;
 export const userServices = id => `/provider/${id}/services`;
+export const addService = '/service';
+export const editUser = id => `user/${id}`;
 
 // appointments
 export const clientAppointments = id => `/client/${id}/appointments`;
@@ -24,3 +26,6 @@ export const userServiceNames = id => `/provider/${id}/serviceNames`;
 export const clientNames = 'clientNames';
 export const freeSpots = (id, date, duration) =>
   `provider/${id}/free-spots?date=${date}&duration=${duration}`;
+export const bookAppointment = '/appointment';
+export const updateAppointment = id => `/appointment/${id}`;
+export const addReview = '/review';

@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import getOr from 'lodash/fp/getOr';
 
+import { getProfilePicture } from '@@store/modules/user/selectors';
 import { UserDetails, UserServices } from './components';
 import * as S from './styled';
-
-const defaultProfilePicture = require('@@assets/images/avatar.png');
 
 const User = ({ user }) => (
   <S.CardContainer>
     <S.RowContainer>
-      <S.UserProfilePicture
-        source={getOr(defaultProfilePicture, 'profilePicture', user)}
-      />
+      <S.UserProfilePicture source={{ uri: getProfilePicture(user) }} />
       <UserDetails user={user} />
     </S.RowContainer>
     <UserServices user={user} />

@@ -1,5 +1,7 @@
 import * as Facebook from 'expo-facebook';
 import firebase from 'firebase';
+import { Notifications } from 'expo';
+import * as Permissions from 'expo-permissions';
 
 import { http, routes } from '@@utils';
 
@@ -17,6 +19,11 @@ import {
   logoutSuccess,
   logoutFail,
 } from './actions';
+
+const registerForPushNotifications = async () => {
+  const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+  return status === 'granted' ? Notifications.getExpoPushTokenAsync() : null;
+};
 
 export default ({ dispatch }) => next => async action => {
   const { type, payload } = action;
@@ -80,12 +87,18 @@ export default ({ dispatch }) => next => async action => {
         .catch(error => dispatch(loginFail({ error })));
     }
   } else if (type === SIGN_UP_START) {
+    const pushToken = await registerForPushNotifications();
     http({
       url: routes.user,
       method: 'POST',
-      data: payload,
+      data: { ...payload, pushToken },
     })
-      .then(({ data: { data } }) => dispatch(signUpSuccess({ data })))
+      .then(({ data }) =>
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(payload.email, payload.password)
+          .then(() => dispatch(signUpSuccess({ data })))
+      )
       .catch(error => dispatch(signUpFail({ error })));
   } else if (type === LOGOUT_START) {
     firebase

@@ -22,4 +22,4 @@ export const initI18n = async () => {
   }
 };
 
-export const t = name => I18n.t(name);
+export const { t } = I18n;

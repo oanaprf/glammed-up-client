@@ -4,12 +4,6 @@ import PropTypes from 'prop-types';
 import { t } from '@@config';
 import * as C from '@@utils/constants';
 import { Modal, Spacer } from '@@components';
-import {
-  getFirstName,
-  getLastName,
-  getPhoneNumber,
-  getAddress,
-} from '@@store/modules/user/selectors';
 
 import {
   SaveButton,
@@ -21,7 +15,13 @@ import {
 } from './components';
 import * as S from './styled';
 
-const EditUserModal = ({ user }) => (
+const EditUserModal = ({
+  user = {},
+  formValues,
+  setFormValues,
+  submitting,
+  setSubmitting,
+}) => (
   <Modal
     name={C.MODALS.EDIT_USER}
     style={{ width: '90%' }}
@@ -30,26 +30,30 @@ const EditUserModal = ({ user }) => (
     <S.ModalContainer>
       <S.RowContainer>
         <S.HalfFlex>
-          <ProfilePicture images={[user.profilePicture]} />
+          <ProfilePicture {...{ formValues, setFormValues, submitting }} />
         </S.HalfFlex>
         <S.HalfFlex>
-          <FirstName value={getFirstName(user)} />
+          <FirstName {...{ formValues, setFormValues, submitting }} />
           <Spacer height={5} />
-          <LastName value={getLastName(user)} />
+          <LastName {...{ formValues, setFormValues, submitting }} />
         </S.HalfFlex>
       </S.RowContainer>
       <Spacer height={5} />
-      <PhoneNumber value={getPhoneNumber(user)} />
+      <PhoneNumber {...{ formValues, setFormValues, submitting }} />
       <Spacer height={5} />
-      <Address value={getAddress(user)} />
+      <Address {...{ formValues, setFormValues, submitting }} />
       <Spacer height={10} />
-      <SaveButton />
+      <SaveButton {...{ user, formValues, setSubmitting }} />
     </S.ModalContainer>
   </Modal>
 );
 
 EditUserModal.propTypes = {
   user: PropTypes.object.isRequired,
+  formValues: PropTypes.object.isRequired,
+  setFormValues: PropTypes.func.isRequired,
+  setSubmitting: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
 };
 
 export default EditUserModal;

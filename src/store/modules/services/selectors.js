@@ -1,5 +1,6 @@
 import getOr from 'lodash/fp/getOr';
 import { createSelector } from 'reselect';
+import { Image } from 'react-native';
 
 import { U } from '@@utils';
 import { fetch } from '@@store/middlewares';
@@ -13,9 +14,14 @@ export const getPrice = getOr('', 'price');
 export const getName = getOr('', 'name');
 export const getRating = getOr('', 'averageRating');
 export const getProviderName = getOr('', 'provider.fullName');
-export const getFirstPicture = getOr(defaultPicture, 'pictures.0');
+export const getFirstPicture = ({ pictures = [] }) =>
+  pictures[0]
+    ? `data:image/png;base64,${pictures[0]}`
+    : Image.resolveAssetSource(defaultPicture).uri;
 export const getPictures = service =>
-  U.getLength(service.pictures) ? service.pictures : [defaultPicture];
+  U.getLength(service.pictures)
+    ? service.pictures.map(pic => ({ uri: `data:image/png;base64,${pic}` }))
+    : [defaultPicture];
 
 export const isSearchLoading = fetch.selectors.isLoading('search');
 export const areUserServicesLoading = fetch.selectors.isLoading('userServices');

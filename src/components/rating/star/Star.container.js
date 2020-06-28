@@ -6,7 +6,10 @@ import BaseStar from './Star';
 
 const Star = compose(
   withHandlers({
-    onPress: ({ setRating, index }) => () => setRating(index),
+    onPress: ({ setRating, index, onChange }) => () => {
+      onChange && onChange(index);
+      setRating(index);
+    },
   }),
   withBounceAnimation({
     outputRange: [1, 1.2, 1.4],

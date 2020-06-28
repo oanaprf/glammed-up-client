@@ -46,7 +46,9 @@
       "REJECTED": "REJECTED",
       "COMPLETED": "COMPLETED",
       "CANCELLED": "CANCELLED"
-    }
+    },
+    "sms": "You have a new appointment on {{date}} at {{time}}",
+    "approveAppointment": "Review appointment"
   },
   "profile": {
     "pageName": "Profile",
@@ -120,6 +122,8 @@
     "save": "Save",
     "yes": "Yes",
     "no": "No",
-    "edit": "Edit"
+    "edit": "Edit",
+    "approve": "Approve",
+    "reject": "Reject"
   }
 }

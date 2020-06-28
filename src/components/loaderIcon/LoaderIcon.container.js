@@ -15,8 +15,8 @@ const LoaderIcon = compose(
   withOnMount(({ animatedValue }) => {
     animatedValue.setValue(0);
     Animated.timing(animatedValue, {
-      toValue: 1,
-      duration: 1000,
+      toValue: 20,
+      duration: 15000,
       easing: Easing.linear,
       useNativeDriver: true,
     }).start();

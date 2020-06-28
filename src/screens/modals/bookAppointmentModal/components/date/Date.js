@@ -10,7 +10,7 @@ const Date2 = props => (
   <Calendar
     {...{
       name: 'date',
-      minDate: tomorrow,
+      minDate: today,
       selectedDay: { dateString: tomorrow.toJSON().substring(0, 10) },
       ...props,
     }}

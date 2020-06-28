@@ -1,5 +1,5 @@
 import React from 'react';
-import getOr from 'lodash/fp/getOr';
+import PropTypes from 'prop-types';
 
 import { Dropdown } from '@@components';
 
@@ -9,10 +9,15 @@ const Service = props => (
       name: 'service',
       dark: true,
       maxHeight: 150,
-      value: getOr('', 'options.0.key', props),
+      error: props.submitting && !props.value,
       ...props,
     }}
   />
 );
+
+Service.propTypes = {
+  submitting: PropTypes.bool.isRequired,
+  value: PropTypes.string.isRequired,
+};
 
 export default Service;

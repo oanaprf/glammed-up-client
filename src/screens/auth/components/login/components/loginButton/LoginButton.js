@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import { t } from '@@config';
 import { Button, ButtonText, LoaderIcon } from '@@components';
-import { auth } from '@@store/middlewares';
 
-const LoginButton = ({ onPress, isLoginLoading }) => (
-  <Button rounded onPress={onPress} disabled={isLoginLoading}>
-    {isLoginLoading ? (
+const LoginButton = ({ onPress, isLoading }) => (
+  <Button rounded onPress={onPress} disabled={isLoading}>
+    {isLoading ? (
       <LoaderIcon />
     ) : (
       <ButtonText>{t('login.loginButton')}</ButtonText>
@@ -18,9 +16,7 @@ const LoginButton = ({ onPress, isLoginLoading }) => (
 
 LoginButton.propTypes = {
   onPress: PropTypes.func.isRequired,
-  isLoginLoading: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
 
-export default connect(state => ({
-  isLoginLoading: auth.selectors.isLoading(state),
-}))(LoginButton);
+export default LoginButton;

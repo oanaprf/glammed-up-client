@@ -16,7 +16,12 @@ import { GoBackButton } from '@@screens/common';
 import { Option, Credentials } from './components';
 import * as S from './styled';
 
-const Settings = ({ navigation, openModal, onLogout }) => (
+const Settings = ({
+  navigation,
+  openModal,
+  onLogout,
+  isCurrentUserProvider,
+}) => (
   <S.Container>
     <S.Header>
       <GoBackButton navigation={navigation} label={t('home.pageName')} />
@@ -27,16 +32,18 @@ const Settings = ({ navigation, openModal, onLogout }) => (
     <S.Body>
       <View>
         <Spacer height={40} />
-        <Credentials
-          onPress={() => openModal({ name: C.MODALS.EDIT_CREDENTIALS_MODAL })}
-        />
+        <Credentials />
         <Spacer height={40} />
-        <Option
-          icon="award"
-          label="becomeProvider"
-          onPress={() => openModal({ name: C.MODALS.BECOME_PROVIDER })}
-        />
-        <Spacer height={30} />
+        {isCurrentUserProvider ? null : (
+          <>
+            <Option
+              icon="award"
+              label="becomeProvider"
+              onPress={() => openModal({ name: C.MODALS.BECOME_PROVIDER })}
+            />
+            <Spacer height={30} />
+          </>
+        )}
         <Option
           icon="globe"
           label="changeLanguage"
@@ -65,6 +72,7 @@ Settings.propTypes = {
   navigation: PropTypes.object.isRequired,
   openModal: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
+  isCurrentUserProvider: PropTypes.bool.isRequired,
 };
 
 export default Settings;

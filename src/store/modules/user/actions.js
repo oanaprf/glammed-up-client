@@ -17,3 +17,14 @@ export const fetchClientNames = () =>
     name: 'clientNames',
     url: routes.clientNames,
   });
+
+export const editUser = (id, params) =>
+  fetch.actions.fetch(
+    {
+      name: `user/${id}/data`,
+      url: routes.editUser(id),
+    },
+    { method: 'PUT', data: params }
+  );
+
+export const becomeProvider = id => editUser(id, { isProvider: true });

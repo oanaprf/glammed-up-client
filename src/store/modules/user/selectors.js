@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 import isEmpty from 'lodash/fp/isEmpty';
 import getOr from 'lodash/fp/getOr';
+import { Image } from 'react-native';
 
 import { auth, fetch } from '@@store/middlewares';
 import { U } from '@@utils';
@@ -12,7 +13,11 @@ export const getLastName = getOr('', 'lastName');
 export const getFullName = getOr('', 'fullName');
 export const getPhoneNumber = getOr('', 'phoneNumber');
 export const getAddress = getOr('', 'address');
-export const getProfilePicture = getOr(defaultProfilePicture, 'profilePicture');
+export const getEmail = getOr('', 'email');
+export const getProfilePicture = ({ profilePicture }) =>
+  profilePicture
+    ? `data:image/png;base64,${profilePicture}`
+    : Image.resolveAssetSource(defaultProfilePicture).uri;
 
 export const isLoggedIn = createSelector(
   auth.selectors.getUserData,

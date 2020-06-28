@@ -9,7 +9,7 @@ import I18n from 'i18n-js';
 
 import { withUseState, withOnMount } from '@@hocs';
 import { initI18n, firebaseConfig } from '@@config';
-import { user, preferences } from '@@store/modules';
+import { user, preferences, modal } from '@@store/modules';
 
 import BaseMain from './Main';
 
@@ -30,8 +30,10 @@ const Main = compose(
     {
       changeLanguage: preferences.actions.changeLanguage,
       changeTheme: preferences.actions.changeTheme,
+      openModal: modal.actions.openModal,
     }
   ),
+
   withOnMount(
     async ({ setTranslationsLoaded, changeLanguage, changeTheme }) => {
       await initI18n();
@@ -44,7 +46,6 @@ const Main = compose(
       changeTheme({
         theme: (await AsyncStorage.getItem('@APP:theme')) || 'FUCHSIA',
       });
-
       setTranslationsLoaded(true);
     }
   )

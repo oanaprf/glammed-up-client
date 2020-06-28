@@ -3,24 +3,26 @@ import { connect } from 'react-redux';
 
 import { withUseState } from '@@hocs';
 import { user } from '@@store/modules';
+import { U } from '@@utils';
 
 import BaseSignUp from './SignUp';
 
 const SignUp = compose(
   withUseState('formValues', {
-    firstName: 'first',
-    lastName: 'user',
-    email: 'first.user@gmail.com',
-    password: 'first.user',
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
   }),
+  withUseState('submitting', false),
   connect(null, {
     signUp: user.actions.signUp,
   }),
   withHandlers({
-    onChange: ({ formValues, setFormValues }) => ({
-      nativeEvent: { target, text },
-    }) => setFormValues({ ...formValues, [`${target.name}`]: text }),
-    onPress: ({ signUp, formValues }) => () => signUp(formValues),
+    onPress: ({ signUp, formValues, setSubmitting }) => () => {
+      setSubmitting(true);
+      if (U.isFormValid(formValues)) signUp(formValues);
+    },
   })
 )(BaseSignUp);
 

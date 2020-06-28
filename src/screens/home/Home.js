@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import { ScrollView } from 'react-native';
 
 import { t } from '@@config';
-import { ServiceDetailsModal, BookAppointmentModal } from '@@screens/modals';
+import {
+  ServiceDetailsModal,
+  BookAppointmentModal,
+  ApproveAppointmentModal,
+} from '@@screens/modals';
 import { ButtonText } from '@@components';
 
 import * as S from './styled';
@@ -30,6 +34,7 @@ const Home = ({ navigation }) => (
     </S.Body>
     <ServiceDetailsModal />
     <BookAppointmentModal />
+    <ApproveAppointmentModal />
   </S.Container>
 );
 

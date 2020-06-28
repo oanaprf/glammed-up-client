@@ -7,16 +7,16 @@ import * as S from './styled';
 import { SignUpButton, FirstName, LastName } from './components';
 import { Email, Password } from '../common';
 
-const SignUp = ({ formValues, onChange, onPress }) => (
+const SignUp = ({ formValues, setFormValues, onPress, submitting }) => (
   <>
     <Spacer height={10} />
-    <FirstName value={formValues.firstName} onChange={onChange} />
+    <FirstName {...{ formValues, setFormValues, submitting }} />
     <S.SmallSpacer />
-    <LastName value={formValues.lastName} onChange={onChange} />
+    <LastName {...{ formValues, setFormValues, submitting }} />
     <S.SmallSpacer />
-    <Email value={formValues.email} onChange={onChange} />
+    <Email {...{ formValues, setFormValues, submitting }} />
     <S.SmallSpacer />
-    <Password value={formValues.password} onChange={onChange} />
+    <Password {...{ formValues, setFormValues, submitting }} />
     <S.MediumSpacer />
     <S.SignUpContainer style={{ flex: 1 }}>
       <SignUpButton onPress={onPress} />
@@ -26,8 +26,9 @@ const SignUp = ({ formValues, onChange, onPress }) => (
 
 SignUp.propTypes = {
   formValues: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
+  setFormValues: PropTypes.func.isRequired,
   onPress: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
 };
 
 export default SignUp;

@@ -21,7 +21,7 @@ const Service = ({
       }
       activeOpacity={0.8}
     >
-      <S.ServicePicture source={getFirstPicture(service)}>
+      <S.ServicePicture source={{ uri: getFirstPicture(service) }}>
         <S.StyledLinearGradient
           colors={['transparent', 'transparent', 'rgba(0,0,0,0.5)']}
         />

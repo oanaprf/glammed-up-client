@@ -14,7 +14,7 @@ const Review = ({ review = {} }) => (
       <ServiceInfo review={review} />
       <Comment review={review} />
     </S.ReviewInfo>
-    <S.ServicePicture source={getFirstPicture(review.service)} />
+    <S.ServicePicture source={{ uri: getFirstPicture(review.service) }} />
   </S.CardContainer>
 );
 

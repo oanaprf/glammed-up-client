@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { t } from '@@config';
 import * as C from '@@utils/constants';
@@ -15,29 +16,41 @@ import {
 } from './components';
 import * as S from './styled';
 
-const AddServiceModal = () => (
+const AddServiceModal = ({
+  formValues,
+  setFormValues,
+  submitting,
+  setSubmitting,
+}) => (
   <Modal
     name={C.MODALS.ADD_SERVICE}
     style={{ width: '90%' }}
     title={t('service.addService')}
   >
     <S.ModalContainer>
-      <Name />
+      <Name {...{ formValues, setFormValues, submitting }} />
       <Spacer height={10} />
-      <Category />
+      <Category {...{ formValues, setFormValues, submitting }} />
       <Spacer height={10} />
       <S.RowContainer>
-        <Price />
-        <Duration />
+        <Price {...{ formValues, setFormValues, submitting }} />
+        <Duration {...{ formValues, setFormValues, submitting }} />
       </S.RowContainer>
       <Spacer height={10} />
       <View style={{ zIndex: -1 }}>
-        <ServiceImagePicker />
+        <ServiceImagePicker {...{ formValues, setFormValues, submitting }} />
       </View>
       <Spacer height={10} />
-      <SaveButton />
+      <SaveButton {...{ formValues, setSubmitting }} />
     </S.ModalContainer>
   </Modal>
 );
+
+AddServiceModal.propTypes = {
+  formValues: PropTypes.object.isRequired,
+  setFormValues: PropTypes.func.isRequired,
+  setSubmitting: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
+};
 
 export default AddServiceModal;
