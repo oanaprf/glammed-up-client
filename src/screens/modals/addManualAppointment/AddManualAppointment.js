@@ -15,6 +15,10 @@ const AddManualAppointment = ({
   fetchFreeSpots,
   currentUserId,
   freeSpots = [],
+  formValues,
+  setFormValues,
+  submitting,
+  setSubmitting,
 }) => (
   <Modal
     name={C.MODALS.ADD_MANUAL_APPOINTMENT}
@@ -22,21 +26,32 @@ const AddManualAppointment = ({
     title={t('appointments.addManualAppointment')}
   >
     <S.ModalContainer>
-      <Service serviceNames={serviceNames} />
+      <Service {...{ serviceNames, formValues, setFormValues, submitting }} />
       <Spacer height={10} />
-      <Date {...{ fetchFreeSpots, currentUserId, serviceNames }} />
+      <View style={{ zIndex: -1 }}>
+        <Date
+          {...{
+            fetchFreeSpots,
+            currentUserId,
+            serviceNames,
+            formValues,
+            setFormValues,
+            submitting,
+          }}
+        />
+      </View>
       <Spacer height={5} />
       <S.RowContainer>
         <S.FlexContainer>
-          <Time freeSpots={freeSpots} />
+          <Time {...{ freeSpots, formValues, setFormValues, submitting }} />
         </S.FlexContainer>
         <S.FlexContainer>
-          <Client clientNames={clientNames} />
+          <Client {...{ clientNames, formValues, setFormValues, submitting }} />
         </S.FlexContainer>
       </S.RowContainer>
       <Spacer height={5} />
       <View style={{ zIndex: -1 }}>
-        <SaveButton />
+        <SaveButton {...{ formValues, setSubmitting }} />
       </View>
     </S.ModalContainer>
   </Modal>
@@ -48,6 +63,10 @@ AddManualAppointment.propTypes = {
   freeSpots: PropTypes.array,
   currentUserId: PropTypes.string.isRequired,
   fetchFreeSpots: PropTypes.func.isRequired,
+  formValues: PropTypes.object.isRequired,
+  setFormValues: PropTypes.func.isRequired,
+  setSubmitting: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
 };
 
 export default AddManualAppointment;

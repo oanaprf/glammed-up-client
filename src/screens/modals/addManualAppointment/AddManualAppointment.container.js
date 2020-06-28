@@ -2,7 +2,7 @@ import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import getOr from 'lodash/fp/getOr';
 
-import { withOnMount } from '@@hocs';
+import { withOnMount, withUseState } from '@@hocs';
 import { user, services, appointments } from '@@store/modules';
 
 import BaseAddManualAppointment from './AddManualAppointment';
@@ -43,7 +43,15 @@ const AddManualAppointment = compose(
         getOr(60, '[0].duration', serviceNames)
       );
     }
-  )
+  ),
+  withUseState('formValues', ({ currentUserId, serviceNames }) => ({
+    providerId: currentUserId,
+    date: '',
+    time: '',
+    serviceId: getOr('', '[0]._id', serviceNames),
+    clientId: '',
+  })),
+  withUseState('submitting', false)
 )(BaseAddManualAppointment);
 
 export default AddManualAppointment;
