@@ -1,4 +1,10 @@
-import { compose, withHandlers, branch, renderComponent } from 'recompose';
+import {
+  compose,
+  withHandlers,
+  branch,
+  renderComponent,
+  withPropsOnChange,
+} from 'recompose';
 import * as ExpoImagePicker from 'expo-image-picker';
 import { Platform } from 'react-native';
 
@@ -7,14 +13,20 @@ import SingleImagePicker from './SingleImagePicker';
 import MultipleImagePicker from './MultipleImagePicker';
 
 const ImagePicker = compose(
-  withUseState('images', ({ images }) => images || []),
   withOnMount(async () => {
     if (Platform.OS === 'ios') {
       await ExpoImagePicker.requestCameraRollPermissionsAsync();
     }
   }),
+  withUseState('images', ({ images }) => images),
+  withPropsOnChange(['images'], ({ images, setImages }) => setImages(images)),
   withHandlers({
-    onSelectImage: ({ images, setImages, onSelectImage }) => async () => {
+    onSelectImage: ({
+      images,
+      setImages,
+      onSelectImage,
+      multiple,
+    }) => async () => {
       const {
         cancelled,
         uri,
@@ -25,9 +37,10 @@ const ImagePicker = compose(
         quality: 0.5,
         base64: true,
       });
+
       if (!cancelled) {
         onSelectImage && onSelectImage(base64);
-        setImages([...images, uri]);
+        setImages([...(multiple ? images : []), uri]);
       }
     },
   }),
