@@ -5,8 +5,9 @@ import { View } from 'react-native';
 import { t } from '@@config';
 import * as C from '@@utils/constants';
 import { Modal, Spacer } from '@@components';
+import { ServiceInfo } from '@@screens/common';
 
-import { ServiceDetails, Date, Time, SaveButton } from './components';
+import { Date, Time, SaveButton } from './components';
 import * as S from './styled';
 
 const BookAppointmentModal = ({
@@ -26,7 +27,9 @@ const BookAppointmentModal = ({
     onCloseModal={onCloseModal}
   >
     <S.ModalContainer>
-      <ServiceDetails service={service} />
+      <S.ServiceDetailsContainer>
+        <ServiceInfo service={service} />
+      </S.ServiceDetailsContainer>
       <Spacer />
       <Date
         {...{ service, fetchFreeSpots, formValues, setFormValues, submitting }}

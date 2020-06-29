@@ -10,6 +10,8 @@ import {
   getName,
   getRating,
   getProviderName,
+  getDurationHours,
+  getDurationMinutes,
 } from '@@store/modules/services/selectors';
 
 import * as S from './styled';
@@ -44,6 +46,26 @@ const ServiceInfo = ({ service = {} }) => (
           />
         </S.RowContainer>
       )}
+    </S.RowContainer>
+    <S.RowContainer>
+      <S.RowContainer>
+        {getDurationHours(service) ? (
+          <>
+            <S.TextWithPadding family="BOLD">
+              {`${getDurationHours(service)}`}
+            </S.TextWithPadding>
+            <Text>h </Text>
+          </>
+        ) : null}
+        {getDurationMinutes(service) ? (
+          <>
+            <S.TextWithPadding family="BOLD">
+              {`${getDurationMinutes(service)}`}
+            </S.TextWithPadding>
+            <Text>min</Text>
+          </>
+        ) : null}
+      </S.RowContainer>
     </S.RowContainer>
   </View>
 );

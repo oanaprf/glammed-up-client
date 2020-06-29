@@ -14,6 +14,11 @@ export const getPrice = getOr('', 'price');
 export const getName = getOr('', 'name');
 export const getRating = getOr('', 'averageRating');
 export const getProviderName = getOr('', 'provider.fullName');
+export const getDuration = getOr(0, 'duration');
+export const getDurationHours = service =>
+  +(getDuration(service) / 60).toFixed(0);
+export const getDurationMinutes = service => +getDuration(service) % 60;
+
 export const getFirstPicture = ({ pictures = [] }) =>
   pictures[0]
     ? `data:image/png;base64,${pictures[0]}`
