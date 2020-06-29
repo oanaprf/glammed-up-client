@@ -27,6 +27,7 @@ export const getPictures = service =>
   U.getLength(service.pictures)
     ? service.pictures.map(pic => ({ uri: `data:image/png;base64,${pic}` }))
     : [defaultPicture];
+export const getReviews = getOr([], 'reviews');
 
 export const isSearchLoading = fetch.selectors.isLoading('search');
 export const areUserServicesLoading = fetch.selectors.isLoading('userServices');

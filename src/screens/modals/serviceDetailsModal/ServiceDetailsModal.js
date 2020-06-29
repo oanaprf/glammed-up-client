@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { SliderBox } from 'react-native-image-slider-box';
+import { ScrollView, TouchableOpacity } from 'react-native';
 
-import { Modal, ButtonText, Button } from '@@components';
+import { Modal, ButtonText, Button, Spacer } from '@@components';
 import { theme, t } from '@@config';
 import { withOpenModal } from '@@hocs';
 import * as C from '@@utils/constants';
-import { getPictures } from '@@store/modules/services/selectors';
+import { getPictures, getReviews } from '@@store/modules/services/selectors';
 
-import { ServiceDetails } from './components';
+import { ServiceDetails, Review } from './components';
 import * as S from './styled';
 
 const ServiceDetailsModal = ({ openModal, service, isOwnService }) => (
@@ -28,6 +29,27 @@ const ServiceDetailsModal = ({ openModal, service, isOwnService }) => (
       />
       <S.ServiceDetailsContainer>
         <ServiceDetails service={service} />
+        {getReviews(service).length ? (
+          <>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                marginTop: 6,
+                marginLeft: 5,
+              }}
+            >
+              <TouchableOpacity activeOpacity={1}>
+                <S.RowContainer>
+                  {service.reviews.map(review => (
+                    <Review key={review._id} review={review} />
+                  ))}
+                </S.RowContainer>
+              </TouchableOpacity>
+            </ScrollView>
+            <Spacer height={10} />
+          </>
+        ) : null}
         {isOwnService ? null : (
           <Button
             rounded
