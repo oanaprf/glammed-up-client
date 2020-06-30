@@ -7,8 +7,8 @@ import { reviews } from '@@store/modules';
 import BaseReviews from './Reviews';
 
 const Reviews = compose(
-  connect(state => ({
-    isLoading: reviews.selectors.areUserReviewsLoading(state),
+  connect((state, props) => ({
+    isLoading: reviews.selectors.areUserReviewsLoading(state, props),
   })),
   branch(({ isLoading }) => isLoading, renderComponent(BigLoaderIcon))
 )(BaseReviews);

@@ -2,19 +2,19 @@ import { compose, branch, renderComponent, nest } from 'recompose';
 import { connect } from 'react-redux';
 
 import { BigLoaderIcon } from '@@components';
-import { services } from '@@store/modules';
+import { user } from '@@store/modules';
 
-import BaseUserServices from './UserServices';
+import BaseUserInfoCard from './UserInfoCard';
 import * as S from './styled';
 
-const UserServices = compose(
+const UserInfoCard = compose(
   connect((state, props) => ({
-    isLoading: services.selectors.areUserServicesLoading(state, props),
+    isLoading: user.selectors.isUserInfoLoading(state, props),
   })),
   branch(
     ({ isLoading }) => isLoading,
     renderComponent(nest(S.LoaderContainer, BigLoaderIcon))
   )
-)(BaseUserServices);
+)(BaseUserInfoCard);
 
-export default UserServices;
+export default UserInfoCard;

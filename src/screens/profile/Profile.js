@@ -54,7 +54,7 @@ const Profile = ({
           ...(user.isProvider
             ? [<UserServices {...{ user, services, isOwnProfile }} />]
             : []),
-          <Reviews reviews={reviews} />,
+          <Reviews {...{ user, reviews }} />,
         ]}
       />
     </S.Body>

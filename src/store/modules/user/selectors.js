@@ -34,6 +34,11 @@ export const getCurrentUserId = createSelector(
   ({ _id }) => _id
 );
 
+export const isUserInfoLoading = (state, { user: { _id } }) =>
+  fetch.selectors.isLoading(`user/${_id || getCurrentUserId(state)}/data`)(
+    state
+  );
+
 export const getProfile = (state, { userId }) =>
   fetch.selectors.getData(`user/${userId}/data`, {})(state);
 

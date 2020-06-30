@@ -1,13 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
 
 import { theme } from '@@config';
+
 import LoaderIcon from './LoaderIcon.container';
+import * as S from './styled';
 
 const BigLoaderIcon = () => (
-  <View style={{ marginTop: 40 }}>
+  <S.LoaderContainer>
     <LoaderIcon size={40} color={theme.colors.black} />
-  </View>
+  </S.LoaderContainer>
 );
 
 export default BigLoaderIcon;
