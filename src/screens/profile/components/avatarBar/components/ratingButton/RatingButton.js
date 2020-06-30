@@ -11,7 +11,7 @@ import * as S from './styled';
 const RatingButton = ({ user }) => (
   <S.StyledButton user={user}>
     <>
-      <S.StyledText size="M">{`${getRating(user)}`}</S.StyledText>
+      <S.StyledText size="M">{`${getRating(user) || 0}`}</S.StyledText>
       <Icon
         {...{
           name: 'star',

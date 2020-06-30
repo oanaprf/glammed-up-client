@@ -12,7 +12,7 @@ export const StyledButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.white};
   flex-direction: row;
   padding: ${({ user }) =>
-    Number.isInteger(getRating(user)) ? '18px 12px' : '18px 5px'}
+    Number.isInteger(getRating(user) || 0) ? '18px 12px' : '18px 5px'}
   border-radius: ${({ theme }) => theme.borderRadius.L}px;
   ${Platform.select({
     ios: 'box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);',
