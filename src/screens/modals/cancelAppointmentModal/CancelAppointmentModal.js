@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Modal, ButtonText, Spacer, Text } from '@@components';
+import { Modal, ButtonText, Spacer } from '@@components';
 import * as C from '@@utils/constants';
 import { t } from '@@config';
 
@@ -14,8 +14,10 @@ const CancelAppointmentModal = ({ onPressYes, onPressNo }) => (
     title={t('appointments.cancelAppointment')}
   >
     <S.ModalContainer>
-      <Text>{t('appointments.cancelAppointmentText')}</Text>
-      <Spacer height={10} />
+      <S.JustifiedText size="M">
+        {t('appointments.cancelAppointmentText')}
+      </S.JustifiedText>
+      <Spacer height={30} />
       <S.ButtonsContainer>
         <S.YesButton rounded onPress={onPressYes}>
           <ButtonText>{t('common.yes')}</ButtonText>

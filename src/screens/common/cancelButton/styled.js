@@ -10,7 +10,7 @@ export const StyledText = styled(Text)`
 export const StyledButton = styled(Button)`
   background-color: transparent;
   align-items: center;
-  padding: 5px;
+  padding: 0px;
   border-radius: ${({ theme }) => theme.borderRadius.L}px;
   ${Platform.select({
     ios: 'box-shadow: 0 0 0 rgba(0, 0, 0, 0);',

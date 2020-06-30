@@ -10,3 +10,9 @@ export const AppointmentInfoContainer = styled.View`
 export const StyledText = styled(Text)`
   color: ${({ theme }) => theme.theme_colors.secondary};
 `;
+
+export const RowContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;

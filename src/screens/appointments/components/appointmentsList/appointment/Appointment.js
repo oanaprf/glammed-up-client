@@ -4,13 +4,9 @@ import getOr from 'lodash/fp/getOr';
 
 import { Spacer } from '@@components';
 import { C } from '@@utils';
+import { CancelButton } from '@@screens/common';
 
-import {
-  AppointmentInfo,
-  ProviderInfo,
-  RatingButton,
-  CancelButton,
-} from './components';
+import { AppointmentInfo, ProviderInfo, RatingButton } from './components';
 import * as S from './styled';
 
 const Appointment = ({ appointment = {} }) => (

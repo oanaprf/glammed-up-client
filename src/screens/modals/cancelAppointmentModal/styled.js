@@ -6,11 +6,7 @@ export const ModalContainer = styled.View`
 `;
 
 export const JustifiedText = styled(Text)`
-  text-align: justify;
-`;
-
-export const RowContainer = styled.View`
-  flex-direction: row;
+  text-align: center;
 `;
 
 export const ButtonsContainer = styled.View`
@@ -25,14 +21,4 @@ export const YesButton = styled(Button)`
 
 export const NoButton = styled(Button)`
   flex: 0.45;
-`;
-
-export const WandContainer = styled.View`
-  border-radius: ${({ theme }) => theme.borderRadius.XXXL}px;
-  border-width: 3px;
-  border-color: ${({ theme }) => theme.theme_colors.secondary};
-  align-self: center;
-  width: 70px;
-  height: 70px;
-  justify-content: center;
 `;

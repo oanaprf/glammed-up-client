@@ -17,7 +17,7 @@ const RatingButton = ({ openModal, appointment }) => (
       {...{
         name: 'x',
         type: 'feather',
-        size: 40,
+        size: 35,
         color: theme.colors.error,
       }}
     />
