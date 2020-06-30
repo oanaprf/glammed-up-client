@@ -55,3 +55,12 @@ export const cancelAppointment = id =>
     },
     { method: 'PUT', data: { id, status: C.APPOINTMENT_STATUS.CANCELLED } }
   );
+
+export const completeAppointment = id =>
+  fetch.actions.fetch(
+    {
+      name: 'completedAppoinement',
+      url: routes.updateAppointment(id),
+    },
+    { method: 'PUT', data: { id, status: C.APPOINTMENT_STATUS.COMPLETED } }
+  );

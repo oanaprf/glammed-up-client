@@ -7,26 +7,29 @@ import * as C from '@@utils/constants';
 import { theme } from '@@config';
 import * as S from './styled';
 
-const CancelButton = ({ openModal, appointment }) => (
+const CompleteButton = ({ openModal, appointment }) => (
   <S.StyledButton
     onPress={() =>
-      openModal({ name: C.MODALS.CANCEL_APPOINTMENT_MODAL, data: appointment })
+      openModal({
+        name: C.MODALS.COMPLETE_APPOINTMENT_MODAL,
+        data: appointment,
+      })
     }
   >
     <Icon
       {...{
-        name: 'x',
+        name: 'check',
         type: 'feather',
         size: 35,
-        color: theme.colors.error,
+        color: theme.colors.success,
       }}
     />
   </S.StyledButton>
 );
 
-CancelButton.propTypes = {
+CompleteButton.propTypes = {
   openModal: PropTypes.func.isRequired,
   appointment: PropTypes.object.isRequired,
 };
 
-export default withOpenModal(CancelButton);
+export default withOpenModal(CompleteButton);

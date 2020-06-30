@@ -44,13 +44,15 @@
       "PENDING_APPROVAL": "INIȚIATĂ",
       "APPROVED": "APROBATĂ",
       "REJECTED": "REFUZATĂ",
-      "COMPLETED": "TERMINATĂ",
+      "COMPLETED": "FINALIZATĂ",
       "CANCELLED": "ANULATĂ"
     },
     "sms": "Ai o nouă programare în data de {{date}} la ora {{time}}",
     "approveAppointment": "Revizuiește programarea",
     "cancelAppointment": "Anulează programarea",
-    "cancelAppointmentText": "Dorești să anulezi programarea?"
+    "cancelAppointmentText": "Dorești să anulezi programarea?",
+    "completeAppointment": "Finalizează programarea",
+    "completeAppointmentText": "Dorești să finalizezi programarea?"
   },
   "profile": {
     "pageName": "Profil",

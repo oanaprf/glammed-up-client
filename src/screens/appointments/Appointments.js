@@ -8,6 +8,7 @@ import {
   AddManualAppointment,
   AddReviewModal,
   CancelAppointmentModal,
+  CompleteAppointmentModal,
 } from '@@screens/modals';
 
 import { AppointmentsList, AppointmentsCalendar } from './components';
@@ -49,6 +50,7 @@ const Appointments = ({
     {isCurrentUserProvider ? <AddManualAppointment /> : null}
     <AddReviewModal />
     <CancelAppointmentModal />
+    <CompleteAppointmentModal />
   </S.Container>
 );
 

@@ -50,7 +50,9 @@
     "sms": "You have a new appointment on {{date}} at {{time}}",
     "approveAppointment": "Review appointment",
     "cancelAppointment": "Cancel appointment",
-    "cancelAppointmentText": "Do you want to cancel this appointment?"
+    "cancelAppointmentText": "Do you want to cancel this appointment?",
+    "completeAppointment": "Complete appointment",
+    "completeAppointmentText": "Do you want to complete this appointment?"
   },
   "profile": {
     "pageName": "Profile",
