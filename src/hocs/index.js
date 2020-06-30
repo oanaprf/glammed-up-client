@@ -4,3 +4,4 @@ export { default as withOnMount } from './withOnMount';
 export { default as withOpenModal } from './withOpenModal';
 export { default as withLabel } from './withLabel';
 export { default as withCloseModal } from './withCloseModal';
+export { default as withUseFocusEffect } from './withUseFocusEffect';

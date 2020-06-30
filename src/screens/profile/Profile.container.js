@@ -2,7 +2,7 @@ import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import getOr from 'lodash/fp/getOr';
 
-import { withOnMount } from '@@hocs';
+import { withUseFocusEffect } from '@@hocs';
 import { user, reviews, services } from '@@store/modules';
 
 import BaseProfile from './Profile';
@@ -30,7 +30,7 @@ const Profile = compose(
       userId,
     }),
   })),
-  withOnMount(
+  withUseFocusEffect(
     ({ userId, fetchProfile, fetchUserReviews, fetchUserServices }) => {
       fetchProfile(userId);
       fetchUserReviews(userId);

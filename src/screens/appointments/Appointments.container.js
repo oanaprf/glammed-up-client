@@ -1,7 +1,7 @@
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 
-import { withOnMount } from '@@hocs';
+import { withUseFocusEffect } from '@@hocs';
 import { user, appointments } from '@@store/modules';
 
 import BaseAppointments from './Appointments';
@@ -21,7 +21,7 @@ const Appointments = compose(
       fetchProviderAppointments: appointments.actions.fetchProviderAppointments,
     }
   ),
-  withOnMount(
+  withUseFocusEffect(
     ({
       currentUserId,
       isCurrentUserProvider,

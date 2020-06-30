@@ -2,7 +2,7 @@ import { compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Notifications } from 'expo';
 
-import { withOnMount } from '@@hocs';
+import { withOnMount, withUseFocusEffect } from '@@hocs';
 import { services, modal } from '@@store/modules';
 import * as C from '@@utils/constants';
 
@@ -18,13 +18,13 @@ const Home = compose(
     onNotificationReceived: ({ openModal }) => ({ data }) =>
       openModal({ name: C.MODALS.APPROVE_APPOINTMENT_MODAL, data }),
   }),
-  withOnMount(
-    ({ fetchServices, fetchMostPopularServices, onNotificationReceived }) => {
-      fetchServices();
-      fetchMostPopularServices();
-      Notifications.addListener(onNotificationReceived);
-    }
-  )
+  withOnMount(({ onNotificationReceived }) => {
+    Notifications.addListener(onNotificationReceived);
+  }),
+  withUseFocusEffect(({ fetchServices, fetchMostPopularServices }) => {
+    fetchServices();
+    fetchMostPopularServices();
+  })
 )(BaseHome);
 
 export default Home;
