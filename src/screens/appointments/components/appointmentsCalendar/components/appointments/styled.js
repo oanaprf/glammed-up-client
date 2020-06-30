@@ -7,3 +7,7 @@ export const StyledButton = styled(Button)`
   border-radius: ${({ theme }) => theme.borderRadius.L}px;
   padding: 15px;
 `;
+export const LoaderContainer = styled.View`
+  height: 40%;
+  justify-content: center;
+`;

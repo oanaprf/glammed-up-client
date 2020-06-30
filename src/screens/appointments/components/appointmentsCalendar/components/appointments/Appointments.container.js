@@ -4,17 +4,17 @@ import { connect } from 'react-redux';
 import { BigLoaderIcon } from '@@components';
 import { appointments } from '@@store/modules';
 
-import BaseAppointmentsList from './AppointmentsList';
+import BaseAppointments from './Appointments';
 import * as S from './styled';
 
-const AppointmentsList = compose(
+const Appointments = compose(
   connect(state => ({
-    isLoading: appointments.selectors.areClientAppointmentsLoading(state),
+    isLoading: appointments.selectors.areProviderAppointmentsLoading(state),
   })),
   branch(
     ({ isLoading }) => isLoading,
     renderComponent(nest(S.LoaderContainer, BigLoaderIcon))
   )
-)(BaseAppointmentsList);
+)(BaseAppointments);
 
-export default AppointmentsList;
+export default Appointments;
