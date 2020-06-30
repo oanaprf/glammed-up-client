@@ -1,14 +1,17 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 import { withOpenModal } from '@@hocs';
 import { theme } from '@@config';
+import { getRating } from '@@store/modules/services/selectors';
+
 import * as S from './styled';
 
-const RatingButton = () => (
-  <S.StyledButton>
+const RatingButton = ({ user }) => (
+  <S.StyledButton user={user}>
     <>
-      <S.StyledText size="M">{'5'}</S.StyledText>
+      <S.StyledText size="M">{`${getRating(user)}`}</S.StyledText>
       <Icon
         {...{
           name: 'star',
@@ -20,5 +23,9 @@ const RatingButton = () => (
     </>
   </S.StyledButton>
 );
+
+RatingButton.propTypes = {
+  user: PropTypes.object.isRequired,
+};
 
 export default withOpenModal(RatingButton);

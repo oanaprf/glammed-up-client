@@ -9,7 +9,7 @@ const AvatarBar = ({ user, isOwnProfile }) => (
   <S.AvatarBar>
     <EditButton {...{ user, isOwnProfile }} />
     <S.ProfilePicture source={{ uri: getProfilePicture(user) }} />
-    <RatingButton />
+    <RatingButton user={user} />
   </S.AvatarBar>
 );
 
