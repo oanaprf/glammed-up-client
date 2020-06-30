@@ -16,3 +16,8 @@ export const StyledRow = styled.View`
 export const StyledText = styled(Text)`
   flex: 0.97;
 `;
+
+export const LoaderContainer = styled.View`
+  height: 15%;
+  justify-content: center;
+`;

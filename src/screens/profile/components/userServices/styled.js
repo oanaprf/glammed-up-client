@@ -14,3 +14,8 @@ export const StyledButton = styled(Button)`
   padding: 15px;
   align-self: center;
 `;
+
+export const LoaderContainer = styled.View`
+  height: 80%;
+  justify-content: center;
+`;
