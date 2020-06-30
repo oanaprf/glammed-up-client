@@ -8,7 +8,7 @@ import {
   BookAppointmentModal,
   ApproveAppointmentModal,
 } from '@@screens/modals';
-import { ButtonText } from '@@components';
+import { ButtonText, Text, Spacer } from '@@components';
 
 import * as S from './styled';
 import { SettingsButton, MostPopularServices, Services } from './components';
@@ -28,7 +28,15 @@ const Home = ({ navigation }) => (
           paddingHorizontal: 10,
         }}
       >
+        <Spacer height={10} />
+        <Text size="M" family="BOLD">
+          {t('home.mostPopular')}
+        </Text>
         <MostPopularServices />
+        <Text size="M" family="BOLD">
+          {t('home.allServices')}
+        </Text>
+        <Spacer height={5} />
         <Services />
       </ScrollView>
     </S.Body>

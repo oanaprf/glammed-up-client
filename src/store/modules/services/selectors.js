@@ -31,6 +31,15 @@ export const getReviews = getOr([], 'reviews');
 
 export const isSearchLoading = fetch.selectors.isLoading('search');
 export const areUserServicesLoading = fetch.selectors.isLoading('userServices');
+export const areMostPopularServicesLoading = fetch.selectors.isLoading(
+  'mostPopularServices'
+);
+export const areAllServicesLoading = fetch.selectors.isLoading('services');
+export const isHomeLoading = createSelector(
+  [areMostPopularServicesLoading, areAllServicesLoading],
+  (servicesLoading, mostPopularServicesLoading) =>
+    servicesLoading && mostPopularServicesLoading
+);
 
 export const getServices = fetch.selectors.getData('services', []);
 

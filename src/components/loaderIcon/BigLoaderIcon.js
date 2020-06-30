@@ -5,7 +5,7 @@ import { theme } from '@@config';
 import LoaderIcon from './LoaderIcon.container';
 
 const BigLoaderIcon = () => (
-  <View style={{ marginTop: 40 }}>
+  <View>
     <LoaderIcon size={40} color={theme.colors.black} />
   </View>
 );
