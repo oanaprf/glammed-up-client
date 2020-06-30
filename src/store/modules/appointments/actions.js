@@ -46,3 +46,12 @@ export const rejectAppointment = id =>
     },
     { method: 'PUT', data: { id, status: C.APPOINTMENT_STATUS.REJECTED } }
   );
+
+export const cancelAppointment = id =>
+  fetch.actions.fetch(
+    {
+      name: 'cancelledAppoinement',
+      url: routes.updateAppointment(id),
+    },
+    { method: 'PUT', data: { id, status: C.APPOINTMENT_STATUS.CANCELLED } }
+  );

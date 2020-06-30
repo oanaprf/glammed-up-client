@@ -5,7 +5,12 @@ import getOr from 'lodash/fp/getOr';
 import { Spacer } from '@@components';
 import { C } from '@@utils';
 
-import { AppointmentInfo, ProviderInfo, RatingButton } from './components';
+import {
+  AppointmentInfo,
+  ProviderInfo,
+  RatingButton,
+  CancelButton,
+} from './components';
 import * as S from './styled';
 
 const Appointment = ({ appointment = {} }) => (
@@ -22,6 +27,9 @@ const Appointment = ({ appointment = {} }) => (
           <RatingButton
             service={{ ...appointment.service, provider: appointment.provider }}
           />
+        ) : null}
+        {appointment.status === C.APPOINTMENT_STATUS.PENDING_APPROVAL ? (
+          <CancelButton appointment={appointment} />
         ) : null}
       </S.RowContainer>
     </S.AppointmentInfo>

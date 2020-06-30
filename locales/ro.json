@@ -48,7 +48,9 @@
       "CANCELLED": "ANULATĂ"
     },
     "sms": "Ai o nouă programare în data de {{date}} la ora {{time}}",
-    "approveAppointment": "Revizuiește programarea"
+    "approveAppointment": "Revizuiește programarea",
+    "cancelAppointment": "Anulează programarea",
+    "cancelAppointmentText": "Dorești să anulezi programarea?"
   },
   "profile": {
     "pageName": "Profil",

@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 
 import { Text, ButtonText } from '@@components';
 import { t } from '@@config';
-import { AddManualAppointment, AddReviewModal } from '@@screens/modals';
+import {
+  AddManualAppointment,
+  AddReviewModal,
+  CancelAppointmentModal,
+} from '@@screens/modals';
 
 import { AppointmentsList, AppointmentsCalendar } from './components';
 import * as S from './styled';
@@ -44,6 +48,7 @@ const Appointments = ({
     </S.Body>
     {isCurrentUserProvider ? <AddManualAppointment /> : null}
     <AddReviewModal />
+    <CancelAppointmentModal />
   </S.Container>
 );
 
