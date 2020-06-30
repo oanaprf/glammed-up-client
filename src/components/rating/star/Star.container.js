@@ -1,4 +1,5 @@
 import { compose, withHandlers } from 'recompose';
+import { Keyboard } from 'react-native';
 
 import { withBounceAnimation } from '@@hocs';
 
@@ -9,6 +10,7 @@ const Star = compose(
     onPress: ({ setRating, index, onChange }) => () => {
       onChange && onChange(index);
       setRating(index);
+      Keyboard.dismiss();
     },
   }),
   withBounceAnimation({

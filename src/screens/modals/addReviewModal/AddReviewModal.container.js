@@ -16,7 +16,7 @@ const AddReviewModal = compose(
   withUseState('submitting', false),
   withHandlers({
     onCloseModal: ({ setFormValues }) => () =>
-      setFormValues({ rating: 0, comment: 'bla' }),
+      setFormValues({ rating: 0, comment: '' }),
   })
 )(BaseAddReviewModal);
 

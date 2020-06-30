@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 
 import { Spacer } from '@@components';
 
@@ -8,20 +9,27 @@ import { SignUpButton, FirstName, LastName } from './components';
 import { Email, Password } from '../common';
 
 const SignUp = ({ formValues, setFormValues, onPress, submitting }) => (
-  <>
-    <Spacer height={10} />
-    <FirstName {...{ formValues, setFormValues, submitting }} />
-    <S.SmallSpacer />
-    <LastName {...{ formValues, setFormValues, submitting }} />
-    <S.SmallSpacer />
-    <Email {...{ formValues, setFormValues, submitting }} />
-    <S.SmallSpacer />
-    <Password {...{ formValues, setFormValues, submitting }} />
-    <S.MediumSpacer />
-    <S.SignUpContainer style={{ flex: 1 }}>
-      <SignUpButton onPress={onPress} />
-    </S.SignUpContainer>
-  </>
+  <KeyboardAvoidingView
+    {...{
+      behavior: 'padding',
+      ...(Platform.OS === 'ios' && { keyboardVerticalOffset: 200 }),
+    }}
+  >
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <Spacer height={10} />
+      <FirstName {...{ formValues, setFormValues, submitting }} />
+      <Spacer height={10} />
+      <LastName {...{ formValues, setFormValues, submitting }} />
+      <Spacer height={10} />
+      <Email {...{ formValues, setFormValues, submitting }} />
+      <Spacer height={10} />
+      <Password {...{ formValues, setFormValues, submitting }} />
+      <Spacer />
+      <S.SignUpContainer style={{ flex: 1 }}>
+        <SignUpButton onPress={onPress} />
+      </S.SignUpContainer>
+    </ScrollView>
+  </KeyboardAvoidingView>
 );
 
 SignUp.propTypes = {
