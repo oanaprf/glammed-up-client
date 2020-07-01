@@ -1,8 +1,9 @@
-import { compose, branch, renderComponent, nest } from 'recompose';
+import { compose, branch, renderComponent, nest, withProps } from 'recompose';
 import { connect } from 'react-redux';
 
-import { BigLoaderIcon } from '@@components';
+import { BigLoaderIcon, NoResults } from '@@components';
 import { user } from '@@store/modules';
+import { t } from '@@config';
 
 import BaseUserInfoCard from './UserInfoCard';
 import * as S from './styled';
@@ -13,7 +14,16 @@ const UserInfoCard = compose(
   })),
   branch(
     ({ isLoading }) => isLoading,
-    renderComponent(nest(S.LoaderContainer, BigLoaderIcon))
+    renderComponent(nest(S.LoaderContainer, BigLoaderIcon)),
+    branch(
+      // eslint-disable-next-line no-shadow
+      ({ user = {} }) => !user.phoneNumber && !user.address,
+      renderComponent(
+        withProps({ message: t('profile.noUserInfo') })(
+          nest(S.NoResultsContainer, NoResults)
+        )
+      )
+    )
   )
 )(BaseUserInfoCard);
 

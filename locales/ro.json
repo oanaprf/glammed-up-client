@@ -52,7 +52,8 @@
     "cancelAppointment": "Anulează programarea",
     "cancelAppointmentText": "Dorești să anulezi programarea?",
     "completeAppointment": "Finalizează programarea",
-    "completeAppointmentText": "Dorești să finalizezi programarea?"
+    "completeAppointmentText": "Dorești să finalizezi programarea?",
+    "noAppointments": "Nu au fost găsite programări"
   },
   "profile": {
     "pageName": "Profil",
@@ -65,7 +66,10 @@
       "email": "Email",
       "phoneNumber": "Număr de telefon",
       "address": "Adresă"
-    }
+    },
+    "noReviews": "Nu au fost găsite recenzii",
+    "noUserInfo": "Nu au fost găsite informații despre utilizator",
+    "noServices": "Nu au fost găsite servicii"
   },
   "service": {
     "addService": "Adaugă un serviciu",

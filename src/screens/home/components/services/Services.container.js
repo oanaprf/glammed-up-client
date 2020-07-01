@@ -8,7 +8,7 @@ import BaseServices from './Services';
 
 const Services = compose(
   connect(state => ({
-    services: services.selectors.getMostPopularServices(state),
+    services: services.selectors.getServices(state),
     isLoading: services.selectors.isHomeLoading(state),
   })),
   branch(({ isLoading }) => isLoading, renderComponent(BigLoaderIcon))

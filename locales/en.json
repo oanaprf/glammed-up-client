@@ -52,7 +52,8 @@
     "cancelAppointment": "Cancel appointment",
     "cancelAppointmentText": "Do you want to cancel this appointment?",
     "completeAppointment": "Complete appointment",
-    "completeAppointmentText": "Do you want to complete this appointment?"
+    "completeAppointmentText": "Do you want to complete this appointment?",
+    "noAppointments": "No appointments found"
   },
   "profile": {
     "pageName": "Profile",
@@ -65,7 +66,10 @@
       "email": "Email",
       "phoneNumber": "Phone number",
       "address": "Address"
-    }
+    },
+    "noReviews": "No reviews found",
+    "noUserInfo": "No user info",
+    "noServices": "No services found"
   },
   "service": {
     "addService": "Add service",

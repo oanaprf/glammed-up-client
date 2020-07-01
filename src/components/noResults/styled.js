@@ -12,4 +12,6 @@ export const NoResultsContainer = styled.View`
 export const StyledText = styled(Text)`
   color: ${({ theme }) => theme.colors.darkGrey};
   margin-top: 20px;
+  text-align: center;
+  opacity: 0.6;
 `;

@@ -21,3 +21,7 @@ export const LoaderContainer = styled.View`
   height: 15%;
   justify-content: center;
 `;
+
+export const NoResultsContainer = styled.View`
+  height: 20%;
+`;

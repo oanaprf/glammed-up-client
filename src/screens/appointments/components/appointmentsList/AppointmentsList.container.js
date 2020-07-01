@@ -1,8 +1,9 @@
-import { compose, branch, renderComponent, nest } from 'recompose';
+import { compose, branch, renderComponent, nest, withProps } from 'recompose';
 import { connect } from 'react-redux';
 
-import { BigLoaderIcon } from '@@components';
+import { BigLoaderIcon, NoResults } from '@@components';
 import { appointments } from '@@store/modules';
+import { t } from '@@config';
 
 import BaseAppointmentsList from './AppointmentsList';
 import * as S from './styled';
@@ -13,7 +14,14 @@ const AppointmentsList = compose(
   })),
   branch(
     ({ isLoading }) => isLoading,
-    renderComponent(nest(S.LoaderContainer, BigLoaderIcon))
+    renderComponent(nest(S.LoaderContainer, BigLoaderIcon)),
+    branch(
+      // eslint-disable-next-line no-shadow
+      ({ appointments = [] }) => !appointments.length,
+      renderComponent(
+        withProps({ message: t('appointments.noAppointments') })(NoResults)
+      )
+    )
   )
 )(BaseAppointmentsList);
 
