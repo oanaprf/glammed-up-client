@@ -9,6 +9,7 @@ import {
   EditCredentialsModal,
   ChangeLanguageModal,
   ChangeThemeModal,
+  HelpModal,
 } from '@@screens/modals';
 import { Spacer } from '@@components';
 import { GoBackButton } from '@@screens/common';
@@ -56,7 +57,11 @@ const Settings = ({
           onPress={() => openModal({ name: C.MODALS.CHANGE_THEME_MODAL })}
         />
         <Spacer height={30} />
-        <Option icon="help-circle" label="help" />
+        <Option
+          icon="help-circle"
+          label="help"
+          onPress={() => openModal({ name: C.MODALS.HELP_MODAL })}
+        />
         <Spacer height={30} />
         <Option icon="power" label="logout" onPress={onLogout} />
       </View>
@@ -65,6 +70,7 @@ const Settings = ({
     <EditCredentialsModal />
     <ChangeLanguageModal />
     <ChangeThemeModal />
+    <HelpModal />
   </S.Container>
 );
 

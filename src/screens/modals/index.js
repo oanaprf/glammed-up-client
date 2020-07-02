@@ -11,3 +11,4 @@ export { default as ChangeThemeModal } from './changeThemeModal';
 export { default as ApproveAppointmentModal } from './approveAppointmentModal';
 export { default as CancelAppointmentModal } from './cancelAppointmentModal';
 export { default as CompleteAppointmentModal } from './completeAppointmentModal';
+export { default as HelpModal } from './helpModal';

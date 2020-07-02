@@ -27,7 +27,7 @@ const ApproveAppointmentModal = ({
             {`${t('appointments.fields.client')}:`}
           </S.MarginedText>
           <Text family="BOLD" size="M">
-            {getName(service)}
+            {getFullName(client)}
           </Text>
         </S.RowContainer>
         <S.RowContainer>
@@ -35,7 +35,7 @@ const ApproveAppointmentModal = ({
             {`${t('appointments.fields.service')}:`}
           </S.MarginedText>
           <Text family="BOLD" size="M">
-            {getFullName(client)}
+            {getName(service)}
           </Text>
         </S.RowContainer>
         <S.RowContainer>

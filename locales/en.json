@@ -124,7 +124,11 @@
     "changeLanguageIntro": "   Choose one of the following languages:",
     "changeThemeIntro": "   Choose one of the following themes:",
     "ro": "romanian",
-    "en": "english"
+    "en": "english",
+    "helpRegister": "1. Register",
+    "helpHome": "2. View services",
+    "helpServiceDetails": "3. Select service",
+    "helpBookAppointment": "4. Book an appointment"
   },
   "common": {
     "save": "Save",

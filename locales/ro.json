@@ -124,7 +124,11 @@
     "changeLanguageIntro": "   Alege una din următoarele limbi:",
     "changeThemeIntro": "   Alege una din următoarele teme:",
     "ro": "română",
-    "en": "engleză"
+    "en": "engleză",
+    "helpRegister": "1. Înregistrează-te",
+    "helpHome": "2. Vizualizează serviciile",
+    "helpServiceDetails": "3. Selectează un serviciu",
+    "helpBookAppointment": "4. Efectuează o programare"
   },
   "common": {
     "save": "Salvează",

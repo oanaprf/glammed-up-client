@@ -32,6 +32,7 @@ export const MODALS = {
   APPROVE_APPOINTMENT_MODAL: 'approveAppointmentModal',
   CANCEL_APPOINTMENT_MODAL: 'cancelAppointmentModal',
   COMPLETE_APPOINTMENT_MODAL: 'completeAppointmentModal',
+  HELP_MODAL: 'helpModal',
 };
 
 export const THEME_COLORS = {
