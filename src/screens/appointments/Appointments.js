@@ -26,26 +26,24 @@ const Appointments = ({
       </ButtonText>
     </S.Header>
     <S.Body>
-      <S.StyledTabs
-        tabLabels={[
-          ...(isCurrentUserProvider
-            ? [
-                <Text family="BOLD" uppercase>
-                  {t('appointments.calendar')}
-                </Text>,
-              ]
-            : []),
-          <Text family="BOLD" uppercase>
-            {t('appointments.list')}
-          </Text>,
-        ]}
-        tabContents={[
-          ...(isCurrentUserProvider
-            ? [<AppointmentsCalendar appointments={providerAppointments} />]
-            : []),
-          <AppointmentsList appointments={clientAppointments} />,
-        ]}
-      />
+      {isCurrentUserProvider ? (
+        <S.StyledTabs
+          tabLabels={[
+            <Text family="BOLD" uppercase>
+              {t('appointments.calendar')}
+            </Text>,
+            <Text family="BOLD" uppercase>
+              {t('appointments.list')}
+            </Text>,
+          ]}
+          tabContents={[
+            <AppointmentsCalendar appointments={providerAppointments} />,
+            <AppointmentsList appointments={clientAppointments} />,
+          ]}
+        />
+      ) : (
+        <AppointmentsList appointments={clientAppointments} />
+      )}
     </S.Body>
     {isCurrentUserProvider ? <AddManualAppointment /> : null}
     <AddReviewModal />

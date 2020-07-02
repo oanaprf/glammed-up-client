@@ -34,14 +34,16 @@ const EditUserModal = compose(
   ),
   withUseState('submitting', false),
   withHandlers({
-    onCloseModal: ({ setFormValues, user }) => () =>
+    onCloseModal: ({ setFormValues, user, setSubmitting }) => () => {
+      setSubmitting(false);
       setFormValues({
         firstName: getFirstName(user),
         lastName: getLastName(user),
         profilePicture: user.profilePicture,
         phoneNumber: getPhoneNumber(user),
         address: getAddress(user),
-      }),
+      });
+    },
   })
 )(BaseEditUserModal);
 

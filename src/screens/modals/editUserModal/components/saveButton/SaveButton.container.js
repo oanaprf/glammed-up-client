@@ -26,8 +26,23 @@ const SaveButton = compose(
       currentUserId,
     }) => () => {
       setSubmitting(true);
-      if (U.isFormValid(formValues)) {
-        editUser(currentUserId, formValues);
+      if (
+        U.isFormValid({
+          firstName: formValues.firstName,
+          lastName: formValues.lastName,
+        })
+      ) {
+        editUser(currentUserId, {
+          firstName: formValues.firstName,
+          lastName: formValues.lastName,
+          ...(formValues.profilePicture && {
+            profilePicture: formValues.profilePicture,
+          }),
+          ...(formValues.phoneNumber && {
+            phoneNumber: formValues.phoneNumber,
+          }),
+          ...(formValues.address && { address: formValues.address }),
+        });
         closeModal();
       }
     },

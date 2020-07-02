@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { t, theme } from '@@config';
 import * as S from './styled';
 
-const NoResults = ({ message = t('search.noResults') }) => (
+const NoResults = ({ message = 'search.noResults' }) => (
   <S.NoResultsContainer>
-    {message === t('search.noResults') ? (
+    {message === 'search.noResults' ? (
       <Icon
         {...{
           name: 'search',
@@ -17,7 +17,7 @@ const NoResults = ({ message = t('search.noResults') }) => (
         }}
       />
     ) : null}
-    <S.StyledText size="M">{message}</S.StyledText>
+    <S.StyledText size="M">{t(message)}</S.StyledText>
   </S.NoResultsContainer>
 );
 

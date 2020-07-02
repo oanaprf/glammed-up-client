@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import { BigLoaderIcon, NoResults } from '@@components';
 import { appointments } from '@@store/modules';
-import { t } from '@@config';
 
 import BaseAppointmentsList from './AppointmentsList';
 import * as S from './styled';
@@ -12,7 +11,7 @@ const AppointmentsList = compose(
   connect(state => ({
     isLoading: appointments.selectors.areClientAppointmentsLoading(state),
   })),
-  withProps({ message: t('appointments.noAppointments') }),
+  withProps({ message: 'appointments.noAppointments' }),
   branch(
     ({ isLoading }) => isLoading,
     renderComponent(nest(S.LoaderContainer, BigLoaderIcon)),

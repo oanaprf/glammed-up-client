@@ -11,6 +11,7 @@ export const Container = styled.View`
 export const Header = styled.View`
   align-items: flex-start;
   flex: 0.15;
+  padding-top: 15px;
 `;
 
 export const Body = styled.View`
