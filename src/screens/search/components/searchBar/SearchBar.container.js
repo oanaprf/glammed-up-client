@@ -9,9 +9,9 @@ const SearchBar = compose(
     search: services.actions.searchServices,
   }),
   withHandlers({
-    onSearch: ({ selectedCategory, setSearchBy, search }) => value => {
+    onSearch: ({ selectedCategory, setSearchBy, search }) => (value = '') => {
       setSearchBy(value);
-      search(value, selectedCategory);
+      value.length >= 3 && search(value, selectedCategory);
     },
   })
 )(BaseSearchBar);

@@ -10,7 +10,7 @@ export const Header = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 20px 0px 20px;
+  padding: 0px 20px;
   flex: 0.1;
 `;
 
