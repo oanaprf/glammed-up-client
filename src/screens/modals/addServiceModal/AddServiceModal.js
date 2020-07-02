@@ -43,7 +43,7 @@ const AddServiceModal = ({
         <ServiceImagePicker {...{ formValues, setFormValues, submitting }} />
       </View>
       <Spacer height={10} />
-      <SaveButton {...{ formValues, setSubmitting }} />
+      <SaveButton {...{ formValues, setSubmitting, onCloseModal }} />
     </S.ModalContainer>
   </Modal>
 );

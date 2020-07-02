@@ -4,7 +4,7 @@ import getOr from 'lodash/fp/getOr';
 import isEmpty from 'lodash/fp/isEmpty';
 
 import { modal, appointments, user } from '@@store/modules';
-import { withOnMount, withUseState } from '@@hocs';
+import { withOnMount, withUseState, withCloseModal } from '@@hocs';
 import BaseBookAppointmentModal from './BookAppointmentModal';
 
 const today = new Date();
@@ -37,13 +37,22 @@ const BookAppointmentModal = compose(
     time: '',
   })),
   withUseState('submitting', false),
+  withCloseModal,
   withHandlers({
-    onCloseModal: ({ setFormValues, currentUserId }) => () =>
+    onCloseModal: ({
+      setFormValues,
+      currentUserId,
+      closeModal,
+      setSubmitting,
+    }) => () => {
+      setSubmitting(false);
+      closeModal();
       setFormValues({
         clientId: currentUserId,
         date: '',
         time: '',
-      }),
+      });
+    },
   })
 )(BaseBookAppointmentModal);
 

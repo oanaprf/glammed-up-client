@@ -28,9 +28,6 @@ const Appointments = ({
     <S.Body>
       <S.StyledTabs
         tabLabels={[
-          <Text family="BOLD" uppercase>
-            {t('appointments.list')}
-          </Text>,
           ...(isCurrentUserProvider
             ? [
                 <Text family="BOLD" uppercase>
@@ -38,12 +35,15 @@ const Appointments = ({
                 </Text>,
               ]
             : []),
+          <Text family="BOLD" uppercase>
+            {t('appointments.list')}
+          </Text>,
         ]}
         tabContents={[
-          <AppointmentsList appointments={clientAppointments} />,
           ...(isCurrentUserProvider
             ? [<AppointmentsCalendar appointments={providerAppointments} />]
             : []),
+          <AppointmentsList appointments={clientAppointments} />,
         ]}
       />
     </S.Body>

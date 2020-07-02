@@ -2,7 +2,7 @@ import { compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 
 import { modal } from '@@store/modules';
-import { withUseState } from '@@hocs';
+import { withUseState, withCloseModal } from '@@hocs';
 import BaseAddReviewModal from './AddReviewModal';
 
 const AddReviewModal = compose(
@@ -14,9 +14,13 @@ const AddReviewModal = compose(
     comment: '',
   }),
   withUseState('submitting', false),
+  withCloseModal,
   withHandlers({
-    onCloseModal: ({ setFormValues }) => () =>
-      setFormValues({ rating: 0, comment: '' }),
+    onCloseModal: ({ setFormValues, closeModal, setSubmitting }) => () => {
+      setSubmitting(false);
+      closeModal();
+      setFormValues({ rating: 0, comment: '' });
+    },
   })
 )(BaseAddReviewModal);
 

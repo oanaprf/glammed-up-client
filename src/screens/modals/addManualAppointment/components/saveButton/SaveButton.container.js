@@ -2,13 +2,11 @@ import { compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 
 import { U } from '@@utils';
-import { withCloseModal } from '@@hocs';
 import { appointments } from '@@store/modules';
 
 import BaseSaveButton from './SaveButton';
 
 const SaveButton = compose(
-  withCloseModal,
   connect(null, {
     bookAppointment: appointments.actions.bookAppointment,
   }),
@@ -17,7 +15,7 @@ const SaveButton = compose(
       formValues,
       setSubmitting,
       bookAppointment,
-      closeModal,
+      onCloseModal,
     }) => () => {
       setSubmitting(true);
       if (U.isFormValid(formValues)) {
@@ -30,7 +28,7 @@ const SaveButton = compose(
           clientId: formValues.clientId,
           date,
         });
-        closeModal();
+        onCloseModal();
       }
     },
   })

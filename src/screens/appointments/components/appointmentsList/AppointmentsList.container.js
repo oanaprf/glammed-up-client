@@ -12,15 +12,14 @@ const AppointmentsList = compose(
   connect(state => ({
     isLoading: appointments.selectors.areClientAppointmentsLoading(state),
   })),
+  withProps({ message: t('appointments.noAppointments') }),
   branch(
     ({ isLoading }) => isLoading,
     renderComponent(nest(S.LoaderContainer, BigLoaderIcon)),
     branch(
       // eslint-disable-next-line no-shadow
       ({ appointments = [] }) => !appointments.length,
-      renderComponent(
-        withProps({ message: t('appointments.noAppointments') })(NoResults)
-      )
+      renderComponent(NoResults)
     )
   )
 )(BaseAppointmentsList);

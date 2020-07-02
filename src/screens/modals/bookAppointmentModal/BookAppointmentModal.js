@@ -38,7 +38,7 @@ const BookAppointmentModal = ({
       <Time {...{ freeSpots, formValues, setFormValues, submitting }} />
       <Spacer height={10} />
       <View style={{ zIndex: -1 }}>
-        <SaveButton {...{ service, formValues, setSubmitting }} />
+        <SaveButton {...{ service, formValues, setSubmitting, onCloseModal }} />
       </View>
     </S.ModalContainer>
   </Modal>

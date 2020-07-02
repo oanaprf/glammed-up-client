@@ -8,7 +8,7 @@ export const CredentialsContainer = styled(Button)`
   justify-content: space-around;
   padding: 20px;
   align-self: center;
-  width: 85%;
+  width: 90%;
 `;
 
 export const StyledImage = styled.Image`

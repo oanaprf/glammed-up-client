@@ -2,7 +2,6 @@ import { compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 
 import { U } from '@@utils';
-import { withCloseModal } from '@@hocs';
 import { user, reviews } from '@@store/modules';
 
 import BaseSaveButton from './SaveButton';
@@ -10,7 +9,6 @@ import BaseSaveButton from './SaveButton';
 const today = new Date();
 
 const SaveButton = compose(
-  withCloseModal,
   connect(
     state => ({
       currentUserId: user.selectors.getCurrentUserId(state),
@@ -24,7 +22,7 @@ const SaveButton = compose(
       formValues,
       setSubmitting,
       addReview,
-      closeModal,
+      onCloseModal,
       currentUserId,
       service,
     }) => () => {
@@ -37,7 +35,7 @@ const SaveButton = compose(
           clientId: currentUserId,
           date: today,
         });
-        closeModal();
+        onCloseModal();
       }
     },
   })

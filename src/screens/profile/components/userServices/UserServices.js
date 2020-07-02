@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { theme } from '@@config';
 import { withOpenModal } from '@@hocs';
 import * as C from '@@utils/constants';
-import { U } from '@@utils';
+import Services from './Services.container';
 
 import * as S from './styled';
 
@@ -20,17 +20,7 @@ const UserServices = ({ openModal, services, user, isOwnProfile }) => (
       justifyContent: 'space-evenly',
     }}
   >
-    {services.map(service => (
-      <S.StyledService
-        key={service._id}
-        isUserService
-        service={{
-          ...service,
-          providerId: user._id,
-          provider: U.pickProviderDetails(user),
-        }}
-      />
-    ))}
+    <Services {...{ user, services }} />
     {isOwnProfile ? (
       <S.StyledButton onPress={() => openModal({ name: C.MODALS.ADD_SERVICE })}>
         <Icon

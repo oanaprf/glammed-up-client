@@ -32,7 +32,7 @@ const AddReviewModal = ({
       <Spacer height={10} />
       <Comment {...{ formValues, setFormValues, submitting }} />
       <Spacer height={10} />
-      <SaveButton {...{ service, formValues, setSubmitting }} />
+      <SaveButton {...{ service, formValues, setSubmitting, onCloseModal }} />
     </S.ModalContainer>
   </Modal>
 );

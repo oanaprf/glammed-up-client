@@ -12,17 +12,14 @@ const UserInfoCard = compose(
   connect((state, props) => ({
     isLoading: user.selectors.isUserInfoLoading(state, props),
   })),
+  withProps({ message: t('profile.noUserInfo') }),
   branch(
     ({ isLoading }) => isLoading,
     renderComponent(nest(S.LoaderContainer, BigLoaderIcon)),
     branch(
       // eslint-disable-next-line no-shadow
       ({ user = {} }) => !user.phoneNumber && !user.address,
-      renderComponent(
-        withProps({ message: t('profile.noUserInfo') })(
-          nest(S.NoResultsContainer, NoResults)
-        )
-      )
+      renderComponent(nest(S.NoResultsContainer, NoResults))
     )
   )
 )(BaseUserInfoCard);

@@ -32,8 +32,8 @@
     "bookAppointment": "Book appointment",
     "addManualAppointment": "Add manual appointment",
     "chooseHour": "Hour",
-    "list": "List",
-    "calendar": "Calendar",
+    "list": "Client",
+    "calendar": "Beautician",
     "fields": {
       "date": "Date",
       "time": "Time",

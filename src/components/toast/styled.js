@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { Text } from '../text';
 
 export const ToastContainer = styled.View`
-  margin-top: 30px;
+  margin-top: 40px;
   padding: 20px;
   background-color: ${({ theme }) => theme.colors.error};
   z-index: 999;
@@ -12,6 +12,7 @@ export const ToastContainer = styled.View`
   flex-direction: row;
   align-items: center;
   width: 95%;
+  justify-content: space-between;
 `;
 
 export const WhiteText = styled(Text)`

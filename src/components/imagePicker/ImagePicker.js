@@ -25,7 +25,7 @@ const MultipleImagePicker = ({ value, multiple, onSelectImage, ...rest }) => {
       {
         mediaTypes: ExpoImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
-        quality: 0.5,
+        quality: 0,
         base64: true,
       }
     );

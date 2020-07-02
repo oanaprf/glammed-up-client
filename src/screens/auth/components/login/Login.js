@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity } from 'react-native';
 
 import { Spacer } from '@@components';
-import { t } from '@@config';
 
 import * as S from './styled';
 import { LoginButton } from './components';
@@ -18,9 +16,9 @@ const Login = ({ formValues, setFormValues, onLogin, submitting }) => (
     <S.MediumSpacer />
     <LoginButton onPress={onLogin} />
     <S.SmallSpacer />
-    <TouchableOpacity activeOpacity={0.6}>
+    {/* <TouchableOpacity activeOpacity={0.6}>
       <S.CenteredText size="XS">{t('login.forgotPassword')}</S.CenteredText>
-    </TouchableOpacity>
+    </TouchableOpacity> */}
     {/* <S.SmallSpacer />
     <S.HorizontalBarWrapper>
       <S.HorizontalBar />

@@ -3,7 +3,7 @@ import { Card, Text } from '@@components';
 
 export const CardContainer = styled(Card)`
   flex-direction: row;
-  width: 85%;
+  width: 90%;
   margin-bottom: 10px;
 `;
 

@@ -32,8 +32,8 @@
     "bookAppointment": "Rezervă un loc",
     "addManualAppointment": "Adaugă rezervare",
     "chooseHour": "Ora",
-    "list": "Listă",
-    "calendar": "Calendar",
+    "list": "Client",
+    "calendar": "Cosmetician",
     "fields": {
       "date": "Data",
       "time": "Ora",
@@ -68,7 +68,7 @@
       "address": "Adresă"
     },
     "noReviews": "Nu au fost găsite recenzii",
-    "noUserInfo": "Nu au fost găsite informații despre utilizator",
+    "noUserInfo": "Nu au fost găsite informații",
     "noServices": "Nu au fost găsite servicii"
   },
   "service": {

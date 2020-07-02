@@ -53,7 +53,7 @@ const AddManualAppointment = ({
       </S.RowContainer>
       <Spacer height={5} />
       <View style={{ zIndex: -1 }}>
-        <SaveButton {...{ formValues, setSubmitting }} />
+        <SaveButton {...{ formValues, setSubmitting, onCloseModal }} />
       </View>
     </S.ModalContainer>
   </Modal>

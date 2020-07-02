@@ -16,7 +16,7 @@ export const getRating = getOr('', 'averageRating');
 export const getProviderName = getOr('', 'provider.fullName');
 export const getDuration = getOr(0, 'duration');
 export const getDurationHours = service =>
-  +(getDuration(service) / 60).toFixed(0);
+  Math.floor(getDuration(service) / 60);
 export const getDurationMinutes = service => +getDuration(service) % 60;
 
 export const getFirstPicture = ({ pictures = [] }) =>

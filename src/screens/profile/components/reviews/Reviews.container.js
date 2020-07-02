@@ -11,13 +11,14 @@ const Reviews = compose(
   connect((state, props) => ({
     isLoading: reviews.selectors.areUserReviewsLoading(state, props),
   })),
+  withProps({ message: t('profile.noReviews') }),
   branch(
     ({ isLoading }) => isLoading,
     renderComponent(BigLoaderIcon),
     branch(
       // eslint-disable-next-line no-shadow
       ({ reviews = [] }) => !reviews.length,
-      renderComponent(withProps({ message: t('profile.noReviews') })(NoResults))
+      renderComponent(NoResults)
     )
   )
 )(BaseReviews);

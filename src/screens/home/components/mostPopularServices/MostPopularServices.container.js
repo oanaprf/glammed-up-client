@@ -9,7 +9,7 @@ import BaseMostPopularServices from './MostPopularServices';
 const MostPopularServices = compose(
   connect(state => ({
     services: services.selectors.getMostPopularServices(state),
-    isLoading: services.selectors.isHomeLoading(state),
+    isLoading: services.selectors.areMostPopularServicesLoading(state),
   })),
   branch(({ isLoading }) => isLoading, renderComponent(BigLoaderIcon))
 )(BaseMostPopularServices);

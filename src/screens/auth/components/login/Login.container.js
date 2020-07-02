@@ -9,8 +9,8 @@ import BaseLogin from './Login';
 
 const Login = compose(
   withUseState('formValues', {
-    email: 'testtest1@gmail.com',
-    password: 'testtest1',
+    email: 'dianapopescu@gmail.com',
+    password: 'dianapopescu',
   }),
   withUseState('submitting', false),
   connect(null, {

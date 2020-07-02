@@ -2,7 +2,7 @@ import { compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import getOr from 'lodash/fp/getOr';
 
-import { withOnMount, withUseState } from '@@hocs';
+import { withOnMount, withUseState, withCloseModal } from '@@hocs';
 import { user, services, appointments } from '@@store/modules';
 
 import BaseAddManualAppointment from './AddManualAppointment';
@@ -51,17 +51,27 @@ const AddManualAppointment = compose(
     serviceId: getOr('', '[0]._id', serviceNames),
     clientId: '',
   })),
+  withCloseModal,
+  withUseState('submitting', false),
   withHandlers({
-    onCloseModal: ({ setFormValues, currentUserId, serviceNames }) => () =>
+    onCloseModal: ({
+      setFormValues,
+      currentUserId,
+      serviceNames,
+      closeModal,
+      setSubmitting,
+    }) => () => {
+      setSubmitting(false);
+      closeModal();
       setFormValues({
         providerId: currentUserId,
         date: '',
         time: '',
         serviceId: getOr('', '[0]._id', serviceNames),
         clientId: '',
-      }),
-  }),
-  withUseState('submitting', false)
+      });
+    },
+  })
 )(BaseAddManualAppointment);
 
 export default AddManualAppointment;

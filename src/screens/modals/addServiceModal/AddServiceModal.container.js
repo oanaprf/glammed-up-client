@@ -1,6 +1,6 @@
 import { compose, withHandlers } from 'recompose';
 
-import { withUseState } from '@@hocs';
+import { withUseState, withCloseModal } from '@@hocs';
 
 import BaseAddServiceModal from './AddServiceModal';
 
@@ -13,15 +13,19 @@ const AddServiceModal = compose(
     pictures: [],
   }),
   withUseState('submitting', false),
+  withCloseModal,
   withHandlers({
-    onCloseModal: ({ setFormValues }) => () =>
+    onCloseModal: ({ setFormValues, closeModal, setSubmitting }) => () => {
+      setSubmitting(false);
+      closeModal();
       setFormValues({
         name: '',
         category: '',
         price: '',
         duration: '',
         pictures: [],
-      }),
+      });
+    },
   })
 )(BaseAddServiceModal);
 
